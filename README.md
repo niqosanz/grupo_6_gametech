@@ -10,7 +10,7 @@ Este proyecto se trata de **[una red social | un ecommerce | un juego ]** orient
 Padre de familia, 3 hijos, trabajo muy duro como un esclavo en la planta nuclear de Springfield. Hace 20 años funde Compumundo Hiper Mega Red, pero finalmente fuimos comprados por Microsoft. Mis habilidades son comer hasta 10 rosquillas a la vez.
 
 ###### Javier Suarez
-Vendedor de comics en Springfield. Quiero cerrar mi tienda porque estoy cansado de los burlones y vender solamente por internet, por eso decidi aprender a programar. Ademas quiero hacer mi propio comic y tener mi propia pagina web para publicarlos.
+Curioso y Emprendedor.
 
 ###### Nicolas Sanchez
 Vendedor de comics en Springfield. Quiero cerrar mi tienda porque estoy cansado de los burlones y vender solamente por internet, por eso decidi aprender a programar. Ademas quiero hacer mi propio comic y tener mi propia pagina web para publicarlos.
