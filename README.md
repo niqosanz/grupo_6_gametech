@@ -7,7 +7,7 @@ Este proyecto se trata de **[una red social | un ecommerce | un juego ]** orient
 ## Participantes
 
 ###### Lorena Nokubi
-Padre de familia, 3 hijos, trabajo muy duro como un esclavo en la planta nuclear de Springfield. Hace 20 años funde Compumundo Hiper Mega Red, pero finalmente fuimos comprados por Microsoft. Mis habilidades son comer hasta 10 rosquillas a la vez.
+28 años, estudiante de ingenieria Química, en busqueda constante de nuevos desafíos y conocimientos.
 
 ###### Javier Suarez
 Curioso y Emprendedor.
