@@ -1,6 +1,10 @@
 # grupo_6_gametech
 
-Este proyecto se trata de **[una red social | un ecommerce | un juego ]** orientado a personas interesadas ***completar cual seria el perfil de usuarios interesados en este sitio*** Cuando comenzamos a planificar este proyecto nos propusimos lograr que ***completar explicando cual era la idea inicial***. En esta aplicacion los usuarios registros pueden ***completar describiendo que servicios y/o productos ofrece la aplicacion que la distinguen del resto de sus competidores***. En el futuro queremos expandir este desarrollo y lograr ***completar con objetivos a futuro***.
+Nuestro proyecto es un ecommerce que se dedica a la venta de consolas de videojuegos, juegos y accesorios.
+Nuestro público es variado, nos orientamos tanto a gamers profesionales como ocasionales con un denominador común: ambos buscan un producto que les permita disfrutar de un momento de entretenimiento.
+Cuando comenzamos este proyecto nos propusimos crear una página dinámica que les permita a los compradores, encontrar de manera intuitiva, y rápida el producto que buscan.
+En esta aplicación los usuarios que estén registrados podrán comprar, acceder a ofertas exclusivas y enterarse de los próximos lanzamientos del mundo gamer.
+En el futuro queremos expandir este desarrollo y poder incluir en esta plataforma los envíos de productos físicos a países vecinos e implementar un espacio donde los nuevos desarrolladores puedan mostrar y vender sus productos
 
 
 
