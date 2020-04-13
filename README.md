@@ -16,8 +16,8 @@ En el futuro queremos expandir este desarrollo y poder incluir en esta plataform
 ###### Javier Suarez
 Colombiano de 39 años, Curioso y Emprendedor.
 
-###### Nicolas Sanchez
-Vendedor de comics en Springfield. Quiero cerrar mi tienda porque estoy cansado de los burlones y vender solamente por internet, por eso decidi aprender a programar. Ademas quiero hacer mi propio comic y tener mi propia pagina web para publicarlos.
+###### Nicolàs Sanchez
+Tengo 29 años, soy una persona muy positiva, programador, tecnico electronico, fan de Dragon Ball ★.
 
 ###### Juan Francisco Echeverria
 26 años, estudiante de sistemas.
@@ -27,6 +27,9 @@ Vendedor de comics en Springfield. Quiero cerrar mi tienda porque estoy cansado 
 
 ```git clone https://github.com/alezvi/empty-project-example```
 
+## Wireframe
+
+Ingresar a```https://xd.adobe.com/view/bd136556-c582-4828-4b95-d963d38342fa-cb22/```
 
 
 ## Utilizacion
@@ -36,3 +39,5 @@ Ingresar a ```http://localhost/proyecto/index.html```
 
 
 ## Recursos
+
+Adobe Xd -- Creación del wireframe
