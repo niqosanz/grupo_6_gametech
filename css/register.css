@@ -93,7 +93,7 @@ nav{
 }
 
 #external-container-login{
-    margin-top: 100px;
+    margin-top: 80px;
     width: 100%;
 
 
@@ -106,5 +106,17 @@ nav{
 
 #paragraph-login{
     text-align: center;
+    color: grey;
+}
+
+
+.sizeinputs{
+    width: 100%;
+    height: 60px;
+}
+
+.btn-submit{
+    background-color: black;
+    color: white;
 }
 
