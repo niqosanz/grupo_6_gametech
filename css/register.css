@@ -28,15 +28,41 @@ nav{
 
 }
 
-#container-search{
+#external-container-search{
     width: 33%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     align-content: center;
-    /* border: 1px solid grey; */
+
 }
+
+#internal-container-search{
+    width: 70%;
+    border: 1px solid grey;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+}
+
+#input-search{
+    width: 80%;
+    height: 30px;
+    border: none;
+
+}
+
+.logo-search{
+    width:10%;
+    text-align: center;
+    font-size: 20px;
+    color: grey;
+}
+
 
 #container-logo{
     width: 33%;
@@ -79,7 +105,6 @@ nav{
     margin-left: 50px;
     margin-top: 20px;
 
-
 }
 
 #header-backtostore{
@@ -110,13 +135,54 @@ nav{
 }
 
 
-.sizeinputs{
+.frame-sizeinputs{
     width: 100%;
+    border-radius: 40px;
+    border: 1px solid grey;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+}
+
+.sizeinputs{
+    width: 80%;
     height: 60px;
 }
 
-.btn-submit{
-    background-color: black;
-    color: white;
+.border-inputs{
+    border: none;
 }
 
+
+.i-blank{
+    width: 5%;   
+}
+
+
+.btn-submit{
+    width: 100%;
+    background-color: black;
+    color: white;
+    border-radius: 40px;
+}
+
+#frame-member-signup{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    
+}
+
+.a-member-signup{
+    padding-left: 20px;
+    text-decoration: none;
+    color: black;
+}
+
+.font-signup{
+    font-weight: bold;
+}
