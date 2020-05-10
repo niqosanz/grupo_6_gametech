@@ -1,0 +1,93 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+.form-control::placeholder {
+    font-size: 0.95rem;
+    color: #aaa;
+    font-style: italic;
+  }
+  .bg-white{
+      background-color: white;
+  }
+
+.btn-group{
+    margin: 0 auto;
+    
+}
+
+.btn{
+    font-size: 10px;
+    font-family: 'Poppins', sans-serif;
+    color:black;
+    font-weight: bold;
+}
+
+.detalle{
+    font-family:'Poppins', sans-serif;
+    font-size: 22px;
+    color: black;
+}
+
+.btn-primary{
+    background-color: black;
+    color: white;
+    border: solid 1px black;
+    border-radius: 16px;
+}
+
+.pink{
+    /* background-color: pink;
+    border: solid 1px black; */
+    overflow:hidden;
+    display: flex;
+    align-items: center;
+    margin: 10px auto;
+}
+.gold{
+    /* background-color: gold;
+    border:solid 1px black; */
+    float: left;
+    align-items: center;
+    text-align: center;
+    font-size: 12px;
+}
+
+.producto-agregar{
+    overflow: hidden;
+    font-size: 15px;
+    font-family:'Poppins', sans-serif;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.card{
+    margin: 2px;
+}
+
+.izq{
+    float: left;
+
+}
+.img-add-product{
+    width: 80%;
+}
+
+@media (max-width:768px) {
+    body{
+        background-color: indigo;
+    }
+    .mostrar-lg{
+        display: none;
+    }
+}
+
+
+@media (min-width:768px) {
+    body{
+        background-color:white;}
+
+    .ocultar-md {
+            display: none;
+            }
+    }
