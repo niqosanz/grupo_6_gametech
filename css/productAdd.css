@@ -37,18 +37,12 @@
     border-radius: 16px;
 }
 
-.pink{
-    /* background-color: pink;
-    border: solid 1px black; */
-    overflow:hidden;
-    display: flex;
+.mayor-detalle{
+   overflow:hidden;
     align-items: center;
     margin: 10px auto;
 }
-.gold{
-    /* background-color: gold;
-    border:solid 1px black; */
-    float: left;
+.sub-grupos{
     align-items: center;
     text-align: center;
     font-size: 12px;
@@ -70,15 +64,16 @@
 
 }
 .img-add-product{
-    width: 80%;
+    width: 100%;
 }
 
 @media (max-width:768px) {
-    body{
+    /* body{
         background-color: indigo;
-    }
+    } */
     .mostrar-lg{
         display: none;
+        justify-content: center;
     }
 }
 
@@ -90,4 +85,13 @@
     .ocultar-md {
             display: none;
             }
+    .gold{
+        float: left;
     }
+    .mayor-detalle{
+        display: flex;
+    }
+    .img-add-product {
+        width: 80%;
+    }
+}
