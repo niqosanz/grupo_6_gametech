@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="../stylesheets/bootstrap.css">
+  <link rel="stylesheet" href="../stylesheets/productDetail.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Gametech</title>
+</head>
+
+<body>
+
+  <!-- Aca empieza el navbar  -->
+
+  <nav class="navbar navbar-light navbar-expand-md bg-white justify-content-between">
+    <div class="flex-fill flex-column"> <!-- se usa flex para poder usar dos lineas de navs -->
+
+      <div class="container-fluid "> <!-- primernav, con el order se la da la posicion a cada item  -->
+        <a href="/" class="navbar-brand mx-auto d-block order-0 order-md-0 ">
+          <img class="logo" src="images/loguito2.png">
+        </a>
+
+        <button class="navbar-toggler ocultar-md" type="button" data-toggle="collapse" data-target=".navbarText"
+          aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon">
+          </span>
+        </button>
+
+
+        <div class="navbar-collapse collapse navbarText w-50 order-1 order-md-1 ">
+          <form class="ml-3 my-auto d-inline w-50">
+            <div class="bg-withe rounded border rounded-pill">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <button id="button-addon2" type="submit" class="btn btn-link text-dark"><i
+                      class="fa fa-search"></i></button>
+                </div>
+                <input type="search" placeholder="Buscar" aria-describedby="button-addon2"
+                  class="form-control border-0 bg-white">
+              </div>
+            </div>
+
+          </form>
+        </div>
+
+        <div class="collapse navbar-collapse order-2 navbarText">
+          <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href=""><i class="fa fa-shopping-cart"></i></a></li>
+            <li class="nav-item"><a class="nav-link" href=""><i class="fa fa-user"></i></a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Aca empieza el segundo navbar  -->
+      <nav class="collapse navbar-collapse navbarText navbar navbar-light navbar-expand-md bg-white justify-content-between ">
+        <ul class="container-fluid navbar-nav mr-auto">
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Categorias
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Accesorios
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Juegos
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Proximamente
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+            </div>
+          </li>
+
+          <a href="#" class="badge badge-pill badge-dark">Sell with us</a>
+
+        </ul>
+      </nav>
+    </div>
+  </nav>
+      <div class="container">
+        <!-- Aca van los detalles de los productos--> 
+        <div class="row">
+            <div class='col-sm-12 col-md-6 col-lg-6 contenedores mostrar-lg'>
+                <i class="fa fa-home envios mostrar-lg"></i>/Accesorios/Nintendo/Joys
+             </div>
+             <div class='col-sm-12 col-md-3 col-lg-3 descripcion-envios'> 
+                 <div><i class="fa fa-truck envios mostrar-lg" ></i></div>
+                 <div class="envios mostrar-lg">Envio Standar <br>
+                    3-5 días hábiles
+                 </div>   
+            </div>
+            <div class='col-sm-12 col-md-3 col-lg-3 descripcion-envios mostrar-lg'> 
+                <div><i class="fa fa-truck envios mostrar-lg" ></i></div>
+                <div class="envios mostrar-lg">Envio Express <br>
+                   A partir de $80
+                </div>   
+           </div>
+        
+        </div>
+    
+        <div class="row">
+            <div class='col-sm-12 col-md-6 col-lg-6 contenedores'>
+               <img src="../Images/nintendogr.png">
+            </div>
+            <div class='col-sm-12 col-md-6 col-lg-6 descripcion-producto'>
+                <button type="button" class="btn btn-info oferta">SALE!</button>
+            <div><h2 class="detalle">Nintendo Joy Cons</h2></div>
+            <div class="precios"><h3>$89.99</h3> 
+            <h3 class="precio-anterior">$119.99</h3></div>
+            </div>
+        </div>
+    
+    <div class="row">
+                <div class='col-12 detalle-productos'>
+     <p>
+        <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+          DESCRIPTION
+        </a>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+          REVIEWS
+        </button>
+      </p>
+      <div class="collapse" id="collapseExample">
+        <div class="card card-body">
+            Game like you have never gamed before with the neon red and neon blue Nintendo Joy-Con game controllers and attachments. These two handheld controllers work with the Nintendo Switch game system in any of its modes. Their joysticks pair with the Nintendo console both at home and on the go for a unique gameplay experience. These versatile hybrid controllers can be used in a variety of ways when detached from the Nintendo console. They can even be divided among two people for multiplayer games, with each player holding one Joy Controller. When used with the Grip, the remotes feel more like a traditional video game controller. The battery life of a fully charged Joy Controller is up to 20 hours.
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+<footer class="page-footer font-small pt-4">
+  <div class="container text-center text-md-left">
+    <div class="row">
+      <div class="col-md-4 mx-auto">
+
+        <!-- Content -->
+        <a href="/" class="navbar-brand mx-auto d-block">
+          <img class="logo" src="images/loguito2.png"></a>
+        <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
+          consectetur
+          adipisicing elit.</p>
+
+            <!-- Social buttons -->
+  
+  <ul class="list-unstyled list-inline mx-auto">
+    <li class="list-inline-item"><a href="#" class="btn-floating mx-1"><i class="fa fa-facebook-f"> </i></a></li>
+
+    <li class="list-inline-item"><a href="#" class="btn-floating mx-1"><i class="fa fa-twitter"> </i></a></li>
+    
+    <li class="list-inline-item"><a href="#" class="btn-floating mx-1"><i class="fa fa-instagram"></i></a></li>
+    
+    <li class="list-inline-item"><a href="#" class="btn-floating mx-1"><i class="fa fa-linkedin"></i></a></li>
+    
+    <li class="list-inline-item"><a href="#" class="btn-floating mx-1"><i class="fa fa-steam"></i></a></li>
+  </ul>
+  <!-- Social buttons -->
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-2 mx-auto">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Shopping Online</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!">Link 1</a>
+          </li>
+          <li>
+            <a href="#!">Link 2</a>
+          </li>
+          <li>
+            <a href="#!">Link 3</a>
+          </li>
+          <li>
+            <a href="#!">Link 4</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-2 mx-auto">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Information</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!">Link 1</a>
+          </li>
+          <li>
+            <a href="#!">Link 2</a>
+          </li>
+          <li>
+            <a href="#!">Link 3</a>
+          </li>
+          <li>
+            <a href="#!">Link 4</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-2 mx-auto">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Contact</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!">Link 1</a>
+          </li>
+          <li>
+            <a href="#!">Link 2</a>
+          </li>
+          <li>
+            <a href="#!">Link 3</a>
+          </li>
+          <li>
+            <a href="#!">Link 4</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+
+  <hr>
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="#">Grupo 6</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
