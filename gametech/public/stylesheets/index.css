@@ -5,35 +5,29 @@
 }
 
 nav {
-    width: 100vw;
     background-color: #FFFFFF;
     box-shadow: 0 3px 20px grey;
     border-radius: 6px;
     text-align: right;
+    margin-top: 10px;
+}
+.input-group{
+    flex-wrap: unset;
+}
+input{
+    border: none;
 }
 a{
     text-decoration: none;
+    font-size: 20px;
 }
 .navbar-collapse{
      background-color: white;
      text-align: center;
      font-family: 'Quicksand', sans-serif;
 }
-
-.logo {
-    width:7vw;
-    border: none;
-    height:3vh;
-}
 .bg-light {
     background-color: white;
-}
-
-i{width: 5vw;
-    font-size: 22px;
-    margin:0 5px;
-    display: flex;
-    text-align: right;
 }
 
 .barra-categorias{
