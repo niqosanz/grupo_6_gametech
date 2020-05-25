@@ -8,9 +8,9 @@ module.exports={
 
     create: function (req,res){
         if (req.query.order == 'recent'){
-            res.send(chats.reverse())
+            res.send()
         }
 
         res.send('Algo mas')
-    }
+    },
 }
