@@ -7,4 +7,13 @@
 "thematic":"Books",
 "keywords":["consolas","playstation"]
 }
+{
+    "id":2,
+    "name":"Nintendo Switch",
+    "description":"Nintendo Switch neon",
+    "price":"30.000",
+    "image":"product_2.jpg",
+    "thematic":"Videojuegos",
+    "keywords":["consolas","Nintendo"]
+    }
 ]
