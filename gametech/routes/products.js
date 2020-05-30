@@ -4,6 +4,8 @@ var productController = require('../controllers/productController')
 
 /* GET users listing. */
 router.get('/', productController.list);
+router.get('/create', productController.create);
 router.get('/:id', productController.detail);
+
 
 module.exports = router;

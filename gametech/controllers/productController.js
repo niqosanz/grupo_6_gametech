@@ -7,10 +7,6 @@ module.exports={
     },
 
     create: function (req,res){
-        if (req.query.order == 'recent'){
-            res.send()
-        }
-
-        res.send('Algo mas')
+        res.render('productAdd')
     },
 }
