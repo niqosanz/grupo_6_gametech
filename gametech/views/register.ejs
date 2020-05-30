@@ -2,16 +2,9 @@
 <html lang="en">
 
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="../stylesheets/bootstrap.css">
-  <link rel="stylesheet" href="../stylesheets/index.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <%- include('./partials/head') %>
   <link rel="stylesheet" href="../stylesheets/register.css">
-  <title>Gametech</title>
+
 </head>
 
 <body>
@@ -112,19 +105,20 @@
 
 
   <div id="external-container-login">
-    <div id="internal-container-login">
+    <form action="./register" class="form-login" method="POST">
+      <div id="internal-container-login">
         <h2 id="header-login">Log in</h2>
         <p id="paragraph-login">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus risus nisi, dignissim sed arcu sed</p>
         <br>
         <br>
             <div class="frame-sizeinputs">
-                <input type="email" placeholder="E-mail" class="sizeinputs border-inputs"><i class="i-blank"></i>
+                <input type="email" placeholder="E-mail" class="sizeinputs border-inputs" name="email"><i class="i-blank"></i>
             </div>
         <br>
         <br>
        
             <div class="frame-sizeinputs">
-                <input type="password"  placeholder="Password" class="sizeinputs border-inputs"><i class="far fa-eye-slash"></i>
+                <input type="password"  placeholder="Password" class="sizeinputs border-inputs" name="password"><i class="far fa-eye-slash"></i>
             </div>           
         <br>
         <br>
@@ -140,6 +134,8 @@
             <a href="" class="a-member-signup font-signup">Sign Up</a>
         </div>
     </div>
+    </form>
+
 </div>
 
 
