@@ -1,6 +1,13 @@
-module.exports={
+const fs = require('fs');
+const path = require('path');
+
+const productsFilePath = path.join(__dirname, '../data/listadoDeProductos.json');
+const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+
+const controller ={
     list: function (req,res){
-    res.send('Algo mas.....?')
+    res.send(products)
     },
     detail: function (req,res){
         res.render('productDetail')
@@ -10,3 +17,5 @@ module.exports={
         res.render('productAdd')
     },
 }
+
+module.exports = controller ;
