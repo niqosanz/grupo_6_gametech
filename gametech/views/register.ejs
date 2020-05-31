@@ -1,4 +1,15 @@
+<<<<<<< HEAD
 <%- include('./partials/head')%>
+=======
+<!doctype html>
+<html lang="en">
+
+<head>
+  <%- include('./partials/head') %>
+  <link rel="stylesheet" href="../stylesheets/register.css">
+
+</head>
+>>>>>>> 315bc319195d04df628f1ef635d0f0e4899c5c8e
 
 <link rel="stylesheet" href="../stylesheets/register.css">
 <body>
@@ -7,19 +18,20 @@
 <body>
 
   <div id="external-container-login">
-    <div id="internal-container-login">
+    <form action="./register" class="form-login" method="POST">
+      <div id="internal-container-login">
         <h2 id="header-login">Log in</h2>
         <p id="paragraph-login">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus risus nisi, dignissim sed arcu sed</p>
         <br>
         <br>
             <div class="frame-sizeinputs">
-                <input type="email" placeholder="E-mail" class="sizeinputs border-inputs"><i class="i-blank"></i>
+                <input type="email" placeholder="E-mail" class="sizeinputs border-inputs" name="email"><i class="i-blank"></i>
             </div>
         <br>
         <br>
        
             <div class="frame-sizeinputs">
-                <input type="password"  placeholder="Password" class="sizeinputs border-inputs"><i class="far fa-eye-slash"></i>
+                <input type="password"  placeholder="Password" class="sizeinputs border-inputs" name="password"><i class="far fa-eye-slash"></i>
             </div>           
         <br>
         <br>
@@ -35,6 +47,8 @@
             <a href="" class="a-member-signup font-signup">Sign Up</a>
         </div>
     </div>
+    </form>
+
 </div>
 
 

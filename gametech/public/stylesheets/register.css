@@ -186,3 +186,8 @@ nav{
 .font-signup{
     font-weight: bold;
 }
+
+
+.form-login{
+    width: 100%;
+}
