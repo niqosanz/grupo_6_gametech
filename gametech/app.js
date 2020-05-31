@@ -23,9 +23,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
-app.use('/prueba', function (req,res){
-  res.render('./partials/footer')
-})
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

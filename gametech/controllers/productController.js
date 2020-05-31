@@ -7,7 +7,7 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const controller ={
     list: function (req,res){
-    res.send(products)
+    res.send(products[0].name)
     },
     detail: function (req,res){
         res.render('productDetail')
