@@ -10,7 +10,8 @@ const controller ={
     res.send(products[1].name)
     },
     detail: function (req,res){
-        res.render('productDetail',{products})
+        let productNumber = req.params.id;
+        res.render('productDetail',{products, productNumber})
     },
 
     create: function (req,res){
