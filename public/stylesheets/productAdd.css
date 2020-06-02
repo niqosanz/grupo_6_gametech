@@ -31,10 +31,10 @@ a {
     align-items: center;
     margin: 10px auto;
 }
-/* .sub-grupos{
+.sub-grupos{
     text-align: center;
     font-size: 12px;
-} */
+}
 .lateral-izq {
     border-bottom: solid 1px grey;
 } 

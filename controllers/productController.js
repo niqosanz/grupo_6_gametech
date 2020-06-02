@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+var multer = require ('multer')
 
 const productsFilePath = path.join(__dirname, '../data/listadoDeProductos.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -17,6 +18,10 @@ const controller ={
     create: function (req,res){
         res.render('productAdd')
     },
+    add: function (req,res){
+        let precio = req.body.precio;
+        res.redirect('/products')
+    }
 }
 
 module.exports = controller ;
