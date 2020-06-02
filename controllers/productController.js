@@ -10,7 +10,7 @@ const controller ={
     res.send(products[1].name)
     },
     detail: function (req,res){
-        res.render('productDetail')
+        res.render('productDetail',{products})
     },
 
     create: function (req,res){

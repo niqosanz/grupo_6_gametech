@@ -3,12 +3,12 @@
     padding:0;
     box-sizing: border-box;
 }
-.btn{
+/* .btn{
     font-size: 10px;
     font-family: 'Poppins', sans-serif;
     color:black;
     font-weight: bold;
-}
+} */
 
 .btn-primary{
     background-color: black;
@@ -20,9 +20,9 @@
 ul {
     list-style: none;
 }
-li .dropdown .show {
+/* li .dropdown .show {
     text-decoration: none;
-}
+} */
 a {
     color:grey;
 }
@@ -31,10 +31,10 @@ a {
     align-items: center;
     margin: 10px auto;
 }
-.sub-grupos{
+/* .sub-grupos{
     text-align: center;
     font-size: 12px;
-}
+} */
 .lateral-izq {
     border-bottom: solid 1px grey;
 } 
@@ -51,9 +51,7 @@ a {
 .pagination {
    box-shadow: none;
 }
-.img-add-product{
-    width: 100%;
-}
+
 .pages {
     display: flex;
     text-align: center;

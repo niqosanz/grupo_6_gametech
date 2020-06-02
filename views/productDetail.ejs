@@ -29,9 +29,10 @@
             </div>
             <div class='col-sm-12 col-md-6 col-lg-6 descripcion-producto'>
                 <button type="button" class="btn btn-info oferta">SALE!</button>
-            <div><h2 class="detalle"> <%  %> producto</h2></div>
-            <div class="precios"><h3>$89.99</h3> 
+            <div><h2 class="detalle"><% {%> <%=products[1].name %> <%} %></h2></div>
+            <div class="precios"><h3><% {%> <%=products[1].price %> <%} %></h3> 
             <h3 class="precio-anterior">$119.99</h3></div>
+
             </div>
         </div>
     
@@ -47,7 +48,7 @@
       </p>
       <div class="collapse" id="collapseExample">
         <div class="card card-body">
-            Game like you have never gamed before with the neon red and neon blue Nintendo Joy-Con game controllers and attachments. These two handheld controllers work with the Nintendo Switch game system in any of its modes. Their joysticks pair with the Nintendo console both at home and on the go for a unique gameplay experience. These versatile hybrid controllers can be used in a variety of ways when detached from the Nintendo console. They can even be divided among two people for multiplayer games, with each player holding one Joy Controller. When used with the Grip, the remotes feel more like a traditional video game controller. The battery life of a fully charged Joy Controller is up to 20 hours.
+          <% {%> <%=products[1].description %> <%} %>
         </div>
       </div>
     </div>
