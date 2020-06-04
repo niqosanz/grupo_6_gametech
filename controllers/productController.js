@@ -21,8 +21,12 @@ const controller ={
         res.render('productAdd')
     },
     add: function (req,res){
-        let precio = req.body.precio;
-        res.redirect('/products')
+        let name = req.body.name;
+        let description = req.body.description;
+        let precio = req.body.price;
+        var nuevoProducto={name,description,precio};
+fs.appendFileSync('listadoDeProductos.json',products.push(nuevoProducto))
+        res.redirect('/')
     }
 }
 
