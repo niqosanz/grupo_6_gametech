@@ -9,10 +9,12 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const controller ={
     list: function (req,res){
     res.send(products[1].name)
+
     },
     detail: function (req,res){
         let productNumber = req.params.id;
-        res.render('productDetail',{products, productNumber})
+        let productsImages =('/images/productos/'+products[productNumber].image);
+        res.render('productDetail',{products, productNumber,productsImages})
     },
 
     create: function (req,res){
