@@ -7,5 +7,16 @@ module.exports={
 
   create: function (req,res){
     res.render('register')
+    },
+  admin: function (req,res){
+    res.render('admin')
+  },
+  products:function (req,res) {
+    if (req.body.create == '1'){
+    res.redirect('/products/create')}
+    else{
+      res.redirect('/')
     }
+  }
+
 }
