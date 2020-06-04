@@ -4,7 +4,7 @@
         "name": "Playstation 4 Slim",
         "description": "Gracias a su interconectividad global, descargarás los mejores videojuegos y navegarás en la web sin límites. A su vez, la posibilidad de competir en línea con otros te hará disfrutar de aventuras inolvidables junto a amigos y personas de todas partes del mundo. Calidad de otro nivel.Su conexión wifi te permitirá reproducir música, películas y tus series favoritas a través de las aplicaciones descargables.Diseño innovador.Gracias a sus pequeñas dimensiones, su consumo energético es reducido, lo que la convierte en un producto económico y accesible. Además, el control DualShock combina funciones revolucionarias mientras conserva precisión, comodidad y exactitud sin precedentes con cada movimiento.Adaptada a tus necesidades.Guardá tus apps, fotos, videos y mucho más en el disco duro, que cuenta con una capacidad de 1 TB. Al contar con un procesador de 8 núcleos y un procesador gráfico, brinda una experiencia dinámica, respuestas ágiles, así como transiciones fluidas de imágenes en alta definición. Por otro lado, tiene puerto USB y salida HDMI, que permiten conectar accesorios y cargar la batería de tu control mientras jugás.",
         "price": "50.000",
-        "image": "product_1.jpg",
+        "image":"1-Play4.jpg",
         "thematic": "Books",
         "keywords": [
             "consolas",
@@ -16,7 +16,7 @@
         "name": "Nintendo Switch",
         "description": "Nintendo Switch neon",
         "price": "30.000",
-        "image": "product_2.jpg",
+        "image": "2-NintendoSwitch.jpeg",
         "thematic": "Videojuegos",
         "keywords": [
             "consolas",
