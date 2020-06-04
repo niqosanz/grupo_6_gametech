@@ -48,6 +48,10 @@ a {
     padding-right:0px;
     padding-left: 10px;
 }
+.form-control{
+    padding: unset;
+    margin-right:10px;
+}
 .pagination {
    box-shadow: none;
 }
