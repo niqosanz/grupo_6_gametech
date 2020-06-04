@@ -30,9 +30,7 @@ app.use('/users', usersRouter);
 app.use('/products', productsRouter);
 app.use('/register', registerRouter);
 
-app.use('/prueba', function (req,res){
-  res.render('./partials/footer')
-})
+app.use('/users/admin', usersRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
