@@ -6,8 +6,7 @@
 <div class="container-fluid">
  <!-- Aca empiezan la pagina de carga de productos-->
  <div class="row">
-    <div class="col-2 mostrar-lg"></div>
-    <div class="col-sm-12 col-md-10 mayor-detalle">
+    <div class="col-sm-12 mayor-detalle">
         <div class="col-6 mostrar-lg detalle-top"> 
           <div class="top-items">Productos</div>
           <ul class=" top-items">
@@ -30,16 +29,7 @@
  </div>
 
 <div class="row">
-    <div class="col-sm-12 col-md-2">
-      <div class="producto-agregar lateral-izq mostrar-lg">CARGAR NUEVOS PRODUCTOS
-      </div>
-      <div class="producto-agregar lateral-izq mostrar-lg">ADMINISTRACIÓN DE INVENTARIO
-      </div></div>
      <!--Categorias que voy a poner en la carga de productos esto tiene que ser un formulario que viaje por un metodo POST--> 
-
-     
-    <div class=" col-sm-12 col-md-10">
-        <div class="mayor-detalle mostrar-lg">
             <div class="col-sm-12 col-md-2 sub-grupos producto-agregar">
                           PRODUCTOS
             </div>
@@ -51,37 +41,8 @@
         </div>
 
         <!--ACA VA CADA PRODUCTO A AGREGAR CN SU DESCRIPCION-->
-    <form method='POST' action='/products/create'>
-      <div class="mayor-detalle">
-        
-        <img class="card-img-top col-sm-12 col-md-2 sub-grupos " src="/images/nintendogr.png" alt="Card image cap">
-        <div class="col-sm-12 col-md-2 sub-grupos">
-        <div><h6>Nintendo Switch Joy-Con</div></h6>
-        <div>
-          Mando inalámbrico, bluetooth para Nintendo
-        </div>
-      </div>
-                    <div class="col-sm-12 col-md-2 sub-grupos">#500350123</div>
-        
-                        <div class="input-group mb-3 col-sm-12 col-md-2 sub-grupos">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text">$</span>
-                            </div>
-                            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="precio">
-                          </div>
-                          <div class="input-group mb-3 col-sm-12 col-md-2">
-                            <div class="input-group-prepend">
-                            </div>
-                            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-                          </div>
-                    <div class="col-sm-12 col-md-2 sub-grupos">
-                        <button class="btn btn-primary" type="submit">+ADD TO INVENTARY</button>
-                </div>
-            </div>
-</div>
-</div>
-</form>
-
+        <%- include('./partials/addProductForm')%>
+    
 <div class="contanainer">
   <div class= row>
   
