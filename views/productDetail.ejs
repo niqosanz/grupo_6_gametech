@@ -25,12 +25,12 @@
     
         <div class="row">
             <div class='col-sm-12 col-md-6 col-lg-6 contenedores'>
-               <img class='col-12' src="../Images/nintendogr.png">
+               <img class='col-12' src="<%=productsImages%>">
             </div>
             <div class='col-sm-12 col-md-6 col-lg-6 descripcion-producto'>
                 <button type="button" class="btn btn-info oferta">SALE!</button>
-            <div><h2 class="detalle"><% {%> <%=products[productNumber].name %> <%} %></h2></div>
-            <div class="precios"><h3><% {%> <%=products[productNumber].price %> <%} %></h3> 
+            <div><h2 class="detalle"><%=products[productNumber].name %></h2></div>
+            <div class="precios"><h3><%=products[productNumber].price %></h3> 
             <h3 class="precio-anterior">$119.99</h3></div>
 
             </div>
@@ -52,6 +52,8 @@
         </div>
       </div>
     </div>
+  </div>
+</div>
 
     <!-- Footer -->
 
