@@ -9,11 +9,23 @@
 <body>
 
 
+  
   <div id="external-container-login">
-    <form action="./register" class="form-login" method="POST">
+    <form action="../register" class="form-login" method="POST">
       <div id="internal-container-login">
         <h2 id="header-login">Log in</h2>
-        <p id="paragraph-login">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus risus nisi, dignissim sed arcu sed</p>
+
+        <% if(statusRegistracion != ''){ %>
+
+          <p id="paragraph-login"><%= statusRegistracion %></p>
+
+        <% }else{ %>
+
+          <p id="paragraph-login">Bienvenido!</p>
+
+        <% } %>
+        
+          <p id="paragraph-login">Ingrese sus datos de usuario:</p>
         <br>
         <br>
             <div class="frame-sizeinputs">
