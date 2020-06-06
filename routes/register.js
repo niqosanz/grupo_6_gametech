@@ -53,7 +53,68 @@ router.post('/', function(req, res, next) {
 
 });
 
+/* POST Cargar datos usuario nuevo */
+router.post('/:id/createuser', function(req, res, next) {
 
+
+  let newUser = {
+
+    email: req.body.email,
+    password: req.body.password,
+    avatar: '',
+ 
+  };
+
+
+  let usersJSON = fs.readFileSync('data/DBUsers.json',{encoding: 'utf-8'});
+  let users;
+
+  if(usersJSON == ''){
+    users = [];
+
+    users.push(newUser);
+  
+    res.send(users);
+  
+    usersUpdatedJSON = JSON.stringify(users);
+  
+     fs.writeFileSync('data/DBUsers.json',usersUpdatedJSON);
+  
+     res.send('Bienvenido!, Sus datos ya fueron ingresados!!');
+
+
+  }else{
+    users = JSON.parse(usersJSON);
+    
+  for(let i=0; i<users.length; i++){
+
+    if(users[i].email == newUser.email){
+      res.send('Usuario existente en la base de datos!');
+
+    }else{
+
+
+      users.push(newUser);
+  
+      res.send(users);
+    
+      usersUpdatedJSON = JSON.stringify(users);
+    
+       fs.writeFileSync('data/DBUsers.json',usersUpdatedJSON);
+    
+       res.send('Bienvenido!, Sus datos ya fueron ingresados!!');
+
+    }
+    
+
+  }
+
+  }
+
+
+
+
+  });
 
 
 module.exports = router;
