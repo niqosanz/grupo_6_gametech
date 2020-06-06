@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
 
 
 
-/* GET Register. */
+/* GET Status Usuario (Registrado o NO registrado o con errores de ingreso de usuario o clave) */
 router.get('/:id', function(req, res, next) {
   
     let statusRegistroUsuario = req.params.id;
@@ -24,6 +24,13 @@ router.get('/:id', function(req, res, next) {
 });
 
 
+/* GET Creación de Usuario Nuevo */
+router.get('/:id/createuser', function(req, res, next) {
+  
+  res.render('createuser',{pageCss: 'register.css'});
+
+});
+
 
 /* GET Validation. */
 router.post('/', function(req, res, next) {
@@ -34,7 +41,8 @@ router.post('/', function(req, res, next) {
     for(let i = 0; i<usersJSON.length; i++){
 
       if(req.body.email == usersJSON[i].email && req.body.password == usersJSON[i].password ){
-        res.send('Usuario Existente');
+
+        res.redirect('/');
 
       }else{
 
