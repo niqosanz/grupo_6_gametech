@@ -1,9 +1,11 @@
-<form method='POST' action='/products/create'>
+<form method='POST' action='/products/create' enctype="multipart/form-data">
     <div class="mayor-detalle">
-      <form action="upload" method="POST" enctype="multipart/form-data" >
-        <input type="file" name="product_image" class="card-img-top col-sm-12 col-md-2 sub-grupos "/>
-      </form>
-      <!-- <img class="card-img-top col-sm-12 col-md-2 sub-grupos " src="/images/nintendogr.png" alt="Card image cap"> -->
+       <input type="file" name="image" class="card-img-top col-sm-12 col-md-2 sub-grupos" >
+      
+      <!-- <form action="../products/create" method="POST" enctype="multipart/form-data" >
+        <input type="file" name="image" class="card-img-top col-sm-12 col-md-2 sub-grupos "/>
+        <button>subir</button> 
+      </form> -->
       <div class="col-sm-12 col-md-2 sub-grupos">
         <input type="text" placeholder="Nombre del Producto" class="sizeinputs border-inputs" name="name"><i class="i-blank"></i>
       <div>

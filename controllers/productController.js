@@ -6,6 +6,7 @@ const productsFilePath = path.join(__dirname, '../data/listadoDeProductos.json')
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 
+
 const controller ={
     list: function (req,res){
     res.send(products[1].name)
@@ -21,12 +22,30 @@ const controller ={
         res.render('productAdd')
     },
     add: function (req,res){
-        let name = req.body.name;
-        let description = req.body.description;
-        let precio = req.body.price;
-        var nuevoProducto={name,description,precio};
-fs.appendFileSync('listadoDeProductos.json',products.push(nuevoProducto))
-        res.redirect('/')
+        let infoImg = req.files
+
+       let proxId=  products.length +1;
+       
+        var newProduct = { 
+       id: proxId,
+       name: req.body.name,
+       description: req.body.description,
+       price: req.body.price,
+       image: infoImg[0].filename,
+       thematic: "",
+        keywords: ""
+
+     };
+
+        products.push(newProduct)
+
+        pasaractualizacionJSON = JSON.stringify (products)
+
+     fs.writeFileSync('data/listadoDeProductos.json',pasaractualizacionJSON)
+
+     res.redirect('/products/create')
+
+        
     }
 }
 
