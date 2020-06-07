@@ -5,6 +5,7 @@ let path = require('path')
 var productController = require('../controllers/productController')
 
 
+var app = express();
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
       cb(null, path.resolve(__dirname,'..','public/images/productos'))
@@ -17,11 +18,13 @@ var storage = multer.diskStorage({
   var upload = multer({ storage: storage })
 
 
-/* GET users listing. */
+/* GET products listing. */
 router.get('/', productController.list);
 router.get('/create', productController.create);
 router.post('/create',upload.any(), productController.add);
 router.get('/:id', productController.detail);
+router.get('/edit/:id', productController.viewedit);
+router.put('/edit/:id', productController.edit);
 
 
 

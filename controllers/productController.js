@@ -46,6 +46,30 @@ const controller ={
      res.redirect('/products/create')
 
         
+    },
+    viewedit: function (req,res) {
+        let productNumber = req.params.id;
+        let productsImages =('/images/productos/'+products[productNumber].image);
+        res.render('productEdit',{products, productNumber,productsImages})
+
+    },
+
+    edit: function (req,res) {
+       console.log('Algo por aqui')
+        // let productNumber = req.params.id;
+        // for(i==0; i<products.length; i++) {
+        //     if (req.params.id == products[i].id)
+        //         products[i].replace =(product[i].name,req.query.newName) ;
+
+        //         console.log(req.query.name)
+                
+        //         pasaractualizacionJSON = JSON.stringify (products)
+        //         fs.writeFileSync('data/listadoDeProductos.json',pasaractualizacionJSON)
+
+            
+        
+        //     }
+        res.redirect('/')
     }
 }
 
