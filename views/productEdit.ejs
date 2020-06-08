@@ -12,22 +12,22 @@
 
                   <div>
                     <form action="/products/edit/:id?_method=PUT" method="POST"  class='col-sm-12 col-md-3 col-lg-3 contenedores' query='_method'>
+                      <input type="hidden" name="numberId" value='<%= productNumber %>'>
                         <label class='col-sm-12 col-md-6 col-lg-6'>Cambiar Nombre:</label>
                         <h2>
                           <input type="text" name="name" value='<%=products[productNumber].name %>'>
+                          
                         </h2>
 
-                        <div class="precios">
-                          <h3><%=products[productNumber].price %></h3> 
+                          <h3><input type="text" name="price" value='<%=products[productNumber].price %>' class="precios"></h3> 
                           <h3 class="precio-anterior">$119.99</h3>
-                        </div>
            
                            <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                              DESCRIPTION
                           </a>
                         <div class="collapse" id="collapseExample">
                           <div class="card card-body">
-                            <% {%> <%=products[productNumber].description %> <%} %>
+                            <input type="text" name="description" value='<%=products[productNumber].description %>' class="precios">
                           </div>
                         </div>
 

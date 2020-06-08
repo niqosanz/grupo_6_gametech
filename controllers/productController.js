@@ -48,29 +48,33 @@ const controller ={
         
     },
     viewedit: function (req,res) {
-        let productNumber = req.params.id;
+        let productNumber = req.params.id-1;
         let productsImages =('/images/productos/'+products[productNumber].image);
         res.render('productEdit',{products, productNumber,productsImages})
 
     },
 
     edit: function (req,res) {
-       console.log('Algo por aqui')
-        // let productNumber = req.params.id;
-        // for(i==0; i<products.length; i++) {
-        //     if (req.params.id == products[i].id)
-        //         products[i].replace =(product[i].name,req.query.newName) ;
+    let productPosition = req.body.numberId;
+    let productoAEditar = products[productPosition];
 
-        //         console.log(req.query.name)
-                
-        //         pasaractualizacionJSON = JSON.stringify (products)
-        //         fs.writeFileSync('data/listadoDeProductos.json',pasaractualizacionJSON)
+    
+    
+    productoAEditar.name = req.body.name;
+    productoAEditar.price = req.body.price;
+    productoAEditar.description = req.body.description;
+
+    
+    products.splice(productPosition,1,productoAEditar)
+      console.log(products)
+    
+        pasaractualizacionJSON = JSON.stringify (products)
+        fs.writeFileSync('data/listadoDeProductos.json',pasaractualizacionJSON)
 
             
-        
-        //     }
         res.redirect('/')
-    }
+            }
+        
 }
 
 module.exports = controller ;
