@@ -66,15 +66,23 @@ const controller ={
 
     
     products.splice(productPosition,1,productoAEditar)
-      console.log(products)
     
         pasaractualizacionJSON = JSON.stringify (products)
         fs.writeFileSync('data/listadoDeProductos.json',pasaractualizacionJSON)
 
             
         res.redirect('/')
-            }
-        
+            },
+
+    destroy: function (req,res)   {
+        delete products[req.params.id]
+
+        pasaractualizacionJSON = JSON.stringify (products)
+        fs.writeFileSync('data/listadoDeProductos.json',pasaractualizacionJSON)
+
+            
+        res.redirect('/')
+         } 
 }
 
 module.exports = controller ;
