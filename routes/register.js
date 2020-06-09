@@ -21,6 +21,10 @@ var upload = multer({storage:storage});
 
 let fs = require('fs');
 
+// Para encriptar el password del usuario
+
+let bcrypt = require('bcrypt');
+
 /* GET Register. */
 router.get('/', function(req, res, next) {
   res.render('register',{pageCss: 'register.css',statusRegistracion: ''});
@@ -75,11 +79,12 @@ router.post('/', function(req, res, next) {
 /* POST Cargar datos usuario nuevo */
 router.post('/:id/createuser', upload.any(), function(req, res, next) {
 
+  let password = bcrypt.hashSync(req.body.password,12);
 
   let newUser = {
 
     email: req.body.email,
-    password: req.body.password,
+    password: password,
     avatar: req.files[0].filename,
  
   };
