@@ -4,7 +4,6 @@
   <%- include('./partials/head') %>
 </head>
 <body>
-  <%- include('./partials/header')%>
   <div id="external-container-login">
     <form action='/users/admin' method="POST">
       <div id="internal-container-login">
@@ -12,7 +11,10 @@
         <button class="sizeinputs btn-submit" type="submit" value='1' name="create">Agregar nuevos
           productos</button><br><br>
         <button class="sizeinputs btn-submit" type="submit" value='0' name="create">Administrar inventarios</button><br>
-      </div>
+      </div><br>
+      <div id="frame-member-signup">
+        <a href="../" class="a-member-signup font-signup">Volver al home</a>
+    </div>
     </form>
   </div>
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
