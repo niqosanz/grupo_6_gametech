@@ -1,14 +1,23 @@
 var express = require('express');
 var router = express.Router();
+
+// Para cargar un archivo (imagen avatar):
+
+let path = require('path');
+
 const multer = require('multer');
 var storage = multer.diskStorage({
   destination:function(req,file,cb){
-    cb(null,/public/Images)
+    cb(null,'public/Images');
   },
   filename: function(req,file,cb){
-    cb(null,file.fieldname+'-'+ Date.now);
+    cb(null,file.fieldname + '-' + Date.now()+ path.extname(file.originalname));
   }
-});
+}); 
+
+var upload = multer({storage:storage});
+
+// Para requerir el método de FileSystem para leer y escribir archivos
 
 let fs = require('fs');
 
@@ -64,14 +73,14 @@ router.post('/', function(req, res, next) {
 });
 
 /* POST Cargar datos usuario nuevo */
-router.post('/:id/createuser', function(req, res, next) {
+router.post('/:id/createuser', upload.any(), function(req, res, next) {
 
 
   let newUser = {
 
     email: req.body.email,
     password: req.body.password,
-    avatar: '',
+    avatar: req.files[0].filename,
  
   };
 
