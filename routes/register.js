@@ -1,5 +1,15 @@
 var express = require('express');
 var router = express.Router();
+const multer = require('multer');
+var storage = multer.diskStorage({
+  destination:function(req,file,cb){
+    cb(null,/public/Images)
+  },
+  filename: function(req,file,cb){
+    cb(null,file.fieldname+'-'+ Date.now);
+  }
+});
+
 let fs = require('fs');
 
 /* GET Register. */
