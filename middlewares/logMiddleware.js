@@ -1,9 +1,12 @@
 const fs = require('fs')
 
-function logMiddleware (req,res,next){
-fs.appendFileSync('userLogs.txt', "El usuario ingresó a la ruta: "+ req.url+'\n')
-
-next();
+function adminLogs (req,res,next){
+if ([].includes(req.params.name)){
+res.send('El usuario existe')
+}else{
+    res.send('No existe el usuario')
+}
 }
 
-module.exports = logMiddleware;
+
+module.exports = adminLogs;
