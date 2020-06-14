@@ -1,6 +1,11 @@
 var express = require('express');
 var router = express.Router();
 
+// Para requerir la ruta del controlador
+
+// let registerController = require('../controllers/registerController');
+
+
 // Para cargar un archivo (imagen avatar):
 
 let path = require('path');
@@ -26,13 +31,19 @@ let fs = require('fs');
 let bcrypt = require('bcrypt');
 
 /* GET Register. */
+/* Esta es la ruta que va presentar la vista para el ingreso de la información para el */
+/* loggin del usuario */
+
 router.get('/', function(req, res, next) {
   res.render('register',{pageCss: 'register.css',statusRegistracion: ''});
 });
 
 
 
-/* GET Status Usuario (Registrado o NO registrado o con errores de ingreso de usuario o clave) */
+/* GET Status Usuario */ 
+/* Esta es la ruta para cuando el usuario ingresado NO está registrado o es incorrecto el email o contraseña */
+
+// (Registrado o NO registrado o con errores de ingreso de usuario o clave) */
 router.get('/:id', function(req, res, next) {
   
     let statusRegistroUsuario = req.params.id;
@@ -47,7 +58,10 @@ router.get('/:id', function(req, res, next) {
 });
 
 
+
 /* GET Creación de Usuario Nuevo */
+/* Esta es la ruta que mostrará la vista con los campos para la creación de un nuevo usuario */
+
 router.get('/:id/createuser', function(req, res, next) {
   
   res.render('createuser',{pageCss: 'register.css'});
@@ -56,23 +70,25 @@ router.get('/:id/createuser', function(req, res, next) {
 
 
 /* GET Validation. */
-router.post('/', function(req, res, next) {
+// Esta es la ruta que valida los datos enviados en el formulario de registro del usuario
 
-    let users = fs.readFileSync('data/DBUsers.json',{encoding:'utf-8'});
-    let usersJSON = JSON.parse(users);
+router.post('/',function(req, res, next) {
 
-    for(let i = 0; i<usersJSON.length; i++){
+  let users = fs.readFileSync('data/DBUsers.json',{encoding:'utf-8'});
+  let usersJSON = JSON.parse(users);
 
-      if(req.body.email == usersJSON[i].email && req.body.password == usersJSON[i].password ){
+  for(let i = 0; i<usersJSON.length; i++){
 
-        res.redirect('/');
+    if(req.body.email == usersJSON[i].email && req.body.password == usersJSON[i].password ){
 
-      }else{
+      res.redirect('/');
 
-        res.redirect('/register/1');
-      }
+    }else{
 
+      res.redirect('/register/1');
     }
+
+  }
 
 });
 
