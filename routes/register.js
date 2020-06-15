@@ -13,6 +13,11 @@ let fs = require('fs');
 
 let bcrypt = require('bcrypt');
 
+// Para validar campos usando express validator
+const {check,validationResult,body}=require('express-validator');
+
+
+
 // Para cargar un archivo (imagen avatar):
 
 let path = require('path');
@@ -55,7 +60,9 @@ router.get('/:id/createuser', registerController.creacionUsuario);
 /* GET Validation. */
 // Esta es la ruta que valida los datos enviados en el formulario de registro del usuario
 
-router.post('/',registerController.validation);
+router.post('/',[
+  check('password').isLength({min:4}).withMessage('La contraseña debe contener al menos 8 caracteres'),
+],registerController.validation);
 
 /* POST Cargar datos usuario nuevo */
 router.post('/:id/createuser',upload.any(),registerController.cargarDatosUsuario);

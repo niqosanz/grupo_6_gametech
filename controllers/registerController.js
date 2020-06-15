@@ -6,6 +6,14 @@ let fs = require('fs');
 
 let bcrypt = require('bcrypt');
 
+// Para tomar los valores de los errores que se presenten en la validación usada 
+// con express validator en la ruta
+
+const {check,validationResult,body}=require('express-validator');
+
+
+// Inicio del controlador
+
 const registerController = {
 
 
@@ -13,9 +21,18 @@ const registerController = {
         res.render('register',{pageCss: 'register.css',statusRegistracion: ''});
       },
 
-    // valida si los datos ingresados por el usuario son válidos o no
 
     'validation': function(req, res, next) {
+
+        // Se define una variable con los errores de express validator que se encuentren, con la validación
+        // definida en la ruta
+
+
+      // valida si los datos ingresados por el usuario son válidos o no
+
+      let errors = validationResult(req);
+
+      if(errors.isEmpty()){
 
         let users = fs.readFileSync('data/DBUsers.json',{encoding:'utf-8'});
         let usersJSON = JSON.parse(users);
@@ -28,7 +45,7 @@ const registerController = {
           if(req.body.email == usersJSON[i].email && (bcrypt.compareSync(req.body.password ,usersJSON[i].password))){
       
             res.redirect('/');
- 
+
         // si los datos ingresados de usuario o contraseña son inválidos: 
 
           }else{
@@ -40,6 +57,12 @@ const registerController = {
         
         res.redirect('/register/1');
 
+
+      }else{
+
+        res.render('register', {errors: errors.errors,pageCss: 'register.css',statusRegistracion: 'Usuario o Contraseña incorrecta.'});
+
+      }
 
       },
 
@@ -55,13 +78,13 @@ const registerController = {
 
         if(statusRegistroUsuario){
 
-          res.render('register',{pageCss: 'register.css',statusRegistracion: 'Usuario o Contraseña incorrecta.'});
+          res.render('register',{errors: [],pageCss: 'register.css',statusRegistracion: 'Usuario o Contraseña incorrecta.'});
 
         //   Si un usuario llega por primera vez a la página de registro 
         //   Status ''
 
         }else{
-          res.render('register',{pageCss: 'register.css',statusRegistracion: ''});
+          res.render('register',{errors: [],pageCss: 'register.css',statusRegistracion: ''});
     
         }
     

@@ -14,6 +14,14 @@
 
           <p id="paragraph-login"><%= statusRegistracion %></p>
 
+          <% for(let i=0; i<errors.length; i++){ %>
+
+            <p id="paragraph-login"><%= errors[i].msg %></p>
+  
+  
+          <% } %>
+  
+
         <% }else{ %>
 
           <p id="paragraph-login">Bienvenido!</p>
@@ -40,7 +48,7 @@
         <label><input type="checkbox" id="cbox1" value="first_checkbox"> Recordar Usuario.</label><br>
         <br>
         <div id="frame-member-signup">
-            <a href="" class="a-member-signup">Not a member yet?</a>
+            <a href="../register/0/createuser" class="a-member-signup">Not a member yet?</a>
             <a href="../register/0/createuser" class="a-member-signup font-signup">Sign Up</a>
         </div>
     </div>
