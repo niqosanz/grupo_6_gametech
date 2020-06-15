@@ -15,7 +15,7 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const controller ={
     list: function (req,res) {
-        db.Product.findAll({include:[{association:"brand"}]}).then(function (resultados){
+        db.Product.findAll({include:[{association:"brand"},{association:"category"}]}).then(function (resultados){
             res.send(resultados)
           },
       )},
