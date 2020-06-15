@@ -1,0 +1,75 @@
+<%- include('./partials/head.ejs')%>
+
+<body>
+    <%- include('./partials/header')%>
+      <div class="container">
+        <!-- Aca van los detalles de los productos--> 
+        <div class="row">
+            <div class='col-md-12 col-lg-6 contenedores mostrar-lg'>
+                <i class="fa fa-home envios mostrar-lg"></i>/Accesorios/Nintendo/Joys
+             </div>
+             <div class='col-sm-12 col-md-3 col-lg-3 descripcion-envios'> 
+                 <div><i class="fa fa-truck envios mostrar-lg" ></i></div>
+                 <div class="envios mostrar-lg">Envio Standar <br>
+                    3-5 días hábiles
+                 </div>   
+            </div>
+            <div class='col-sm-12 col-md-3 col-lg-3 descripcion-envios mostrar-lg'> 
+                <div><i class="fa fa-truck envios mostrar-lg" ></i></div>
+                <div class="envios mostrar-lg">Envio Express <br>
+                   A partir de $80
+                </div>   
+           </div>
+        
+        </div>
+    
+        <div class="row">
+            <div class='col-sm-12 col-md-6 col-lg-6 contenedores'>
+               <img class='col-12' src="/Images/productos/<%=producto.image %>">
+            </div>
+            <div class='col-sm-12 col-md-6 col-lg-6 descripcion-producto'>
+                <button type="button" class="btn btn-info oferta">SALE!</button>
+            <div><h2 class="detalle"><%=producto.short_description %></h2></div>
+            <div class="precios"><h3><%=producto.price %></h3> 
+            <h3 class="precio-anterior">$119.99</h3></div>
+
+            </div>
+        </div>
+    
+    <div class="row">
+                <div class='col-12 detalle-productos'>
+     <p>
+        <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+          DESCRIPTION
+        </a>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+          REVIEWS
+        </button>
+      </p>
+      <div class="collapse" id="collapseExample">
+        <div class="card card-body">
+          <% {%> <%=producto.long_description %> <%} %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- Footer -->
+
+    <%- include('./partials/footer')%> 
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
