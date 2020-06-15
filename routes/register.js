@@ -57,7 +57,7 @@ router.get('/:id', registerController.status);
 router.get('/:id/createuser', registerController.creacionUsuario);
 
 
-/* GET Validation. */
+/* POST Validation. */
 // Esta es la ruta que valida los datos enviados en el formulario de registro del usuario
 
 router.post('/',[
