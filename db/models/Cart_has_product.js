@@ -28,14 +28,18 @@ module.exports = (sequelize, Types) =>{
         createdAt: 'created_at',
         updatedAt: 'updated_at',
     })
-    // Cart_has_product.associate = function(models){
-    //     //hasOne, hasMany, belongsTo,belongsToMany
-    //     Cart_has_product.belongsTo(models.Brand,{
-    //         as: "brand",
-    //         foreignKey:"brands_id"
-    //     })
+     Cart_has_product.associate = function(models){
+        // hasOne, hasMany, belongsTo,belongsToMany
+         Cart_has_product.belongsTo(models.Product,{
+             as: "product",
+             foreignKey:"products_id"
+         })
+         Cart_has_product.belongsTo(models.Cart,{
+            as: "cart",
+            foreignKey:"carts_id"
+        })
 
-    // }
+     }
 
 
     return Cart_has_product

@@ -45,6 +45,9 @@ module.exports = (sequelize, Types) =>{
             as: "category",
             foreignKey:"categories_id1"
         })
+        Products.hasOne(models.Cart_has_product,{
+            as: "products_id",
+        })
 
     }
 

@@ -23,9 +23,17 @@ module.exports = (sequelize, Types) =>{
         updatedAt: 'updated_at',
     })
 
-    // Customer.associate = function(models){
-    //     //hasOne, hasMany, belongsTo,belongsToMany
-    //     Customer.belongsTo(models.Adresses)}
+     Customer.associate = function(models){
+        //hasOne, hasMany, belongsTo,belongsToMany
+         Customer.belongsTo(models.User,{
+            as: "user",
+            foreignKey:"users_id"
+         })
+         Customer.belongsTo(models.Adress,{
+            as: "address",
+            foreignKey:"adresses_id"
+         })
+        }
 
 
     return Customer

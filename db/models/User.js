@@ -21,14 +21,15 @@ module.exports = (sequelize, Types) =>{
         createdAt: 'created_at',
         updatedAt: 'updated_at',
     })
-    // Products.associate = function(models){
-    //     //hasOne, hasMany, belongsTo,belongsToMany
-    //     Products.belongsTo(models.Brand,{
-    //         as: "brand",
-    //         foreignKey:"brands_id"
-    //     })
-
-    // }
+    User.associate = function(models){
+        //hasOne, hasMany, belongsTo,belongsToMany
+        User.hasOne(models.Cart,{
+           as: "cart",
+       })
+       User.hasOne(models.Customer,{
+        as: "customer",
+    })
+    }
 
 
     return User

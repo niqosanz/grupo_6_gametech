@@ -16,14 +16,13 @@ module.exports = (sequelize, Types) =>{
     }
 )
 
-// Brand.associate = function(models){
-//     //hasOne, hasMany, belongsTo,belongsToMany
-//         Brand.HasOne(models.Products,{
-//         as: "product",
-//         foreignKey:"product_id"
-//     })
+Brand.associate = function(models){
+    //hasOne, hasMany, belongsTo,belongsToMany
+        Brand.hasOne(models.Product,{
+        as: "products",
+    })
 
-// }
+}
 
     return Brand
     }

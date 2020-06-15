@@ -23,14 +23,17 @@ module.exports = (sequelize, Types) =>{
         createdAt: 'created_at',
         updatedAt: 'updated_at',
     })
-    // Cart.associate = function(models){
-    //     //hasOne, hasMany, belongsTo,belongsToMany
-    //     Cart.belongsTo(models.Brand,{
-    //         as: "brand",
-    //         foreignKey:"brands_id"
-    //     })
-
-    // }
+     Cart.associate = function(models){
+         //hasOne, hasMany, belongsTo,belongsToMany
+         Cart.hasOne(models.Cart_has_product,{
+            as: "carts",
+        })
+        Cart.belongsTo(models.User,{
+            as: "user",
+            foreignKey:"users_id"
+        })
+        
+     }
 
 
     return Cart
