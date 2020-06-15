@@ -22,11 +22,11 @@ module.exports = (sequelize, Types) =>{
                     allowNull: true},
         image :{type:Types.STRING(100),
                         allowNull: true},
-    
 
 
 
-        
+
+
 
     },{
         tableName: "products",
@@ -35,21 +35,21 @@ module.exports = (sequelize, Types) =>{
         createdAt: 'created_at',
         updatedAt: 'updated_at',
     })
-    Products.associate = function(models){
-        //hasOne, hasMany, belongsTo,belongsToMany
-        Products.belongsTo(models.Brand,{
-            as: "brand",
-            foreignKey:"brands_id"
-        })
-        Products.belongsTo(models.Category,{
-            as: "category",
-            foreignKey:"categories_id1"
-        })
-        Products.hasOne(models.Cart_has_product,{
-            as: "products_id",
-        })
+    // Products.associate = function(models){
+    //     //hasOne, hasMany, belongsTo,belongsToMany
+    //     Products.belongsTo(models.Brand,{
+    //         as: "brand",
+    //         foreignKey:"brands_id"
+    //     })
+    //     Products.belongsTo(models.Category,{
+    //         as: "category",
+    //         foreignKey:"categories_id1"
+    //     })
+    //     // Products.hasOne(models.Cart_has_product,{
+    //     //     as: "products_id",
+    //     // })
 
-    }
+    // }
 
 
     return Products

@@ -30,10 +30,10 @@ module.exports = (sequelize, Types) =>{
     })
      Cart_has_product.associate = function(models){
         // hasOne, hasMany, belongsTo,belongsToMany
-         Cart_has_product.belongsTo(models.Product,{
-             as: "product",
-             foreignKey:"products_id"
-         })
+        //  Cart_has_product.belongsTo(models.Product,{
+        //      as: "product",
+        //      foreignKey:"products_id"
+        //  })
          Cart_has_product.belongsTo(models.Cart,{
             as: "cart",
             foreignKey:"carts_id"

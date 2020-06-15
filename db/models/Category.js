@@ -18,13 +18,13 @@ module.exports = (sequelize, Types) =>{
     }
 )
 
-Category.associate = function(models){
-    //hasOne, hasMany, belongsTo,belongsToMany
-        Category.hasOne(models.Product,{
-        as: "products",
-    })
+// Category.associate = function(models){
+//     //hasOne, hasMany, belongsTo,belongsToMany
+//         Category.hasOne(models.Product,{
+//         as: "products",
+//     })
 
-}
+// }
 
     return Category
     }
