@@ -96,68 +96,66 @@ const registerController = {
       
       },
 
-      'cargarDatosUsuario': function(req, res, next) {
+    'cargarDatosUsuario': function(req, res, next) {
 
-        let password = bcrypt.hashSync(req.body.password,12);
+      let password = bcrypt.hashSync(req.body.password,12);
       
-        let newUser = {
+      let newUser = {
       
-          email: req.body.email,
-          password: password,
-          avatar: req.files[0].filename,
+        email: req.body.email,
+        password: password,
+        avatar: req.files[0].filename,
        
-        };
+      };
       
       
-        let usersJSON = fs.readFileSync('data/DBUsers.json',{encoding: 'utf-8'});
-        let users;
+      let usersJSON = fs.readFileSync('data/DBUsers.json',{encoding: 'utf-8'});
+      let users;
       
-        if(usersJSON == ''){
-          users = [];
+      if(usersJSON == ''){
+        users = [];
+      
+        users.push(newUser);
+        
+        res.send(users);
+        
+        usersUpdatedJSON = JSON.stringify(users);
+        
+        fs.writeFileSync('data/DBUsers.json',usersUpdatedJSON);
+        
+        res.send('Bienvenido!, Sus datos ya fueron ingresados!!');
+      
+      
+      }else{
+        users = JSON.parse(usersJSON);
+          
+      for(let i=0; i<users.length; i++){
+      
+        if(users[i].email == newUser.email){
+          res.send('Usuario existente en la base de datos!');
+      
+        }else{
+      
       
           users.push(newUser);
         
           res.send(users);
-        
+          
           usersUpdatedJSON = JSON.stringify(users);
-        
-           fs.writeFileSync('data/DBUsers.json',usersUpdatedJSON);
-        
-           res.send('Bienvenido!, Sus datos ya fueron ingresados!!');
-      
-      
-        }else{
-          users = JSON.parse(usersJSON);
           
-        for(let i=0; i<users.length; i++){
-      
-          if(users[i].email == newUser.email){
-            res.send('Usuario existente en la base de datos!');
-      
-          }else{
-      
-      
-            users.push(newUser);
-        
-            res.send(users);
+          fs.writeFileSync('data/DBUsers.json',usersUpdatedJSON);
           
-            usersUpdatedJSON = JSON.stringify(users);
-          
-             fs.writeFileSync('data/DBUsers.json',usersUpdatedJSON);
-          
-             res.send('Bienvenido!, Sus datos ya fueron ingresados!!');
-      
-          }
-          
+          res.send('Bienvenido!, Sus datos ya fueron ingresados!!');
       
         }
+          
       
-        }
+      }
+      
+    }
       
       
-      
-      
-        }
+    }
 
 }
 
