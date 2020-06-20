@@ -92,7 +92,7 @@ const registerController = {
 
     'creacionUsuario': function(req, res, next) {
   
-        res.render('createuser',{pageCss: 'register.css'});
+        res.render('createuser',{pageCss: 'register.css',statusRegistracion: ''});
       
       },
 
@@ -109,6 +109,8 @@ const registerController = {
       
         let newUser = {
         
+          nombre: req.body.nombre,
+          apellido: req.body.apellido,
           email: req.body.email,
           password: password,
           avatar: req.files[0].filename,
@@ -124,13 +126,11 @@ const registerController = {
         
           users.push(newUser);
           
-          res.send(users);
-          
           usersUpdatedJSON = JSON.stringify(users);
           
           fs.writeFileSync('data/DBUsers.json',usersUpdatedJSON);
           
-          res.send('Bienvenido!, Sus datos ya fueron ingresados!!');
+          res.redirect('/');
         
         
         }else{
@@ -139,7 +139,8 @@ const registerController = {
           for(let i=0; i<users.length; i++){
           
             if(users[i].email == newUser.email){
-              res.send('Usuario existente en la base de datos!');
+
+              res.redirect('/');
           
             }else{
           
@@ -166,8 +167,7 @@ const registerController = {
       }else{
         
 
-        res.render('register', {errors: errors.errors,pageCss: 'register.css',statusRegistracion: 'Usuario o Contraseña incorrecta.'});
-
+        res.render('createuser', {errors: errors.errors,pageCss: 'register.css',statusRegistracion: 'Error en el ingreso de los datos.'});
 
       }
       
