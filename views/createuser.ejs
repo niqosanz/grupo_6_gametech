@@ -15,6 +15,23 @@
       <div id="internal-container-login">
         <h2 id="header-login">Registro Usuario Nuevo</h2>
         
+            <% if(statusRegistracion != ''){ %>
+
+              <p id="paragraph-login"><%= statusRegistracion %></p>
+
+              <% for(let i=0; i<errors.length; i++){ %>
+
+                <p id="paragraph-login"><%= errors[i].msg %></p>
+      
+              <% } %>
+      
+            <% }else{ %>
+
+              <p id="paragraph-login">Bienvenido!</p>
+
+            <% } %>
+
+
           <p id="paragraph-login">Ingrese sus datos de usuario:</p>
 
         <br>

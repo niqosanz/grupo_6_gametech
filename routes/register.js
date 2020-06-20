@@ -58,14 +58,17 @@ router.get('/:id/createuser', registerController.creacionUsuario);
 
 
 /* POST Validation. */
-// Esta es la ruta que valida los datos enviados en el formulario de registro del usuario
+// Esta es la ruta que valida los datos enviados en el formulario de login del usuario
 
 router.post('/',[
   check('password').isLength({min:4}).withMessage('La contraseña debe contener al menos 8 caracteres'),
 ],registerController.validation);
 
-/* POST Cargar datos usuario nuevo */
-router.post('/:id/createuser',upload.any(),registerController.cargarDatosUsuario);
+/* POST Toma los datos enviados por Post del formulario de usuarios nuevos y los carga en la base de datos*/
+router.post('/:id/createuser',upload.any(),[
+  check('nombre').isLength({min:2}).withMessage('El nombre debe contener al menos 2 caracteres')
+  
+],registerController.cargarDatosUsuario);
 
 
 module.exports = router;

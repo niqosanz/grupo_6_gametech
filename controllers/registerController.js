@@ -98,47 +98,32 @@ const registerController = {
 
     'cargarDatosUsuario': function(req, res, next) {
 
-      let password = bcrypt.hashSync(req.body.password,12);
       
-      let newUser = {
+      // valida si los datos ingresados por el usuario son válidos o no
+
+      let errors = validationResult(req);
+
+      if(errors.isEmpty()){
+
+        let password = bcrypt.hashSync(req.body.password,12);
       
-        email: req.body.email,
-        password: password,
-        avatar: req.files[0].filename,
-       
-      };
-      
-      
-      let usersJSON = fs.readFileSync('data/DBUsers.json',{encoding: 'utf-8'});
-      let users;
-      
-      if(usersJSON == ''){
-        users = [];
-      
-        users.push(newUser);
+        let newUser = {
         
-        res.send(users);
+          email: req.body.email,
+          password: password,
+          avatar: req.files[0].filename,
+         
+        };
+
+                
+        let usersJSON = fs.readFileSync('data/DBUsers.json',{encoding: 'utf-8'});
+        let users;
         
-        usersUpdatedJSON = JSON.stringify(users);
+        if(usersJSON == ''){
+          users = [];
         
-        fs.writeFileSync('data/DBUsers.json',usersUpdatedJSON);
-        
-        res.send('Bienvenido!, Sus datos ya fueron ingresados!!');
-      
-      
-      }else{
-        users = JSON.parse(usersJSON);
-          
-      for(let i=0; i<users.length; i++){
-      
-        if(users[i].email == newUser.email){
-          res.send('Usuario existente en la base de datos!');
-      
-        }else{
-      
-      
           users.push(newUser);
-        
+          
           res.send(users);
           
           usersUpdatedJSON = JSON.stringify(users);
@@ -146,14 +131,45 @@ const registerController = {
           fs.writeFileSync('data/DBUsers.json',usersUpdatedJSON);
           
           res.send('Bienvenido!, Sus datos ya fueron ingresados!!');
+        
+        
+        }else{
+          users = JSON.parse(usersJSON);
+            
+          for(let i=0; i<users.length; i++){
+          
+            if(users[i].email == newUser.email){
+              res.send('Usuario existente en la base de datos!');
+          
+            }else{
+          
+          
+              users.push(newUser);
+
+              usersUpdatedJSON = JSON.stringify(users);
+              
+              fs.writeFileSync('data/DBUsers.json',usersUpdatedJSON);
+
+              res.send(users);
+              
+              // res.redirect('/');
+
+              
+            }
+            
+        
+          }
       
         }
-          
-      
+
+              
+      }else{
+        
+
+        res.render('register', {errors: errors.errors,pageCss: 'register.css',statusRegistracion: 'Usuario o Contraseña incorrecta.'});
+
+
       }
-      
-    }
-      
       
     }
 
