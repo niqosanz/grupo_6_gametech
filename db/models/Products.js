@@ -35,12 +35,12 @@ module.exports = (sequelize, Types) =>{
         createdAt: 'created_at',
         updatedAt: 'updated_at',
     })
-    // Products.associate = function(models){
-    //     //hasOne, hasMany, belongsTo,belongsToMany
-    //     Products.belongsTo(models.Brand,{
-    //         as: "brand",
-    //         foreignKey:"brands_id"
-    //     })
+     Products.associate = function(models){
+         //hasOne, hasMany, belongsTo,belongsToMany
+         Products.belongsTo(models.Brand,{
+             as: "brand",
+             foreignKey:"brands_id"
+         })
     //     Products.belongsTo(models.Category,{
     //         as: "category",
     //         foreignKey:"categories_id1"
@@ -49,7 +49,7 @@ module.exports = (sequelize, Types) =>{
     //     //     as: "products_id",
     //     // })
 
-    // }
+     }
 
 
     return Products
