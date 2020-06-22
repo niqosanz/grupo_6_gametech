@@ -6,20 +6,20 @@
       <div class="container">
         <div class="row">
 
-                <img class='col-12' src="<%=productsImages%>">
+                <img class='col-12' src="<%=producto.image%>">
 
                 <div class='col-sm-12 col-md-6 col-lg-6 descripcion-producto'>
 
                   <div>
                     <form action="/products/edit/:id?_method=PUT" method="POST"  class='col-sm-12 col-md-3 col-lg-3 contenedores' query='_method'>
-                      <input type="hidden" name="numberId" value='<%= productNumber %>'>
+                      <input type="hidden" name="numberId" value='<%= producto.id %>'>
                         <label class='col-sm-12 col-md-6 col-lg-6'>Cambiar Nombre:</label>
                         <h2>
-                          <input type="text" name="name" value='<%=products[productNumber].name %>'>
+                          <input type="text" name="name" value='<%=producto.short_description %>'>
                           
                         </h2>
 
-                          <h3><input type="text" name="price" value='<%=products[productNumber].price %>' class="precios"></h3> 
+                          <h3><input type="text" name="price" value='<%=producto.price %>' class="precios"></h3> 
                           <h3 class="precio-anterior">$119.99</h3>
            
                            <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
@@ -27,7 +27,7 @@
                           </a>
                         <div class="collapse" id="collapseExample">
                           <div class="card card-body">
-                            <input type="text" name="description" value='<%=products[productNumber].description %>' class="precios">
+                            <input type="text" name="description" value='<%=producto.long_description %>' class="precios">
                           </div>
                         </div>
 
@@ -36,7 +36,7 @@
                 </div>
             
               </div>
-              <form action="/products/delete/<%= productNumber %>?_method=DELETE" method="POST"  class='col-sm-12 col-md-3 col-lg-3 contenedores'>
+              <form action="/products/delete/<%= producto.id %>?_method=DELETE" method="POST"  class='col-sm-12 col-md-3 col-lg-3 contenedores'>
                 <button type="submit"> Eliminar</button>
               </form>
         

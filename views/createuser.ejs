@@ -15,27 +15,44 @@
       <div id="internal-container-login">
         <h2 id="header-login">Registro Usuario Nuevo</h2>
         
+            <% if(statusRegistracion != ''){ %>
+
+              <p id="paragraph-login"><%= statusRegistracion %></p>
+
+              <% for(let i=0; i<errors.length; i++){ %>
+
+                <p id="paragraph-login"><%= errors[i].msg %></p>
+      
+              <% } %>
+      
+            <% }else{ %>
+
+              <p id="paragraph-login">Bienvenido!</p>
+
+            <% } %>
+
+
           <p id="paragraph-login">Ingrese sus datos de usuario:</p>
 
         <br>
             <br>
             <div class="frame-sizeinputs">
-                <input type="text" placeholder="Nombre *" class="sizeinputs border-inputs" name="nombre" required><i class="i-blank"></i>
+                <input type="text" placeholder="Nombre *" class="sizeinputs border-inputs" name="nombre"><i class="i-blank"></i>
             </div>
             <br>
 
             <div class="frame-sizeinputs">
-                <input type="text" placeholder="Apellido *" class="sizeinputs border-inputs" name="apellido" required><i class="i-blank"></i>
+                <input type="text" placeholder="Apellido *" class="sizeinputs border-inputs" name="apellido"><i class="i-blank"></i>
             </div>
             <br>
 
             <div class="frame-sizeinputs">
-                <input type="email" placeholder="E-mail" class="sizeinputs border-inputs" name="email" required><i class="i-blank"></i>
+                <input type="email" placeholder="E-mail" class="sizeinputs border-inputs" name="email"><i class="i-blank"></i>
             </div>
         <br>
        
             <div class="frame-sizeinputs">
-                <input type="password"  placeholder="Password" class="sizeinputs border-inputs" name="password" required><i class="far fa-eye-slash"></i>
+                <input type="password"  placeholder="Password" class="sizeinputs border-inputs" name="password"><i class="far fa-eye-slash"></i>
             </div>           
         <br>
        

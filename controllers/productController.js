@@ -14,9 +14,15 @@ let sequelize = db.sequelize;
 
 
 
+<<<<<<< HEAD
 const controller = {
     list: function (req, res) {
         db.Product.findAll(/*{include:[{association:"brand"},{association:"category"}]}*/).then(function (resultados) {
+=======
+const controller ={
+    list: function (req,res) {
+        db.Product.findAll({include:[{association:"brand"}]}/*,{association:"category"}]}*/).then(function (resultados){
+>>>>>>> dc40bf749c7ce4e350a63208e9992709bd62046c
             res.send(resultados)
         },
         )
@@ -24,9 +30,14 @@ const controller = {
 
     detail: function (req, res) {
         let productNumber = req.params.id;
+<<<<<<< HEAD
         // let productsImages =('/images/productos/'+products[1].image);
         db.Product.findByPk(req.params.id).then(function (producto) {
             res.render('productDetail', { producto })
+=======
+        db.Product.findByPk(req.params.id).then(function(producto){
+            res.render('productDetail',{producto})
+>>>>>>> dc40bf749c7ce4e350a63208e9992709bd62046c
         })
 
     },
@@ -34,6 +45,7 @@ const controller = {
     create: function (req, res) {
         res.render('productAdd')
     },
+<<<<<<< HEAD
     add: function (req, res) {
         let infoImg = req.files
 
@@ -64,9 +76,26 @@ const controller = {
         let productNumber = req.params.id - 1;
         let productsImages = ('/images/productos/' + products[productNumber].image);
         res.render('productEdit', { products, productNumber, productsImages })
+=======
+    add: function (req,res){
+        db.Product.create({
+            short_description:req.body.name,
+            price: req.body.price,
+            long_description: req.body.description,
+            image:req.files[0].filename,
+        })
 
+     res.redirect('/products')   
+    },
+>>>>>>> dc40bf749c7ce4e350a63208e9992709bd62046c
+
+    viewedit: function (req,res) {
+        db.Product.findByPk(req.params.id).then(function(producto){
+            res.render('productEdit',{producto})
+        })
     },
 
+<<<<<<< HEAD
     edit: function (req, res) {
         let productPosition = req.body.numberId;
         let productoAEditar = products[productPosition];
@@ -94,6 +123,21 @@ const controller = {
         fs.writeFileSync('data/listadoDeProductos.json', pasaractualizacionJSON)
 
 
+=======
+    edit: function (req,res) {
+        db.Product.update({
+            short_description:req.body.name,
+             price: req.body.price,
+             long_description: req.body.description,
+        }, {where:{id: req.body.numberId}})
+        console.log(req.body.numberId)
+        res.redirect('/products')
+            },
+
+    destroy: function (req,res)   {
+        db.Product.destroy({where:{id: req.params.id}})
+            
+>>>>>>> dc40bf749c7ce4e350a63208e9992709bd62046c
         res.redirect('/')
     },
 
