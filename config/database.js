@@ -1,4 +1,4 @@
-{
+module.exports ={
   "development": {
     "username": "root",
     "password": "root",
@@ -9,7 +9,7 @@
   },
   "test": {
     "username": "root",
-    "password": null,
+    "password": "root",
     "database": "database_test",
     "host": "127.0.0.1",
     "dialect": "mysql",
@@ -22,13 +22,5 @@
     "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": false
-  },
-    "tester": {
-      "username": "root",
-      "password": "root",
-      "database": "gametech6",
-      "host": "127.0.0.1",
-      "dialect": "mysql",
-      "operatorsAliases": false
-    }
+  }
 }

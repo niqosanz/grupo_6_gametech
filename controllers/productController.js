@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-var multer = require ('multer')
+var multer = require('multer')
 var express = require('express');
 var db = require('../db/models');
 const {check,validationResult,body}=require('express-validator');
@@ -11,15 +11,16 @@ const controller ={
     list: function (req,res) {
         db.Product.findAll({include:[{association:"brand"}]}/*,{association:"category"}]}*/).then(function (resultados){
             res.send(resultados)
-          },
-      )},
-    
-    detail: function (req,res){
+        },
+        )
+    },
+
+    detail: function (req, res) {
         let productNumber = req.params.id;
         db.Product.findByPk(req.params.id).then(function(producto){
             res.render('productDetail',{producto})
         })
-        
+
     },
 
     create: function (req,res){
@@ -65,17 +66,18 @@ const controller ={
         db.Product.destroy({where:{id: req.params.id}})
             
         res.redirect('/')
-         },
+    },
 
-    adress: function (req,res) {
+    adress: function (req, res) {
 
-        db.Adress.findAll().then(function (resultados){
+        db.Adress.findAll().then(function (resultados) {
             console.log(resultados)
             res.send(resultados)
-          },
-          
-      )}
+        },
+
+        )
+    }
 
 }
 
-module.exports = controller ;
+module.exports = controller;

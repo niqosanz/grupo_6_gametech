@@ -12,8 +12,12 @@ var session = require('express-session');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var productsRouter = require('./routes/products');
+<<<<<<< HEAD
 var registerRouter = require('./routes/register');
 const { validation } = require('./controllers/registerController');
+=======
+//var registerRouter = require('./routes/register');
+>>>>>>> a8b30d3e8f914bddd8053ef2ca48c138f475580b
 
 var app = express();
 
@@ -33,7 +37,7 @@ app.use(session({secret:"Mensaje secreto", saveUninitialized: false }));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
-app.use('/register', registerRouter);
+//app.use('/register', registerRouter);
 
 app.use('/users/admin', usersRouter)
 
