@@ -41,13 +41,13 @@ module.exports = (sequelize, Types) =>{
              as: "brand",
              foreignKey:"brands_id"
          })
-    //     Products.belongsTo(models.Category,{
-    //         as: "category",
-    //         foreignKey:"categories_id1"
-    //     })
-    //     // Products.hasOne(models.Cart_has_product,{
-    //     //     as: "products_id",
-    //     // })
+         Products.belongsTo(models.Category,{
+             as: "category",
+             foreignKey:"categories_id1"
+         })
+          Products.hasOne(models.Cart_has_product,{
+              as: "products_id",
+          })
 
      }
 

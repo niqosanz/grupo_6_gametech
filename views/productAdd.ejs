@@ -41,11 +41,24 @@
         </div>
 
         <!--ACA VA CADA PRODUCTO A AGREGAR CN SU DESCRIPCION-->
-        <%- include('./partials/addProductForm')%>
+
+        <% if (errors != '') { %>
+          <% for(let i=0; i<errors.length; i++){ %>
+
+          <div class=container> <%= errors[i].msg %>  </div>
+          <% } %>
+          <%- include('./partials/addProductForm')%>
+        <%} else{ %>
+          <%- include('./partials/addProductForm')%>
+          <% } %>
+       
+
+     
+  
     
 <div class="contanainer">
   <div class= row>
-  
+
   <div class="col-12 pages">
     <nav class="pagination" aria-label="Page navigation example pages">
       <ul class="pagination justify-content-center pages">

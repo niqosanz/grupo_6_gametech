@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var methodOverride = require ('method-override');
 var logger = require('morgan');
 var session = require('express-session');
+
 // var logMiddleware = require('./middlewares/logMiddleware');
 
 
@@ -12,6 +13,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var productsRouter = require('./routes/products');
 var registerRouter = require('./routes/register');
+const { validation } = require('./controllers/registerController');
 
 var app = express();
 
@@ -25,7 +27,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
-app.use(session({secret:"Mensaje secreto"}));
+app.use(session({secret:"Mensaje secreto", saveUninitialized: false }));
 
 
 app.use('/', indexRouter);

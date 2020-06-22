@@ -3,13 +3,7 @@ const path = require('path');
 var multer = require ('multer')
 var express = require('express');
 var db = require('../db/models');
-
-const productsFilePath = path.join(__dirname, '../data/listadoDeProductos.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
-
-
-
+const {check,validationResult,body}=require('express-validator');
 
 
 
@@ -29,17 +23,26 @@ const controller ={
     },
 
     create: function (req,res){
-        res.render('productAdd')
+        res.render('productAdd', {errors: ''})
     },
     add: function (req,res){
-        db.Product.create({
+        let errors = validationResult(req);
+
+        if(errors.isEmpty()){  db.Product.create({
             short_description:req.body.name,
             price: req.body.price,
             long_description: req.body.description,
             image:req.files[0].filename,
         })
+        res.redirect('/products')   } 
+        else{
+            res.render('productAdd', errors)
 
-     res.redirect('/products')   
+        }
+    
+      
+
+     
     },
 
     viewedit: function (req,res) {
