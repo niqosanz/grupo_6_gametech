@@ -11,7 +11,7 @@ var session = require('express-session');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var productsRouter = require('./routes/products');
-var registerRouter = require('./routes/register');
+//var registerRouter = require('./routes/register');
 
 var app = express();
 
@@ -31,7 +31,7 @@ app.use(session({secret:"Mensaje secreto"}));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
-app.use('/register', registerRouter);
+//app.use('/register', registerRouter);
 
 app.use('/users/admin', usersRouter)
 
