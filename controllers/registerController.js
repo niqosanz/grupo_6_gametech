@@ -98,12 +98,16 @@ const registerController = {
 
     'cargarDatosUsuario': function(req, res, next) {
 
-      
+      const datosArchivo = req.files[0];
+
+     
       // valida si los datos ingresados por el usuario son válidos o no
 
       let errors = validationResult(req);
 
-      if(errors.isEmpty()){
+      if(errors.isEmpty() && (datosArchivo.mimetype=='image/jpeg' || datosArchivo.mimetype=='image/jpg' || datosArchivo.mimetype=='image/png' || datosArchivo.mimetype=='image/gif')){
+
+        // JPG, JPEG, PNG, GIF
 
         let password = bcrypt.hashSync(req.body.password,12);
       
@@ -151,9 +155,9 @@ const registerController = {
               
               fs.writeFileSync('data/DBUsers.json',usersUpdatedJSON);
 
-              res.send(users);
+              // res.send(users);
               
-              // res.redirect('/');
+              res.redirect('/');
 
               
             }
