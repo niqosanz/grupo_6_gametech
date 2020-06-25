@@ -25,7 +25,7 @@ router.get('/', productController.list);
 router.get('/prueba', productController.adress);
 
 router.get('/create', productController.create);
-router.post('/create',upload.any(),[check('name').not().isEmpty().withMessage('El campo Nombre es Obligatorio.'),check('name').isLength({min:4}).withMessage('El campo Nombre debe contener al menos 4 caracteres'),],productController.add);
+router.post('/create',upload.any(),[check('name').not().isEmpty().withMessage('El campo Nombre es Obligatorio.'),check('name').isLength({min:5}).withMessage('El campo Nombre debe contener al menos 5 caracteres'),check('description').not().isEmpty().withMessage('El campo Descripción es Obligatorio.'),check('description').isLength({min:20}).withMessage('El campo Descripcion debe contener al menos 20 caracteres'),],productController.add);
 router.get('/:id', productController.detail);
 router.get('/edit/:id', productController.viewedit);
 router.put('/edit/:id', productController.edit);
