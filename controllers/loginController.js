@@ -6,6 +6,11 @@ let fs = require('fs');
 
 let bcrypt = require('bcrypt');
 
+// Para conectar con la base de datos definida en los modelos:
+
+const db = require('../db/models')
+
+
 // Para tomar los valores de los errores que se presenten en la validación usada 
 // con express validator en la ruta
 
@@ -14,7 +19,7 @@ const {check,validationResult,body}=require('express-validator');
 
 // Inicio del controlador
 
-const registerController = {
+const loginController = {
 
 
     'ingreso': function(req, res, next) {
@@ -25,10 +30,9 @@ const registerController = {
     'validation': function(req, res, next) {
 
 
-      let users = fs.readFileSync('data/DBUsers.json',{encoding:'utf-8'});
-      let usersJSON = JSON.parse(users);
+      // let users = fs.readFileSync('data/DBUsers.json',{encoding:'utf-8'});
+      // let usersJSON = JSON.parse(users);
       
-
         // Se define una variable con los errores de express validator que se encuentren, con la validación
         // definida en la ruta
 
@@ -37,34 +41,67 @@ const registerController = {
 
       let errors = validationResult(req);
 
+      // res.send(errors);
+
       if(errors.isEmpty()){
 
+        db.User.findOne({
+          where: {
+            email: req.body.email,
+          }
+  
+        })
+          .then(function(user){
 
-        for(let i = 0; i<usersJSON.length; i++){
+            if(bcrypt.compareSync(req.body.password ,user.password)){
+              res.redirect('/');
+
+            }else{
+              res.render('register', {errors: errors.errors,pageCss: 'register.css',statusRegistracion: 'Usuario existente pero contraseña incorrecta'});
+
+            }
+
+          })
+          .catch(function (err) {
+
+            res.render('register', {errors: errors.errors,pageCss: 'register.css',statusRegistracion: 'Usuario Inexistente, presione (Sign Up) en caso de querer registrar un usuario nuevo.'});
+        
+            throw err;
+          })
+  
+      }else{
+
+        res.render('register', {errors: errors.errors,pageCss: 'register.css',statusRegistracion: 'Error en los datos de ingreso.'});
+
+      }
+      
+    
+          
+        // for(let i = 0; i<usersJSON.length; i++){
 
         // si los datos ingresados de usuario o contraseña son válidos: 
 
-          if(req.body.email == usersJSON[i].email && (bcrypt.compareSync(req.body.password ,usersJSON[i].password))){
+          // if(req.body.email == usersJSON[i].email && (bcrypt.compareSync(req.body.password ,usersJSON[i].password))){
       
-            res.redirect('/');
+          //   res.redirect('/');
 
         // si los datos ingresados de usuario o contraseña son inválidos: 
 
-          }else{
+      //     }else{
       
 
-          }
+      //     }
 
-        }
+      //   }
         
-        res.redirect('/login/1');
+      //   res.redirect('/login/1');
 
 
-      }else{
+      // }else{
 
-        res.render('register', {errors: errors.errors,pageCss: 'register.css',statusRegistracion: 'Usuario o Contraseña incorrecta.'});
+      //   res.render('register', {errors: errors.errors,pageCss: 'register.css',statusRegistracion: 'Usuario o Contraseña incorrecta.'});
 
-      }
+      // }
 
       },
 
@@ -90,96 +127,9 @@ const registerController = {
     
         }
     
-    },
-
-    'creacionUsuario': function(req, res, next) {
-  
-        res.render('createuser',{pageCss: 'register.css',statusRegistracion: ''});
-      
-      },
-
-    'cargarDatosUsuario': function(req, res, next) {
-
-      const datosArchivo = req.files[0];
-
-     
-      // valida si los datos ingresados por el usuario son válidos o no
-
-      let errors = validationResult(req);
-
-      if(errors.isEmpty() && (datosArchivo.mimetype=='image/jpeg' || datosArchivo.mimetype=='image/jpg' || datosArchivo.mimetype=='image/png' || datosArchivo.mimetype=='image/gif')){
-
-        // JPG, JPEG, PNG, GIF
-
-        let password = bcrypt.hashSync(req.body.password,12);
-      
-        let newUser = {
-        
-          nombre: req.body.nombre,
-          apellido: req.body.apellido,
-          email: req.body.email,
-          password: password,
-          avatar: req.files[0].filename,
-         
-        };
-
-                
-        let usersJSON = fs.readFileSync('data/DBUsers.json',{encoding: 'utf-8'});
-        let users;
-        
-        if(usersJSON == ''){
-          users = [];
-        
-          users.push(newUser);
-          
-          usersUpdatedJSON = JSON.stringify(users);
-          
-          fs.writeFileSync('data/DBUsers.json',usersUpdatedJSON);
-          
-          res.redirect('/');
-        
-        
-        }else{
-          users = JSON.parse(usersJSON);
-            
-          for(let i=0; i<users.length; i++){
-          
-            if(users[i].email == newUser.email){
-
-              res.redirect('/');
-          
-            }else{
-          
-          
-              users.push(newUser);
-
-              usersUpdatedJSON = JSON.stringify(users);
-              
-              fs.writeFileSync('data/DBUsers.json',usersUpdatedJSON);
-
-              // res.send(users);
-              
-              res.redirect('/');
-
-              
-            }
-            
-        
-          }
-      
-        }
-
-              
-      }else{
-        
-
-        res.render('createuser', {errors: errors.errors,pageCss: 'register.css',statusRegistracion: 'Error en el ingreso de los datos.'});
-
-      }
-      
     }
 
 }
 
-module.exports = registerController
+module.exports = loginController
 

@@ -54,7 +54,7 @@ router.get('/:id', loginController.status);
 // Esta es la ruta que valida los datos enviados en el formulario de login del usuario
 
 router.post('/',[
-  check('password').isLength({min:4}).withMessage('La contraseña debe contener al menos 8 caracteres'),
+  check('password').isLength({min:8}).withMessage('La contraseña debe contener al menos 8 caracteres'),
 ],loginController.validation);
 
 
