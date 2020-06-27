@@ -35,47 +35,26 @@ var storage = multer.diskStorage({
 var upload = multer({storage:storage});
 
 
-/* GET Register. */
-/* Esta es la ruta que va presentar la vista para el ingreso de la información para el */
-/* loggin del usuario */
-
-router.get('/', registerController.ingreso);
-
-
-
-/* GET Status Usuario */ 
-/* Esta es la ruta para cuando el usuario ingresado NO está registrado o es incorrecto el email o contraseña */
-
-// (Registrado o NO registrado o con errores de ingreso de usuario o clave) */
-router.get('/:id', registerController.status);
-
 
 
 /* GET Creación de Usuario Nuevo */
 /* Esta es la ruta que mostrará la vista con los campos para la creación de un nuevo usuario */
 
-router.get('/:id/createuser', registerController.creacionUsuario);
-
-
-/* POST Validation. */
-// Esta es la ruta que valida los datos enviados en el formulario de login del usuario
-
-router.post('/',[
-  check('password').isLength({min:4}).withMessage('La contraseña debe contener al menos 8 caracteres'),
-],registerController.validation);
+router.get('/', registerController.creacionUsuario);
 
 /* POST Toma los datos enviados por Post del formulario de usuarios nuevos y los carga en la base de datos*/
-router.post('/:id/createuser',upload.any(),[
-  check('nombre').not().isEmpty().withMessage('El campo Nombre es Obligatorio.'),
-  check('nombre').isLength({min:2}).withMessage('El campo Nombre debe contener al menos 2 caracteres'),
-  check('apellido').not().isEmpty().withMessage('El campo Apellido es Obligatorio.'),
-  check('apellido').isLength({min:2}).withMessage('El campo Apellido debe contener al menos 2 caracteres'),
-  check('email').not().isEmpty().withMessage('El campo Email es Obligatorio.'),
-  check('email').isLength({min:2}).withMessage('El campo Email debe contener al menos 2 caracteres'),
-  check('password').not().isEmpty().withMessage('El campo Contraseña es Obligatorio.'),
-  check('password').isLength({min:8}).withMessage('El campo Contraseña debe contener al menos 8 caracteres'),
+router.post('/',upload.any(),[
+    check('nombre').not().isEmpty().withMessage('El campo Nombre es Obligatorio.'),
+    check('nombre').isLength({min:2}).withMessage('El campo Nombre debe contener al menos 2 caracteres'),
+    check('apellido').not().isEmpty().withMessage('El campo Apellido es Obligatorio.'),
+    check('apellido').isLength({min:2}).withMessage('El campo Apellido debe contener al menos 2 caracteres'),
+    check('email').not().isEmpty().withMessage('El campo Email es Obligatorio.'),
+    check('email').isLength({min:2}).withMessage('El campo Email debe contener al menos 2 caracteres'),
+    check('password').not().isEmpty().withMessage('El campo Contraseña es Obligatorio.'),
+    check('password').isLength({min:8}).withMessage('El campo Contraseña debe contener al menos 8 caracteres'),
+    
+  ],registerController.cargarDatosUsuario);
   
-],registerController.cargarDatosUsuario);
 
 
 module.exports = router;
