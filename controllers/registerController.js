@@ -13,12 +13,13 @@ const {check,validationResult,body}=require('express-validator');
 
 // Para conectar con la base de datos definida en los modelos:
 
-const db = require('../db/models')
+const db = require('../db/models');
+const { getMaxListeners } = require('process');
 
 
 // Inicio del controlador
 
-const loginController = {
+const registerController = {
 
 
     'creacionUsuario': function(req, res, next) {
@@ -53,17 +54,37 @@ const loginController = {
         };
 
 
-
-        /* Para Crear un nuevo registro o usuario en la base de datos */
-          db.User.create({
-
+        db.User.findAndCountAll({
+          where: {
             email: newUser.email,
-            password:newUser.password,
-            avatar: newUser.avatar,
+          },
+        }).then((results) => {
+          console.log(results.count);
 
-          });
+          if(results.count >= 1){
 
-          res.redirect('/');        
+            console.log('La cantidad de coincidencias de ' + newUser.email + ' son ' + results.count)
+
+            res.render('createuser', {errors: errors.errors,pageCss: 'register.css',statusRegistracion: 'Usuario ya existente.'});
+
+
+          }else{
+            //  Para Crear un nuevo registro o usuario en la base de datos
+              db.User.create({
+
+                email: newUser.email,
+                password:newUser.password,
+                avatar: newUser.avatar,
+
+              });
+              
+              res.redirect('/');  
+          }
+
+          console.log(results.rows);
+        });
+
+
 
               
       }else{
@@ -77,5 +98,4 @@ const loginController = {
 
 }
 
-module.exports = loginController
-
+module.exports = registerController
