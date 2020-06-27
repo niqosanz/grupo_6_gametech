@@ -11,6 +11,10 @@ let bcrypt = require('bcrypt');
 
 const {check,validationResult,body}=require('express-validator');
 
+// Para conectar con la base de datos definida en los modelos:
+
+const db = require('../db/models')
+
 
 // Inicio del controlador
 
@@ -48,51 +52,18 @@ const loginController = {
          
         };
 
-                
-        let usersJSON = fs.readFileSync('data/DBUsers.json',{encoding: 'utf-8'});
-        let users;
-        
-        if(usersJSON == ''){
-          users = [];
-        
-          users.push(newUser);
-          
-          usersUpdatedJSON = JSON.stringify(users);
-          
-          fs.writeFileSync('data/DBUsers.json',usersUpdatedJSON);
-          
-          res.redirect('/');
-        
-        
-        }else{
-          users = JSON.parse(usersJSON);
-            
-          for(let i=0; i<users.length; i++){
-          
-            if(users[i].email == newUser.email){
 
-              res.redirect('/');
-          
-            }else{
-          
-          
-              users.push(newUser);
 
-              usersUpdatedJSON = JSON.stringify(users);
-              
-              fs.writeFileSync('data/DBUsers.json',usersUpdatedJSON);
+        /* Para Crear un nuevo registro o usuario en la base de datos */
+          db.User.create({
 
-              // res.send(users);
-              
-              res.redirect('/');
+            email: newUser.email,
+            password:newUser.password,
+            avatar: newUser.avatar,
 
-              
-            }
-            
-        
-          }
-      
-        }
+          });
+
+          res.redirect('/');        
 
               
       }else{
