@@ -54,10 +54,12 @@ const loginController = {
         .then(function (user) {
 
           if (bcrypt.compareSync(req.body.password, user.password)) {
+            console.log (user.email)
+            let usuarioALoguear = user.email
             res.redirect('/');
+            req.session.usuarioLogueado = usuarioALoguear;
 
           } 
-          //req.session.usuarioLogueado = errors;
           else {
             res.render('register', { errors: errors.errors, pageCss: 'register.css', statusRegistracion: 'Usuario existente pero contraseña incorrecta' });
 
