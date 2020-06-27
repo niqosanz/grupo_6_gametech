@@ -18,6 +18,7 @@ const controller ={
     detail: function (req, res) {
         let productNumber = req.params.id;
         db.Product.findByPk(req.params.id).then(function(producto){
+            console.log(producto)
             res.render('productDetail',{producto})
         })
 
@@ -29,7 +30,7 @@ const controller ={
     add: function (req,res){
         let errors = validationResult(req);
 
-        if(errors.isEmpty()){  db.Product.create({
+        if(errors.isEmpty()&& (datosArchivo.mimetype=='image/jpeg' || datosArchivo.mimetype=='image/jpg' || datosArchivo.mimetype=='image/png' || datosArchivo.mimetype=='image/gif')){  db.Product.create({
             short_description:req.body.name,
             price: req.body.price,
             long_description: req.body.description,
@@ -37,11 +38,12 @@ const controller ={
         })
         res.redirect('/products')   } 
         else{
-            res.render('productAdd', errors)
+            res.render('productAdd', errors, req.body.name, req.body.price, req.body.description,req.files[0].filename)
 
         }
     
-      
+
+        
 
      
     },
