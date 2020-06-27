@@ -24,6 +24,11 @@ const registerController = {
 
     'validation': function(req, res, next) {
 
+
+      let users = fs.readFileSync('data/DBUsers.json',{encoding:'utf-8'});
+      let usersJSON = JSON.parse(users);
+      
+
         // Se define una variable con los errores de express validator que se encuentren, con la validación
         // definida en la ruta
 
@@ -33,9 +38,6 @@ const registerController = {
       let errors = validationResult(req);
 
       if(errors.isEmpty()){
-
-        let users = fs.readFileSync('data/DBUsers.json',{encoding:'utf-8'});
-        let usersJSON = JSON.parse(users);
 
 
         for(let i = 0; i<usersJSON.length; i++){
