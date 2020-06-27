@@ -35,10 +35,12 @@ const controller ={
             price: req.body.price,
             long_description: req.body.description,
             image:req.files[0].filename,
+
+   
         })
         res.redirect('/products')   } 
         else{
-            res.render('productAdd', errors, req.body.name, req.body.price, req.body.description,req.files[0].filename)
+            res.render('productAdd', errors)
 
         }
     
