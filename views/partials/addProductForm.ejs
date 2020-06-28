@@ -1,15 +1,11 @@
 <form method='POST' action='/products/create' enctype="multipart/form-data" id='addProductForm'>
     <div class="mayor-detalle">
        <input type="file" name="image" class="card-img-top col-sm-12 col-md-2 sub-grupos" >
-      
-      <!-- <form action="../products/create" method="POST" enctype="multipart/form-data" >
-        <input type="file" name="image" class="card-img-top col-sm-12 col-md-2 sub-grupos "/>
-        <button>subir</button> 
-      </form> -->
+
       <div class="col-sm-12 col-md-2 sub-grupos">
-        <input type="text" placeholder="Nombre del Producto" class="sizeinputs border-inputs" name="name" id="productName"><i class="i-blank"></i>
+        <input type="text" placeholder="Nombre del Producto" class="form-control sizeinputs" name="name" id="productName"><i class="i-blank"></i>
       <div>
-        <input type="text" placeholder="Descripción del producto" class="sizeinputs border-inputs" name="description">
+        <input type="text" placeholder="Descripción del producto" class="form-control sizeinputs" name="description">
       </div>
     </div>
         <div class="col-sm-12 col-md-2 sub-grupos"><input type="text" placeholder="Código SKU" class="sizeinputs border-inputs" name="SKU-Code"></div>
@@ -24,7 +20,7 @@
                           <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)"placeholder="Cantidad de productos" >
                         </div>
                   <div class="col-sm-12 col-md-2 sub-grupos">
-                      <button class="btn btn-primary" type="submit" id='sendInformation'>+ADD TO INVENTARY</button>
+                      <button class="btn btn-primary" name="submit" id='sendInformation'>+ADD TO INVENTARY</button>
               </div>
           </div>
 </div>

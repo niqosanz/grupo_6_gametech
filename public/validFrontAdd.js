@@ -1,15 +1,20 @@
-let form = document.getElementById('addProductForm')
+var form = document.getElementById('addProductForm')
+var buttonSend = document.getElementById('sendInformation');
+console.log(form)
+
 form.name.addEventListener('keyup', function(event){
     let mensaje = event.target.value;
-    if(mensaje.length <=5){
-        let buttonSend = document.querySelector('#sendInformation');
-
-        buttonSend.addEventListener('click',function(event){
-        
-            event.preventDefault()
-         
+    event.target.classList.add('is-invalid')
+    form.submit.classList.add('disabled')
+    
+    if(mensaje.length <5){
         console.log(event.target.value)
-    })
+        event.target.classList.replace('is-valid','is-invalid');
+
+}else {
+    event.target.classList.replace('is-invalid','is-valid') ;
+    
+
 }
 
 });
