@@ -58,6 +58,10 @@ const loginController = {
             //console.log(user.email)
             let usuarioALoguear = user.email;
             req.session.usuarioLogueado = usuarioALoguear;
+            if (req.body.recordame != undefined) {
+              res.cookie('recordame', usuarioALoguear, {maxAge: 60000})
+            }
+
             res.redirect('/users/check');
 
           }
