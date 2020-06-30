@@ -22,6 +22,7 @@ const { check, validationResult, body } = require('express-validator');
 const loginController = {
 
 
+
   'ingreso': function (req, res, next) {
     res.render('register', { pageCss: 'register.css', statusRegistracion: '' });
   },
@@ -54,12 +55,12 @@ const loginController = {
         .then(function (user) {
 
           if (bcrypt.compareSync(req.body.password, user.password)) {
-            console.log (user.email)
-            let usuarioALoguear = user.email
-            res.redirect('/');
+            //console.log(user.email)
+            let usuarioALoguear = user.email;
             req.session.usuarioLogueado = usuarioALoguear;
+            res.redirect('/users/check');
 
-          } 
+          }
           else {
             res.render('register', { errors: errors.errors, pageCss: 'register.css', statusRegistracion: 'Usuario existente pero contraseña incorrecta' });
 
@@ -78,34 +79,6 @@ const loginController = {
       res.render('register', { errors: errors.errors, pageCss: 'register.css', statusRegistracion: 'Error en los datos de ingreso.' });
 
     }
-
-
-
-    // for(let i = 0; i<usersJSON.length; i++){
-
-    // si los datos ingresados de usuario o contraseña son válidos: 
-
-    // if(req.body.email == usersJSON[i].email && (bcrypt.compareSync(req.body.password ,usersJSON[i].password))){
-
-    //   res.redirect('/');
-
-    // si los datos ingresados de usuario o contraseña son inválidos: 
-
-    //     }else{
-
-
-    //     }
-
-    //   }
-
-    //   res.redirect('/login/1');
-
-
-    // }else{
-
-    //   res.render('register', {errors: errors.errors,pageCss: 'register.css',statusRegistracion: 'Usuario o Contraseña incorrecta.'});
-
-    // }
 
   },
 

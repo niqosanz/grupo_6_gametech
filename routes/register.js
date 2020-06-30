@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+var guestMiddleware = require ('../middlewares/guestMiddleware');
+
 
 // Para requerir la ruta del controlador
 
@@ -40,7 +42,7 @@ var upload = multer({storage:storage});
 /* GET Creación de Usuario Nuevo */
 /* Esta es la ruta que mostrará la vista con los campos para la creación de un nuevo usuario */
 
-router.get('/', registerController.creacionUsuario);
+router.get('/', guestMiddleware, registerController.creacionUsuario);
 
 /* POST Toma los datos enviados por Post del formulario de usuarios nuevos y los carga en la base de datos*/
 router.post('/',upload.any(),[
