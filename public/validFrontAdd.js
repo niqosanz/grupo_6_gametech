@@ -1,17 +1,21 @@
 var form = document.getElementById('addProductForm')
-var buttonSend = document.getElementById('sendInformation');
-console.log(form)
+var buttonSend = document.querySelector('#sendInformation');
+
+console.log(buttonSend.classList)
 
 form.name.addEventListener('keyup', function(event){
+    buttonSend.classList.add('disabled')
+    
     let mensaje = event.target.value;
-    event.target.classList.add('is-invalid')
+    
     
     if(mensaje.length <5){
-        console.log(event.target.value)
-        event.target.classList.replace('is-valid','is-invalid');
+        console.log(buttonSend.classList)
+        buttonSend.classList.toggle('disabled');
 
 }else {
-    event.target.classList.replace('is-invalid','is-valid') ;
+    buttonSend.classList.replace('disabled','new')
+    console.log(buttonSend.classList) ;
     
 
 }
@@ -20,6 +24,7 @@ form.name.addEventListener('keyup', function(event){
 
 form.description.addEventListener('keyup', function(event){
     let mensaje = event.target.value;
+
     event.target.classList.add('is-invalid')
     
     if(mensaje.length <20){
