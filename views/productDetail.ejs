@@ -1,59 +1,31 @@
 <%- include('./partials/head.ejs')%>
+<link rel="stylesheet" href="/stylesheets/productDetail.css">
 
 <body>
     <%- include('./partials/header')%>
       <div class="container">
         <!-- Aca van los detalles de los productos--> 
-        <div class="row">
-            <div class='col-md-12 col-lg-6 contenedores mostrar-lg'>
-                <i class="fa fa-home envios mostrar-lg"></i>/Accesorios/Nintendo/Joys
-             </div>
-             <div class='col-sm-12 col-md-3 col-lg-3 descripcion-envios'> 
-                 <div><i class="fa fa-truck envios mostrar-lg" ></i></div>
-                 <div class="envios mostrar-lg">Envio Standar <br>
-                    3-5 días hábiles
-                 </div>   
-            </div>
-            <div class='col-sm-12 col-md-3 col-lg-3 descripcion-envios mostrar-lg'> 
-                <div><i class="fa fa-truck envios mostrar-lg" ></i></div>
-                <div class="envios mostrar-lg">Envio Express <br>
-                   A partir de $80
-                </div>   
-           </div>
-        
-        </div>
-    
+          <h4 class='destacar'><%=producto.short_description %></h4>
+
         <div class="row">
             <div class='col-sm-12 col-md-6 col-lg-6 contenedores'>
-               <img class='col-12' src="/Images/productos/<%=producto.image %>">
+               <img class='col-12 productos' src="/Images/productos/<%=producto.image %>">
             </div>
             <div class='col-sm-12 col-md-6 col-lg-6 descripcion-producto'>
-                <button type="button" class="btn btn-info oferta">SALE!</button>
-            <div><h2 class="detalle"><%=producto.short_description %></h2></div>
-            <div class="precios"><h3><%=producto.price %></h3> 
-            <h3 class="precio-anterior">$119.99</h3></div>
+              <div><h2 class="detalle"><%=producto.short_description %></h2></div>
+              <div class="precios"><h6>Marca: <%=producto.brand.name %></h6>
+             <div class="precios"><h6>Categoría: <%=producto.category.name %></h6> 
+              <div class="precios"><h3>Precio: $<%=producto.price %></h3> 
+              <div class="card card-body">
+              <% {%> <%=producto.long_description %> <%} %>
+              </div>
+              <button type="button" class="dark btn-lg"> +ADD TO CART</button>
 
             </div>
-        </div>
-    
-    <div class="row">
-                <div class='col-12 detalle-productos'>
-     <p>
-        <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-          DESCRIPTION
-        </a>
-        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-          REVIEWS
-        </button>
-      </p>
-      <div class="collapse" id="collapseExample">
-        <div class="card card-body">
-          <% {%> <%=producto.long_description %> <%} %>
         </div>
       </div>
     </div>
   </div>
-</div>
 
     <!-- Footer -->
 

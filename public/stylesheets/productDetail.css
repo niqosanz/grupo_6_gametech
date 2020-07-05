@@ -16,11 +16,23 @@
     margin: 0 auto;
     
 }
-
+.destacar{
+    background-color: black;
+    color:white;
+    text-align: center;
+}
 .btn{
     font-size: 10px;
     font-family: quicksand;
     color:black;
+}
+.dark{
+    width: 100%;
+    margin-top: 10px;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    font-family: quicksand;
 }
 
 /* img {
@@ -39,12 +51,11 @@ h2 {
    font-size: 12px;
    opacity: 80%;
    text-align: center;
-   margin-top: 15px;
    margin-bottom: 30px;
 }
 .row{
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 .descripcion-envios{
     overflow: hidden;
@@ -74,13 +85,12 @@ i .envios{
 }
 .detalle{
     font-family:'Poppins', sans-serif;
-    font-size: 22px;
+    font-size: 25px;
     color: black;
+    font-weight: bolder;
+    text-align: center;
 }
-.precio-anterior{
-    text-decoration: line-through;
-    color:grey;
-}
+
 .detalle-productos{
     text-align: center;
     margin: 20px auto;
