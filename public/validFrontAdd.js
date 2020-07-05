@@ -4,18 +4,18 @@ var buttonSend = document.querySelector('#sendInformation');
 console.log(buttonSend.classList)
 
 form.name.addEventListener('keyup', function(event){
-    buttonSend.classList.add('disabled')
+    event.target.classList.add('is-invalid')
+    buttonSend.disabled =true;
     
     let mensaje = event.target.value;
     
     
     if(mensaje.length <5){
-        console.log(buttonSend.classList)
-        buttonSend.classList.toggle('disabled');
+        buttonSend.disabled =true;
 
 }else {
-    buttonSend.classList.replace('disabled','new')
-    console.log(buttonSend.classList) ;
+    event.target.classList.replace('is-invalid','is-valid'),
+    buttonSend.disabled =false;
     
 
 }

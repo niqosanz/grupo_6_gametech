@@ -1,6 +1,5 @@
 'use strict';
 const faker = require('faker');
-const { image } = require('faker');
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
@@ -12,7 +11,7 @@ module.exports = {
           price:faker.commerce.price(),
           short_description:faker.commerce.productName(),
           long_description:faker.random.words(10),
-          image: faker.image.technics(),
+          image: faker.image.transport(),
         })
       }
       return queryInterface.bulkInsert('products', producto, {});
