@@ -9,7 +9,7 @@
 
         <div class="row">
             <div class='col-sm-12 col-md-6 col-lg-6 contenedores'>
-               <img class='col-12 productos' src="/Images/productos/<%=producto.image %>">
+               <img class='col-12 productos' src="<%=producto.image %>">
             </div>
             <div class='col-sm-12 col-md-6 col-lg-6 descripcion-producto'>
               <div><h2 class="detalle"><%=producto.short_description %></h2></div>
@@ -19,7 +19,7 @@
               <div class="card card-body">
               <% {%> <%=producto.long_description %> <%} %>
               </div>
-              <button type="button" class="dark btn-lg"> +ADD TO CART</button>
+              <button type="button" class="dark btn-lg" action=''> + AGREGAR AL CARRITO</button>
 
             </div>
         </div>

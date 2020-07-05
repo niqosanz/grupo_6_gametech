@@ -9,7 +9,7 @@ const {check,validationResult,body}=require('express-validator');
 
 const controller ={
     list: function (req,res) {
-        db.Product.findAll({include:[{association:"brand"}]}/*,{association:"category"}]}*/).then(function (resultados){
+        db.Product.findAll({include:[{association:"brand"},{association:"category"}]}).then(function (resultados){
             res.send(resultados)
         },
         )
@@ -17,8 +17,7 @@ const controller ={
 
     detail: function (req, res) {
         let productNumber = req.params.id;
-        db.Product.findByPk(req.params.id).then(function(producto){
-            console.log(producto)
+        db.Product.findByPk(req.params.id,{include:[{association:"brand"},{association:"category"}]}).then(function(producto){
             res.render('productDetail',{producto})
         })
 
