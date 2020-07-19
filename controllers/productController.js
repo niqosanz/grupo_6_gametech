@@ -24,9 +24,12 @@ const controller ={
     },
 
     create: function (req,res){
+        
         res.render('productAdd', {errors: ''})
     },
     add: function (req,res){
+        let datosArchivo= req.files
+        console.log(req.body)
         let errors = validationResult(req);
 
         if(errors.isEmpty()&& (datosArchivo.mimetype=='image/jpeg' || datosArchivo.mimetype=='image/jpg' || datosArchivo.mimetype=='image/png' || datosArchivo.mimetype=='image/gif')){  db.Product.create({

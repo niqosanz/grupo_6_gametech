@@ -8,6 +8,7 @@ var app = express();
 
 /* GET products listing. */
 router.get('/', apiProductController.list);
+router.get('/:id?', apiProductController.detail)
 
 
 

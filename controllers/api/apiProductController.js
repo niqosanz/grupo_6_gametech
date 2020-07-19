@@ -6,6 +6,31 @@ const controller ={
     list: function (req,res) {
         db.Product.findAll({include:[{association:"brand"},{association:"category"}]}).then(function (productos){
             ;
+            categoria =[];
+        
+            var contadorCategorias=[];
+            for (i=0; i<productos.length ;i++){
+                var tipoCategoria = productos[i].category.dataValues.name
+                  if(categoria.indexOf(tipoCategoria)== -1){
+                      categoria.push(tipoCategoria)
+                      contadorCategorias.push(1)
+                  }else{
+                      contadorCategorias[categoria.indexOf(tipoCategoria)]= contadorCategorias[categoria.indexOf(tipoCategoria)]+1;
+                  }         
+            }
+            
+            var contador =[];
+            for (i=0; i<categoria.length ;i++){
+                
+                let categoryName = categoria[i];
+                let categoryCantidad = contadorCategorias[i];
+                
+                var newValues = {'Nombre de categoría':categoryName,'Total de Productos':categoryCantidad}
+                contador.push(newValues)
+
+            }
+
+
             var products = [];
             for (i=0; i<productos.length ;i++){
                 
@@ -18,16 +43,13 @@ const controller ={
                 var newProducts = {'id':idProduct,'name':nameProduct,'description':descriptionProduct,'categories':categorias, 'detail': detailProduct}
                 products.push(newProducts)
 
-                i++
-
             }
-            
-           
+
    
             let respuesta ={
             
                     count: productos.length,
-                    countByCategory:{},
+                    countByCategory:contador,
                     productos: products,
                     
             }
@@ -36,7 +58,16 @@ const controller ={
         },
         )
     },
+detail: function(req,res) {
+        db.Product.findByPk(req.params.id).then(function (products){
 
+            res.json(products)
+
+        }
+            
+        )
+
+}
 }
 
 module.exports = controller;
