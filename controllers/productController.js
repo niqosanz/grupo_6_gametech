@@ -28,6 +28,8 @@ const controller ={
     },
     add: function (req,res){
         let errors = validationResult(req);
+        let datosArchivo = req.files[0];
+        console.log(req.files[0])
 
         if(errors.isEmpty()&& (datosArchivo.mimetype=='image/jpeg' || datosArchivo.mimetype=='image/jpg' || datosArchivo.mimetype=='image/png' || datosArchivo.mimetype=='image/gif')){  db.Product.create({
             short_description:req.body.name,
