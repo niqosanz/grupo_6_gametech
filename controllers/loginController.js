@@ -56,13 +56,19 @@ const loginController = {
 
           if (bcrypt.compareSync(req.body.password, user.password)) {
             //console.log(user.email)
-            let usuarioALoguear = user.email;
-            req.session.usuarioLogueado = usuarioALoguear;
+            // let usuarioALoguear = user.email;
+            let usuarioALoguear = user.name;
+
+            // req.session.usuarioLogueado = usuarioALoguear;
+            req.cookies.usuarioLogueado = usuarioALoguear;
+
             if (req.body.recordame != undefined) {
               res.cookie('recordame', usuarioALoguear, {maxAge: 60000})
             }
 
-            res.redirect('/users/check');
+            // res.redirect('/users/check');
+            res.redirect('/');
+
 
           }
           else {
