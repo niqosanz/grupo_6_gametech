@@ -11,6 +11,7 @@ var session = require('express-session');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var apiUsersRouter = require('./routes/api/users')
 var productsRouter = require('./routes/products');
 var apiProductsRouter = require('./routes/api/products')
 var registerRouter = require('./routes/register');
@@ -38,6 +39,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
 app.use('/api/products', apiProductsRouter);
+app.use('/api/users', apiUsersRouter);
 app.use('/register', registerRouter);
 app.use('/login', loginRouter);
 app.use('/pruebalecturadb', pruebalecturadbRouter);
