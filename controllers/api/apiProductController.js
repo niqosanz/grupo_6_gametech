@@ -12,7 +12,7 @@ const controller ={
                 let idProduct = productos[i].id;
                 let nameProduct = productos[i].short_description;
                 let descriptionProduct = productos[i].long_description;
-                let categorias = productos[14].category.dataValues.name;
+                let categorias = productos[i].category.dataValues.name;
                 let detailProduct ='http://localhost:3000/api/products/'+idProduct;
                 
                 var newProducts = {'id':idProduct,'name':nameProduct,'description':descriptionProduct,'categories':categorias, 'detail': detailProduct}
@@ -27,7 +27,8 @@ const controller ={
             let respuesta ={
             
                     count: productos.length,
-                    productos: products
+                    countByCategory:{},
+                    productos: products,
                     
             }
 
