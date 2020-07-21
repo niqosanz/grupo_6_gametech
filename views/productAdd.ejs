@@ -3,6 +3,9 @@
 <head>
 <%- include('./partials/head')%>
 <link rel="stylesheet" href="/stylesheets/productAdd.css">
+
+<!-- <link rel="stylesheet" href="/stylesheets/dropzone.css"> -->
+
 </head>
 
 <body>
@@ -10,7 +13,7 @@
 
 <div class="container-fluid">
  <!-- Aca empiezan la pagina de carga de productos-->
- <div class="row">
+ <!-- <div class="row">
     <div class="col-sm-12 mayor-detalle">
         <div class="col-6 mostrar-lg detalle-top"> 
           <div class="top-items">Productos</div>
@@ -28,10 +31,10 @@
         <div class="col-3 mostrar-lg" >
           Mostrar</div>
     </div>
- </div>
+ </div> -->
 
-<div class="row">
-     <!--Categorias que voy a poner en la carga de productos esto tiene que ser un formulario que viaje por un metodo POST--> 
+<!-- <div class="row">
+     Categorias que voy a poner en la carga de productos esto tiene que ser un formulario que viaje por un metodo POST
             <div class="col-sm-12 col-md-2 sub-grupos producto-agregar">
                           PRODUCTOS
             </div>
@@ -40,7 +43,7 @@
             <div class="col-2 sub-grupos producto-agregar">CODIGO SKU</div>
             <div class="col-2 sub-grupos producto-agregar">PRECIO</div>
             <div class="col-2 sub-grupos producto-agregar">STOCK</div>
- </div>
+ </div> -->
 
         <!--ACA VA CADA PRODUCTO A AGREGAR CN SU DESCRIPCION-->
 
@@ -53,7 +56,7 @@
         <%} else{ %>
           <%- include('./partials/addProductForm')%>
           <% } %>
-<div class="contanainer">
+<!-- <div class="contanainer">
   <div class= row>
 
   <div class="col-12 pages">
@@ -76,7 +79,7 @@
       <i class="fa fa-arrow-left mr-2"></i> Back to Home</a>
 </div>
   </div>
-</div>
+</div> -->
 </div>
 
 <%- include('./partials/footer')%>  
@@ -93,7 +96,8 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
-  <script src="/js/plugins.js"></script>
+    <script src="/js/plugins.js"></script>
+
 
 </body>
 </html>
