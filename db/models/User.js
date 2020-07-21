@@ -14,6 +14,12 @@ module.exports = (sequelize, Types) =>{
         avatar:{type:Types.STRING(100),
                 allowNull: false},
 
+        name:{type:Types.STRING(45),
+                allowNull: false},
+
+        lastname:{type:Types.STRING(45),
+            allowNull: false},
+
     },{
         tableName: "users",
         underscored: true,

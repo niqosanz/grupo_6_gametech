@@ -45,8 +45,8 @@ const registerController = {
       
         let newUser = {
         
-          nombre: req.body.nombre,
-          apellido: req.body.apellido,
+          name: req.body.nombre,
+          lastname: req.body.apellido,
           email: req.body.email,
           password: password,
           avatar: req.files[0].filename,
@@ -75,6 +75,8 @@ const registerController = {
                 email: newUser.email,
                 password:newUser.password,
                 avatar: newUser.avatar,
+                name: newUser.name,
+                lastname: newUser.lastname
 
               });
               
