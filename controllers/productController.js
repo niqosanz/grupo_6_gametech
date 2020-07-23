@@ -28,12 +28,8 @@ const controller ={
         res.render('productAdd', {errors: ''})
     },
     add: function (req,res){
-<<<<<<< HEAD
-        console.log(req.body)
-=======
         // let datosArchivo= req.files
         // console.log(req.body)
->>>>>>> 8b09478f43196f00ffef5f52bdb4d6841960a0dc
         let errors = validationResult(req);
         let datosArchivo = req.files[0];
         console.log(req.files[0])
