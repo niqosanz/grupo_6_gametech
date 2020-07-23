@@ -9,43 +9,8 @@
 </head>
 
 <body>
-  <%- include('./partials/header')%>
 
 <div class="container-fluid">
- <!-- Aca empiezan la pagina de carga de productos-->
- <!-- <div class="row">
-    <div class="col-sm-12 mayor-detalle">
-        <div class="col-6 mostrar-lg detalle-top"> 
-          <div class="top-items">Productos</div>
-          <ul class=" top-items">
-            <li class="dropdown">
-              <a class="dropdown-toggle" href="#" id="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Todos los productos
-              </a>
-              <div class="dropdown-menu" aria-labelledby="Dropdown">
-                <a class="dropdown-item" href="#">Nintendo</a>
-                <a class="dropdown-item" href="#">Playstation</a>
-              </div>
-            </li>
-        </div>
-        <div class="col-3 mostrar-lg" >
-          Mostrar</div>
-    </div>
- </div> -->
-
-<!-- <div class="row">
-     Categorias que voy a poner en la carga de productos esto tiene que ser un formulario que viaje por un metodo POST
-            <div class="col-sm-12 col-md-2 sub-grupos producto-agregar">
-                          PRODUCTOS
-            </div>
-            <div class="col-2 sub-grupos producto-agregar">DESCRIPCION
-            </div>
-            <div class="col-2 sub-grupos producto-agregar">CODIGO SKU</div>
-            <div class="col-2 sub-grupos producto-agregar">PRECIO</div>
-            <div class="col-2 sub-grupos producto-agregar">STOCK</div>
- </div> -->
-
-        <!--ACA VA CADA PRODUCTO A AGREGAR CN SU DESCRIPCION-->
 
         <% if (errors != '') { %>
           <% for(let i=0; i<errors.length; i++){ %>
@@ -56,7 +21,6 @@
         <%} else{ %>
           <%- include('./partials/addProductForm')%>
           <% } %>
-<!-- <div class="contanainer">
   <div class= row>
 
   <div class="col-12 pages">

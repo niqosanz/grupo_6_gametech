@@ -28,21 +28,18 @@ const controller ={
         res.render('productAdd', {errors: ''})
     },
     add: function (req,res){
-<<<<<<< HEAD
         console.log(req.body)
-=======
-        // let datosArchivo= req.files
-        // console.log(req.body)
->>>>>>> 8b990411bf37f3670bbea78a336e4a689c918315
         let errors = validationResult(req);
         let datosArchivo = req.files[0];
         console.log(req.files[0])
 
-        if(errors.isEmpty()&& (datosArchivo.mimetype=='image/jpeg' || datosArchivo.mimetype=='image/jpg' || datosArchivo.mimetype=='image/png' || datosArchivo.mimetype=='image/gif')){  db.Product.create({
+        // if(errors.isEmpty()&& (datosArchivo.mimetype=='image/jpeg' || datosArchivo.mimetype=='image/jpg' || datosArchivo.mimetype=='image/png' || datosArchivo.mimetype=='image/gif')){  db.Product.create({
+        if(errors.isEmpty()){  db.Product.create({
+ 
             short_description:req.body.name,
             price: req.body.price,
             long_description: req.body.description,
-            image:req.files[0].filename,
+            // image:req.files[0].filename,
 
    
         })

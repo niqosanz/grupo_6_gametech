@@ -59,7 +59,7 @@ const loginController = {
             // let usuarioALoguear = user.email;
             let usuarioALoguear = user.name;
 
-            // req.session.usuarioLogueado = usuarioALoguear;
+            //req.session.usuarioLogueado = usuarioALoguear;
             req.cookies.usuarioLogueado = usuarioALoguear;
 
             if (req.body.recordame != undefined) {
