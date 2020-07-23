@@ -4,11 +4,12 @@
   <%- include('./partials/head') %>
   <link rel="stylesheet" href="../../stylesheets/register.css">
 
+
 </head>
 <body>
 
   <div id="external-container-login">
-    <form action="../login" class="form-login" method="POST">
+    <form action="../login" class="form-login login" method="POST">
       <div id="internal-container-login">
         <h2 id="header-login">Log in</h2>
 
@@ -34,16 +35,20 @@
         <br>
         <br>
             <div class="frame-sizeinputs">
-                <input type="email" placeholder="E-mail" class="sizeinputs border-inputs" name="email"><i class="i-blank"></i>
+                <input type="email" placeholder="E-mail" class="sizeinputs border-inputs email" name="email"><i class="i-blank"></i>
+                
             </div>
         <br>
+        <p class="mensajeErrorEmail"></p>
         <br>
        
             <div class="frame-sizeinputs">
-                <input type="password"  placeholder="Password" class="sizeinputs border-inputs" name="password"><i class="far fa-eye-slash"></i>
+                <input type="password"  placeholder="Password" class="sizeinputs border-inputs password" name="password"><i class="far fa-eye-slash"></i>
             </div>           
         <br>
+        <p class="mensajeErrorPassword"></p>
         <br>
+       
         <br>
         <input type="submit" id="email" value="Sign in" class="sizeinputs btn-submit">
         <br>
@@ -71,6 +76,11 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
+
+
+  <!-- Validación del lado del Front con Javascript. -->
+  <script src="../../js/validacionRegister.js"></script>
+
 </body>
 
 </html>
