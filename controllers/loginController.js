@@ -11,7 +11,7 @@ let bcrypt = require('bcrypt');
 const db = require('../db/models')
 
 
-// Para tomar los valores de los errores que se presenten en la validación usada 
+// Para tomar los valores de los errores que se presenten en la validación usada
 // con express validator en la ruta
 
 const { check, validationResult, body } = require('express-validator');
@@ -59,7 +59,7 @@ const loginController = {
             // let usuarioALoguear = user.email;
             let usuarioALoguear = user.name;
 
-            //req.session.usuarioLogueado = usuarioALoguear;
+            // req.session.usuarioLogueado = usuarioALoguear;
             req.cookies.usuarioLogueado = usuarioALoguear;
 
             if (req.body.recordame != undefined) {
@@ -106,7 +106,7 @@ const loginController = {
 
       res.render('register', { errors: [], pageCss: 'register.css', statusRegistracion: 'Usuario o Contraseña incorrecta.' });
 
-      //   Si un usuario llega por primera vez a la página de registro 
+      //   Si un usuario llega por primera vez a la página de registro
       //   Status ''
 
     } else {
@@ -119,4 +119,3 @@ const loginController = {
 }
 
 module.exports = loginController
-

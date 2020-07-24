@@ -611,7 +611,7 @@ jQuery.fn.dataTableExt.oApi.fnPagingInfo = function (e) { return { iStart: e._iD
 // Dropzone.options.myAwesomeDropzone = {
 //     paramName: "image", // The name that will be used to transfer the file
 //     maxFilesize: 2, // MB
-//     autoProcessQueue: false,
+//     autoProcessQueue: ,
 //     accept: function(file, done) {
 //       if (file.name == "justinbieber.jpg") {
 //         done("Naha, you don't.");
