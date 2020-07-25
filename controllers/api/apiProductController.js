@@ -58,16 +58,16 @@ const controller ={
         },
         )
     },
-detail: function(req,res) {
-        db.Product.findByPk(req.params.id).then(function (products){
+    detail: function(req,res) {
 
-            res.json(products)
+            db.Product.findByPk(req.params.id)
+            .then(function(products){
+                res.json(products)
+                
+            })
 
-        }
-            
-        )
 
-}
+    }
 }
 
 module.exports = controller;
