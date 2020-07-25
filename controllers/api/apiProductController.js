@@ -60,12 +60,11 @@ const controller ={
     },
     detail: function(req,res) {
 
-            db.Product.findByPk(req.params.id)
+            db.Product.findByPk(req.params.id,{include:[{association:"brand"},{association:"category"}]})
             .then(function(products){
                 res.json(products)
                 
             })
-
 
     },
     'image': function(req,res){
