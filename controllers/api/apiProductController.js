@@ -67,6 +67,15 @@ const controller ={
             })
 
 
+    },
+    'image': function(req,res){
+        db.Product.findByPk(req.params.id)
+        .then(function(products){
+            res.send('<img src="/Images/productos/' + products.image + '" height="auto" width="500">')
+            
+        })
+
+
     }
 }
 
