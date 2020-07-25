@@ -11,6 +11,7 @@ var session = require('express-session');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var adminRouter = require('./routes/admin');
 var apiUsersRouter = require('./routes/api/users')
 var productsRouter = require('./routes/products');
 var apiProductsRouter = require('./routes/api/products')
@@ -37,6 +38,7 @@ app.use(session({secret:"Mensaje secreto"}));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/admin', adminRouter);
 app.use('/products', productsRouter);
 app.use('/api/products', apiProductsRouter);
 app.use('/api/users', apiUsersRouter);
@@ -45,7 +47,7 @@ app.use('/login', loginRouter);
 app.use('/pruebalecturadb', pruebalecturadbRouter);
 app.use(recordameMiddleware);
 
-app.use('/users/admin', usersRouter)
+//app.use('/users/admin', usersRouter)
 
 
 // catch 404 and forward to error handler
