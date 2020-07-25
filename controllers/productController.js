@@ -16,10 +16,21 @@ const controller ={
     },
 
     detail: function (req, res) {
+
         let productNumber = req.params.id;
-        db.Product.findByPk(req.params.id,{include:[{association:"brand"},{association:"category"}]}).then(function(producto){
-            res.render('productDetail',{producto})
-        })
+
+        if(req.cookies.recordame == undefined){
+            db.Product.findByPk(req.params.id,{include:[{association:"brand"},{association:"category"}]}).then(function(producto){
+                res.render('productDetail',{usuario: '', producto})
+            })
+
+        }else {
+            db.Product.findByPk(req.params.id,{include:[{association:"brand"},{association:"category"}]}).then(function(producto){
+                res.render('productDetail',{usuario: req.cookies.recordame, producto})
+            })
+     
+        }
+
 
     },
 
@@ -36,7 +47,7 @@ const controller ={
       
         }
 
-}, 
+},
     add: function (req,res){
         // let datosArchivo= req.files
         // console.log(req.body)
