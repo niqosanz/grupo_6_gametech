@@ -1,7 +1,15 @@
 module.exports={
 
     list: function (req,res){
-      res.render('admin')
+      if(req.cookies.recordame == undefined){
+
+        res.render('admin', {errors: '',usuario: ''})
+
+      }else {
+        res.render ('admin',{errors: '',usuario: req.cookies.recordame});
+    
+      }
+
       },
   
   }
