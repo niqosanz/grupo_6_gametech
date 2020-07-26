@@ -34,7 +34,7 @@
                                     <div class="widget-extra themed-background-dark">
                                         <h4 class="widget-content-light"><strong>Total</strong> Productos</h4>
                                     </div>
-                                    <div class="widget-extra-full"><span class="h2 themed-color-dark animation-expandOpen">4.982</span></div>
+                                    <div class="widget-extra-full"><span class="h2 themed-color-dark animation-expandOpen"><%= resultados.length %></span></div>
                                 </a>
                             </div>
                         </div>
@@ -70,7 +70,12 @@
                                             <td class="hidden-xs">
                                                 <span class="label label-success"><%= resultados[i].category.dataValues.name %></span>
                                             </td>
-                                            <td class="hidden-xs text-center"><%= resultados[i].created_at %></td>
+                                            <!-- <td class="hidden-xs text-center"><%= resultados[i].created_at %></td> -->
+                                            <td class="text-center">
+                                                <div class="btn-group btn-group-xs">
+                                                    <img src="/Images/productos/<%= resultados[i].image %>" alt="">
+                                                </div>
+                                            </td>
                                             <td class="text-center">
                                                 <div class="btn-group btn-group-xs">
                                                     <a href="page_ecom_product_edit.html" data-toggle="tooltip" title="Edit" class="btn btn-default"><i class="fa fa-pencil"></i></a>
