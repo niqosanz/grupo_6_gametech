@@ -61,37 +61,28 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td class="text-center"><a href="page_ecom_product_edit.html"><strong>PID.8789</strong></a></td>
-                                        <td><a href="page_ecom_product_edit.html">Product #89</a></td>
-                                        <td class="text-right hidden-xs"><strong>$739,00</strong></td>
-                                        <td class="hidden-xs">
-                                            <span class="label label-success">Available (5)</span>
-                                        </td>
-                                        <td class="hidden-xs text-center">16/04/2014</td>
-                                        <td class="text-center">
-                                            <div class="btn-group btn-group-xs">
-                                                <a href="page_ecom_product_edit.html" data-toggle="tooltip" title="Edit" class="btn btn-default"><i class="fa fa-pencil"></i></a>
-                                                <a href="javascript:void(0)" data-toggle="tooltip" title="Delete" class="btn btn-xs btn-danger"><i class="fa fa-times"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center"><a href="page_ecom_product_edit.html"><strong>PID.8788</strong></a></td>
-                                        <td><a href="page_ecom_product_edit.html">Product #88</a></td>
-                                        <td class="text-right hidden-xs"><strong>$564,00</strong></td>
-                                        <td class="hidden-xs">
-                                            <span class="label label-danger">Out of Stock</span>
-                                        </td>
-                                        <td class="hidden-xs text-center">06/07/2014</td>
-                                        <td class="text-center">
-                                            <div class="btn-group btn-group-xs">
-                                                <a href="page_ecom_product_edit.html" data-toggle="tooltip" title="Edit" class="btn btn-default"><i class="fa fa-pencil"></i></a>
-                                                <a href="javascript:void(0)" data-toggle="tooltip" title="Delete" class="btn btn-xs btn-danger"><i class="fa fa-times"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
+
+                                    <% for(let i = 0; i<resultados.length; i++){ %>
+                                        <tr>
+                                            <td class="text-center"><a href="page_ecom_product_edit.html"><strong><%= resultados[i].id %></strong></a></td>
+                                            <td><a href="page_ecom_product_edit.html"><%= resultados[i].short_description %></a></td>
+                                            <td class="text-right hidden-xs"><strong><%= resultados[i].price %></strong></td>
+                                            <td class="hidden-xs">
+                                                <span class="label label-success"><%= resultados[i].category.dataValues.name %></span>
+                                            </td>
+                                            <td class="hidden-xs text-center"><%= resultados[i].created_at %></td>
+                                            <td class="text-center">
+                                                <div class="btn-group btn-group-xs">
+                                                    <a href="page_ecom_product_edit.html" data-toggle="tooltip" title="Edit" class="btn btn-default"><i class="fa fa-pencil"></i></a>
+                                                    <a href="javascript:void(0)" data-toggle="tooltip" title="Delete" class="btn btn-xs btn-danger"><i class="fa fa-times"></i></a>
+                                                </div>
+                                            </td>
+                                        </tr>
+    
+
+                                    <% } %>
+
+                               </tbody>
                             </table>
 
                             <!-- END All Products Content -->

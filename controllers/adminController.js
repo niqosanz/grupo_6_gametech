@@ -6,23 +6,42 @@ var db = require('../db/models');
 module.exports={
 
     list: function (req,res){
+      
+      let resultados2 = [
+        {
+          price: 123
+        },
+        {price: 456
+        }
+      ];
+
+
       if(req.cookies.recordame == undefined){
 
-        res.render('admin', {errors: '',usuario: ''})
+        db.Product.findAll({include:[{association:"brand"},{association:"category"}]})
+        .then(function (resultados){
+          console.log(resultados);
 
+          // res.json(resultados)
+
+          res.render('admin', {errors: '',usuario: '', resultados: resultados, resultados2: resultados2})
+        })
+        
+      
       }else {
-        res.render ('admin',{errors: '',usuario: req.cookies.recordame});
-    
+      
+        db.Product.findAll({include:[{association:"brand"},{association:"category"}]})
+        .then(function (resultados){
+          console.log(resultados);
+          // res.json(resultados)
+
+          res.render ('admin',{errors: '',usuario: req.cookies.recordame, resultados: resultados, resultados2: resultados2});
+        })
+        
       }
 
-      },
+    }
 
-      // list: function (req,res) {
-      //   db.Product.findAll({include:[{association:"brand"},{association:"category"}]}).then(function (resultados){
-      //     console.log(resultados);
-      //     res.render('admin',resultados)
-      //   },)
-      // },
-  
-  }
+
+}
   
