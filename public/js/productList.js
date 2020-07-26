@@ -1,9 +1,3 @@
-/*
- *  Document   : ecomProducts.js
- *  Author     : pixelcave
- *  Description: Custom javascript code used in eCommerce Products page
- */
-
 var EcomProducts = function() {
 
     return {
