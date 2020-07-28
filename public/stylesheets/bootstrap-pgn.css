@@ -1,31 +1,9 @@
-/*
- *  Document   : plugins.css
- *  Author     : Various
- *  Description: Stylesheet of various plugins
- *  Most styles are altered to match template's style. Feel free to remove the
- *  plugin styles you won't use (along with their plugins in js/plugins.js)
- *  or include them separately if you are going to use them only in few pages
- *  of your project.
- *
- *  Includes (with shortcode):
- *      (#01fas) Font Awesome
- *      (#02gps) Glyphicons PRO
- *      (#03fcs) FullCalendar
- *      (#04djs) Dropzone.js
- *      (#05chs) Chosen
- *      (#06dps) Datepicker for Bootstrap
- *      (#07bcs) Bootstrap Colorpicker
- *      (#08prs) PRISM.js
- *      (#09mps) Magnific Popup CSS
- *      (#10dts) Datatables
- *      (#11eps) Easy Pie Chart
- *      (#12cas) CSS3 ANIMATION CHEAT SHEET
- *      (#13tps) Bootstrap Timepicker
- *      (#14tis) Jquery Tags Input
- *      (#15sbs) Slider for Bootstrap
- *      (#16nps) NProgress
- *      (#17s2s) Select2
- */
+.avatar {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 10%;
+  }
 
 /*
 =================================================================

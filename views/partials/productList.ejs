@@ -52,11 +52,11 @@
                             <table id="ecom-products" class="table table-bordered table-striped table-vcenter">
                                 <thead>
                                     <tr>
-                                        <th class="text-center" style="width: 70px;">ID</th>
-                                        <th>Nombre Producto</th>
-                                        <th class="text-right hidden-xs">Precio</th>
-                                        <th class="hidden-xs">Categoria</th>
-                                        <th class="hidden-xs text-center">Creado</th>
+                                        <th class="text-center">ID</th>
+                                        <th class="text-center">Image</th>
+                                        <th class="text-center">Nombre</th>
+                                        <th class="text-center">Precio</th>
+                                        <th class="text-center">Categoria</th>
                                         <th class="text-center">Action</th>
                                     </tr>
                                 </thead>
@@ -65,16 +65,15 @@
                                     <% for(let i = 0; i<resultados.length; i++){ %>
                                         <tr>
                                             <td class="text-center"><a href="page_ecom_product_edit.html"><strong><%= resultados[i].id %></strong></a></td>
-                                            <td><a href="page_ecom_product_edit.html"><%= resultados[i].short_description %></a></td>
-                                            <td class="text-right hidden-xs"><strong><%= resultados[i].price %></strong></td>
-                                            <td class="hidden-xs">
-                                                <span class="label label-success"><%= resultados[i].category.dataValues.name %></span>
-                                            </td>
-                                            <!-- <td class="hidden-xs text-center"><%= resultados[i].created_at %></td> -->
-                                            <td class="text-center">
+                                            <td class="text-left">
                                                 <div class="btn-group btn-group-xs">
-                                                    <img src="/Images/productos/<%= resultados[i].image %>" alt="">
+                                                    <img src="/Images/productos/<%= resultados[i].image %>" class="avatar" alt="">
                                                 </div>
+                                            </td>
+                                            <td><a href="page_ecom_product_edit.html"><%= resultados[i].short_description %></a></td>
+                                            <td class="text-left"><strong><%= resultados[i].price %></strong></td>
+                                            <td class="text-left">
+                                                <span><%= resultados[i].category.dataValues.name %></span>
                                             </td>
                                             <td class="text-center">
                                                 <div class="btn-group btn-group-xs">
