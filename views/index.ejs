@@ -21,7 +21,8 @@
        <!-- <div class="container">
            <div class="carousel-caption text-left">
             <h1>BLACK FRIDAY</h1>
-            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+            <p>Cras justo odio, dapibus ac facilisis in, egestas
+               eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
             <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
           </div> 
         </div>-->
@@ -63,43 +64,43 @@
 
       <div class="container">
         <!-- Aca van los mas vendidos--> 
-         <h2>Lo mas vendido</h2>
+         <h2>Algunos de nuestros productos</h2>
          <div class="row row-cols-1 row-cols-md-4">
            
            <div class="col mb-4">
              <div class="card">
-               <img src="images/nintendoch-01.jpg" class="card-img-top" alt="...">
+               <img src="../Images/<%= productos[1].image %>" class="card-img-top" alt="...">
                <div class="card-body">
-                 <h5 class="card-title">Card title</h5>
-                 <p class="card-text">This is a longer</p>
+                 <h5 class="card-title"><%= productos[1].short_description %></h5>
+                 <p class="card-text"><%= productos[1].long_description %></p>
                </div>
              </div>
            </div>
 
            <div class="col mb-4">
              <div class="card">
-               <img src="images/play4ch-01.jpg" class="card-img-top" alt="...">
+               <img src="../Images/<%= productos[2].image %>" class="card-img-top" alt="...">
                <div class="card-body">
-                 <h5 class="card-title">Card title</h5>
-                 <p class="card-text">This is a longer</p>
+                 <h5 class="card-title"><%= productos[2].short_description %></h5>
+                 <p class="card-text"><%= productos[2].long_description %></p>
                </div>
              </div>
            </div>
            <div class="col mb-4">
              <div class="card">
-               <img src="images/xboxonech-01.jpg" class="card-img-top" alt="...">
+               <img src="../Images/<%= productos[3].image %>" class="card-img-top" alt="...">
                <div class="card-body">
-                 <h5 class="card-title">Card title</h5>
-                 <p class="card-text">This is a longer</p>
+                 <h5 class="card-title"><%= productos[3].short_description %></h5>
+                 <p class="card-text"><%= productos[3].long_description %></p>
                </div>
              </div>
            </div>
            <div class="col mb-4">
              <div class="card">
-               <img src="images/retroboych-01.jpg" class="card-img-top" alt="...">
+               <img src="../Images/<%= productos[1].image %>" class="card-img-top" alt="...">
                <div class="card-body">
-                 <h5 class="card-title">Card title</h5>
-                 <p class="card-text">This is a longer</p>
+                 <h5 class="card-title"><%= productos[4].short_description %></h5>
+                 <p class="card-text"><%= productos[4].long_description %></p>
                </div>
              </div>
            </div>
@@ -110,7 +111,7 @@
 
          <div class="col mb-2">
            <div class="card">
-             <img src="images/dual4-01.jpg" class="card-img-top" alt="...">
+             <img src="../Images/<%= productos[1].image %>" class="card-img-top" alt="...">
              <div class="card-body">
                <h5 class="card-title">Card title</h5>
                <p class="card-text">This is a longer</p>
@@ -120,7 +121,7 @@
          
          <div class="col mb-2">
            <div class="card">
-             <img src="images/doom3-01.jpg" class="card-img-top" alt="...">
+             <img src="../Images/<%= productos[2].image %>" class="card-img-top" alt="...">
              <div class="card-body">
                <h5 class="card-title">Card title</h5>
                <p class="card-text">This is a longer</p>
