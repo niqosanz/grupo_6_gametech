@@ -24,7 +24,7 @@ const loginController = {
 
 
   'ingreso': function (req, res, next) {
-    res.render('register', { pageCss: 'register.css', statusRegistracion: '' });
+    res.render('login', { pageCss: 'register.css', statusRegistracion: '' });
   },
 
 
