@@ -21,11 +21,11 @@
                             <h2><i class="fa fa-pencil"></i> <strong>General</strong> Data</h2>
                         </div>
                         <!-- <form action="/products/edit/:id?_method=PUT" method="POST" ' class='col-sm-12 col-md-3 col-lg-3 contenedores' query='_method'> -->
-                        <form action="/products/edit/:id?_method=PUT" method="post" query='_method' enctype="multipart/form-data" class="form-horizontal form-bordered" id='addProductForm'>
+                        <form action="/products/edit/:id?_method=PUT" method="POST" enctype="multipart/form-data" class="form-horizontal form-bordered" id='addProductForm'>
                             <div class="form-group">
                                 <label class="col-md-3 control-label" for="product-id">Product ID</label>
                                 <div class="col-md-9">
-                                    <input type="text" id="product-id" name="product-id" class="form-control" value='<%= producto.id %>'>
+                                    <input type="text" id="product-id" name="productId" class="form-control" value='<%= producto.id %>'>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -86,7 +86,7 @@
                                 <h2></i> <strong>Actualizar</strong> Imagen</h2>
                             <!-- prueba de agregar imagen -->
                             <div class="col-4" >
-                                <input type="file" id="seleccionArchivos" accept="image/*">
+                                <input name="imagenNew" type="file" id="seleccionArchivos" accept="image/*">
                                 <br><br>
                                 <img id="imagenPrevisualizacion" class="img-thumbnail">
                             </div>

@@ -81,19 +81,23 @@ const controller ={
     },
 
     edit: function (req,res) {
+
         db.Product.update({
+            image:req.files[0].filename,
             short_description:req.body.name,
              price: req.body.price,
              long_description: req.body.description,
-        }, {where:{id: req.body.numberId}})
-        console.log(req.body.numberId)
+        }, {where:{id:req.body.productId}})
+
         res.redirect('/products')
             },
 
     destroy: function (req,res)   {
         db.Product.destroy({where:{id: req.params.id}})
-            
-        res.redirect('/')
+         .then(function(result){
+            res.redirect('/')
+         })   
+        
     },
 
     adress: function (req, res) {
