@@ -5,14 +5,15 @@ var db = require('../db/models');
 /* GET home page. */
 router.get('/', function(req, res){
   db.Product.findAll({include:[{association:"brand"},{association:"category"}]}).then(function (resultados){
-    let productos = resultados 
-    if(req.cookies.recordame == undefined){ 
-      res.render ('index',{usuario: '', productos});
-  }else {
-    res.render ('index',{usuario: req.cookies.recordame, productos });
+      db.Category.findAll().then(function(categorias){
+      let productos = resultados 
+      if(req.cookies.recordame == undefined){ 
+      res.render ('index',{usuario: '',categorias, productos});
+}else {
+      res.render ('index',{usuario: req.cookies.recordame, productos,categorias});
+}
+})
 
-  }
-    
 },
 )
   
@@ -27,3 +28,9 @@ router.get('/pruebaSession', function(req,res){
 })
 
 module.exports = router;
+
+
+
+
+
+

@@ -54,8 +54,10 @@
               Categorias
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
+              <% for(let i = 0; i<categorias.length; i++){ %>
+                <a class="dropdown-item" href="/products/categories/<%= categorias[i].id %>"><%= categorias[i].name %></a>
+
+                <% } %>
             </div>
           </li>
 

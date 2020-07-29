@@ -20,7 +20,10 @@ var storage = multer.diskStorage({
 
 
 /* GET products listing. */
-router.get('/', productController.list);
+// router.get('/', productController.list);
+router.get('/categories', productController.list);
+router.get('/categories/:id', productController.detailCategories);
+
 
 router.get('/prueba', productController.adress);
 

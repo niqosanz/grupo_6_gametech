@@ -43,7 +43,11 @@
                             <div class="form-group">
                                 <label class="col-md-3 control-label" for="product-category">Categoria</label>
                                 <div class="col-md-8">
-                                    <select id="product-category" name="product-category" class="select-chosen" data-placeholder="Choose Category.." style="width: 250px;">
+                                    <select id="product-category" name="productCategory" class="select-chosen" data-placeholder="Choose Category.." style="width: 250px;">
+                                        <% for(let i = 0; i<categorias.length; i++){ %>
+                                            <option value="<%= categorias[i].id %>"><%= categorias[i].name %></option>
+
+                                            <% } %>
 
                                        
                                     </select>
