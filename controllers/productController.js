@@ -37,26 +37,19 @@ const controller = {
     
 
     detail: function (req, res) {
-
-        let productNumber = req.params.id;
-
-        if (req.cookies.recordame == undefined) {
-            db.Product.findByPk(req.params.id, { include: [{ association: "brand" }, { association: "category" }] }).then(function (producto) {
-                res.render('productDetail', { usuario: '', producto })
-            })
-
-        } else {
-            db.Product.findByPk(req.params.id, { include: [{ association: "brand" }, { association: "category" }] }).then(function (producto) {
-                res.render('productDetail', { usuario: req.cookies.recordame, producto })
-            })
-
-        }
-
-
+        var productNumber = req.params.id;
+        db.Product.findByPk(req.params.id, { include: [{ association: "brand" }, 
+        { association: "category" }] }).then(function (producto){
+            db.Category.findAll().then(function(categorias){
+                if(req.cookies.recordame == undefined){ 
+                res.render ('productDetail',{usuario: '',categorias, producto});
+          }else {
+                res.render ('productDetail',{usuario: req.cookies.recordame, producto,categorias});
+          }
+          })
+    console.log(producto)
+        })
     },
-
-
-
     create: function (req, res) {
 
         if (req.cookies.recordame == undefined) {
