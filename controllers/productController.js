@@ -82,7 +82,7 @@ const controller = {
             })
             // console.log(req.files);
 
-            res.redirect('/products')
+            res.redirect('/products/create')
         }
         else {
             res.render('productAdd', errors)
