@@ -24,12 +24,6 @@
                         </div>
                         <form action="/products/create" method="post" enctype="multipart/form-data" class="form-horizontal form-bordered" id='addProductForm'>
                             <div class="form-group">
-                                <label class="col-md-3 control-label" for="product-id">Product ID</label>
-                                <div class="col-md-9">
-                                    <input type="text" id="product-id" name="product-id" class="form-control" value="6825">
-                                </div>
-                            </div>
-                            <div class="form-group">
                                 <label class="col-md-3 control-label" for="product-name">Nombre</label>
                                 <div class="col-md-9">
                                     <input type="text" id="product-name" class="form-control" placeholder="Nombre del producto" name="name">
@@ -84,10 +78,19 @@
                         </div>
                         <!-- <form action="/products/create" method="post" enctype="multipart/form-data" class="form-horizontal form-bordered" id='addProductForm'> -->
 
-                        <div class="block-section">
+                        <!-- <div class="block-section">
                           <div action="/products/create" class="dropzone dropzone-previews" id="myAwesomeDropzone">
-                        </div>
+                        </div> -->
                       
+                        <div class="form-group">
+                            <h2></i> <strong>Actualizar</strong> Imagen</h2>
+                        <!-- prueba de agregar imagen -->
+                        <div class="col-4" >
+                            <input name="imagenNew" type="file" id="seleccionArchivos" accept="image/*">
+                            <br><br>
+                            <img id="imagenPrevisualizacion" class="img-thumbnail">
+                        </div>
+                        <script src="/js/scripto.js"></script>
                         </div>
                         </form>
   
