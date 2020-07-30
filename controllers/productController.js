@@ -30,7 +30,7 @@ const controller = {
 ,{ include: [{ association: "brand" }, { association: "category" }] }
             ).then(function (resultados) {
                 res.send(resultados)
-    // console.log(resultados)
+   
             },
             )
         },
@@ -47,21 +47,32 @@ const controller = {
                 res.render ('productDetail',{usuario: req.cookies.recordame, producto,categorias});
           }
           })
-    console.log(producto)
         })
     },
+
     create: function (req, res) {
-
-        if (req.cookies.recordame == undefined) {
-            // res.render ('index',{usuario: ''});
-            res.render('productAdd', { errors: '', usuario: '' })
-
-        } else {
-            res.render('productAdd', { errors: '', usuario: req.cookies.recordame });
-
-        }
-
+       db.Category.findAll().then(function(categorias){
+                if(req.cookies.recordame == undefined){ 
+                res.render ('productAdd',{errors: '',usuario: '',categorias});
+          }else {
+                res.render ('productAdd',{errors: '', usuario: req.cookies.recordame,categorias});
+          }
+          })
     },
+
+
+    // create: function (req, res) {
+
+    //     if (req.cookies.recordame == undefined) {
+    //         // res.render ('index',{usuario: ''});
+    //         res.render('productAdd', { errors: '', usuario: '' })
+
+    //     } else {
+    //         res.render('productAdd', { errors: '', usuario: req.cookies.recordame });
+
+    //     }
+
+    // },
     add: function (req, res) {
         // let datosArchivo= req.files
         // console.log(req.body)
@@ -82,7 +93,7 @@ const controller = {
             })
             // console.log(req.files);
 
-            res.redirect('/products')
+            res.redirect('/products/create')
         }
         else {
             res.render('productAdd', errors)

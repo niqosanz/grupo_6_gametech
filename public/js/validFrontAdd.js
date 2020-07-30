@@ -52,3 +52,8 @@ form.description.addEventListener('keyup', function(event){
 }
 
 });
+
+buttonSend.addEventListener('Click', function(event){
+    <alert> El producto fue creado con exito</alert>
+    console.log (alert)
+})
