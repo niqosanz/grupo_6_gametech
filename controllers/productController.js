@@ -88,12 +88,12 @@ const controller = {
                 short_description: req.body.name,
                 price: req.body.price,
                 long_description: req.body.description,
-                // image:req.files[0].filename,
+                image:req.files[0].filename,
 
             })
             // console.log(req.files);
 
-            res.redirect('/products/create')
+            res.redirect('/products/create',{errors: '',usuario: '',categorias})
         }
         else {
             res.render('productAdd', errors)
