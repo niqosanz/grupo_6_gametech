@@ -119,7 +119,7 @@ const controller = {
             long_description: req.body.description,
         }, { where: { id: req.body.productId } })
 
-        res.redirect('/products')
+        res.redirect('/admin')
     },
 
     destroy: function (req, res) {

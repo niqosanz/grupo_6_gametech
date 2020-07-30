@@ -8,6 +8,7 @@ router.get('/', function(req, res){
       db.Category.findAll().then(function(categorias){
       let productos = resultados 
       if(req.cookies.recordame == undefined){ 
+        console.log(productos[1].dataValues)
       res.render ('index',{usuario: '',categorias, productos});
 }else {
       res.render ('index',{usuario: req.cookies.recordame, productos,categorias});
