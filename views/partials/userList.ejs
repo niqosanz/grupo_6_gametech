@@ -36,9 +36,9 @@
                     <div class="col-sm-6 col-lg-6">
                         <a href="javascript:void(0)" class="widget widget-hover-effect2">
                             <div class="widget-extra themed-background-dark">
-                                <h4 class="widget-content-light"><strong>Total</strong> Productos</h4>
+                                <h4 class="widget-content-light"><strong>Total</strong> Clientes activos</h4>
                             </div>
-                            <div class="widget-extra-full"><span class="h2 themed-color-dark animation-expandOpen"><%= resultados.length %></span></div>
+                            <div class="widget-extra-full"><span class="h2 themed-color-dark animation-expandOpen"><%= usuarios.length %></span></div>
                         </a>
                     </div>
                 </div>
@@ -64,16 +64,16 @@
                         </thead>
                         <tbody>
 
-                            <% for(let i = 0; i<resultados.length; i++){ %>
+                            <% for(let i = 0; i<usuarios.length; i++){ %>
                                 <tr>
-                                    <td class="text-center"><a href="page_ecom_product_edit.html"><strong><%= resultados[i].id %></strong></a></td>
+                                    <td class="text-center"><a href="page_ecom_product_edit.html"><strong><%= usuarios[i].id %></strong></a></td>
                                     <td class="text-left">
                                         <div class="btn-group btn-group-xs">
-                                            <img src="/Images/productos/<%= resultados[i].image %>" class="avatar" alt="">
+                                            <img src="../Images/avatar-users/<%= usuarios[i].avatar %>" class="avatar" alt="">
                                         </div>
                                     </td>
-                                    <td><a href="page_ecom_product_edit.html"><%= resultados[i].short_description %></a></td>
-                                    <td class="text-left"><strong><%= resultados[i].price %></strong></td>
+                                    <td><a href="page_ecom_product_edit.html"><%= usuarios[i].name %></a></td>
+                                    <td class="text-left"><strong><%= usuarios[i].email %></strong></td>
                                 </tr>
                             <% } %>
 

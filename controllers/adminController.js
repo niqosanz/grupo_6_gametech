@@ -18,22 +18,18 @@ module.exports={
     })
 },
 
-clients: function(req,res){
-    db.Product.findAll({include:[{association:"brand"},{association:"category"}]}).then(function (resultados){
-        db.Category.findAll().then(function(categorias){
-        let productos = resultados 
-        if(req.cookies.recordame == undefined){ 
-          console.log(productos[1].dataValues)
-        res.render ('clientList',{usuario: '',categorias, productos});
-  }else {
-        res.render ('clientList',{usuario: req.cookies.recordame, productos,categorias});
-  }
+clients: function (req, res) {
+  db.User.findAll().then(function (usuarios){
+      db.Category.findAll().then(function(categorias){
+          if(req.cookies.recordame == undefined){ 
+            console.log(usuarios[0].image)
+          res.render ('clientList',{errors:'',usuario: '',categorias, usuarios});
+    }else {
+          res.render ('clientList',{errors:'',usuario: req.cookies.recordame, usuarios,categorias});
+    }
+    })
   })
-  
-  },
-  )
-
-}
+},
 
 
 
