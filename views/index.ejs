@@ -89,6 +89,13 @@
                 <p class="card-text"><%= productos[3].long_description %></p>
               </div>
             </div>
+            <div class="card">
+              <img class="card-img-top" src="../Images/productos/<%= productos[1].dataValues.image %>" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title"><%= productos[3].short_description %></h5>
+                <p class="card-text"><%= productos[3].long_description %></p>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -97,7 +104,8 @@
 
 
 
-        
+      <div class="container">
+
        <!-- Aca van productos destacados-->
        <h2> DESTACADOS</h2>
        <div class="row row-cols-1 row-cols-md-2">
@@ -124,6 +132,7 @@
        </div>
        <!--POR QUÉ ELEGIRNOS-->
        </div>
+      </div>
 
 <%- include('./partials/footer')%>      
 

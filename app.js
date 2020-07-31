@@ -13,6 +13,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var adminRouter = require('./routes/admin');
 var apiUsersRouter = require('./routes/api/users')
+var cartRouter = require('./routes/cart')
 var productsRouter = require('./routes/products');
 var apiProductsRouter = require('./routes/api/products')
 var registerRouter = require('./routes/register');
@@ -39,6 +40,7 @@ app.use(session({secret:"Mensaje secreto"}));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/admin', adminRouter);
+app.use('/cart', cartRouter);
 app.use('/products', productsRouter);
 app.use('/api/products', apiProductsRouter);
 app.use('/api/users', apiUsersRouter);

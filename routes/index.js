@@ -26,7 +26,29 @@ router.get('/pruebaSession', function(req,res){
   }
   req.session.numeroVisitas++;
   res.send('Session tiene numer: ' + req.session.numeroVisitas);
+});
+
+//por
+
+router.get('/faq', function(req, res){
+  db.Product.findAll({include:[{association:"brand"},{association:"category"}]}).then(function (resultados){
+      db.Category.findAll().then(function(categorias){
+      let productos = resultados 
+      if(req.cookies.recordame == undefined){ 
+        console.log(productos[1].dataValues)
+      res.render ('faq',{usuario: '',categorias, productos});
+}else {
+      res.render ('faq',{usuario: req.cookies.recordame, productos,categorias});
+}
 })
+
+},
+)
+  
+  
+});
+
+
 
 module.exports = router;
 
