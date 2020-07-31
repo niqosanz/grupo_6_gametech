@@ -59,9 +59,7 @@
                                 <th class="text-center">ID</th>
                                 <th class="text-center">Image</th>
                                 <th class="text-center">Nombre</th>
-                                <th class="text-center">Precio</th>
-                                <th class="text-center">Categoria</th>
-                                <th class="text-center">Action</th>
+                                <th class="text-center">Email</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -76,18 +74,7 @@
                                     </td>
                                     <td><a href="page_ecom_product_edit.html"><%= resultados[i].short_description %></a></td>
                                     <td class="text-left"><strong><%= resultados[i].price %></strong></td>
-                                    <td class="text-left">
-                                        <span><%= categorias[0].dataValues.name %></span>
-                                    </td>
-                                    <td class="text-center">
-                                        <div class="btn-group btn-group-xs">
-                                            <a href="/products/edit/<%= resultados[i].id %>" data-toggle="tooltip" title="Edit" class="btn btn-default"><i class="fa fa-pencil"></i></a>
-                                            <a href="javascript:void(0)" data-toggle="tooltip" title="Delete" class="btn btn-xs btn-danger"><i class="fa fa-times"></i></a>
-                                        </div>
-                                    </td>
                                 </tr>
-
-
                             <% } %>
 
                        </tbody>
