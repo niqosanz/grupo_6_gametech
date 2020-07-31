@@ -107,7 +107,7 @@ const controller = {
         }else {
         db.Product.findByPk(req.params.id).then(function (producto) {
             db.Category.findAll().then(function (categorias) {
-                res.render('productEdit', { producto, categorias })
+                res.render('productEdit', {errors: '',usuario: '', producto, categorias })
             })
               })}
     },
