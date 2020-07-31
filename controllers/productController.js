@@ -42,8 +42,8 @@ const controller = {
         { association: "category" }] }).then(function (producto){
             db.Category.findAll().then(function(categorias){
                 if(req.cookies.recordame == undefined){ 
-                res.render ('productDetail',{usuario: '',categorias, producto});
-          }else {
+                    res.redirect ('/login');
+                }else {
                 res.render ('productDetail',{usuario: req.cookies.recordame, producto,categorias});
           }
           })
@@ -53,8 +53,8 @@ const controller = {
     create: function (req, res) {
        db.Category.findAll().then(function(categorias){
                 if(req.cookies.recordame == undefined){ 
-                res.render ('productAdd',{errors: '',usuario: '',categorias});
-          }else {
+                    res.redirect ('/login');
+                }else {
                 res.render ('productAdd',{errors: '', usuario: req.cookies.recordame,categorias});
           }
           })

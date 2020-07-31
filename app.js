@@ -53,10 +53,7 @@ app.use(recordameMiddleware);
 
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
-});
-
+app.use((req,res,next) => { res.status(404).redirect('/')})
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
@@ -69,3 +66,4 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+

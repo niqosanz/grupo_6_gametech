@@ -9,8 +9,8 @@ module.exports={
     { association: "category" }] }).then(function (resultados){
         db.Category.findAll().then(function(categorias){
             if(req.cookies.recordame == undefined){ 
-              console.log(categorias)
-            res.render ('admin',{errors:'',usuario: '',categorias, resultados});
+              // console.log(categorias)
+            res.redirect ('login');
       }else {
             res.render ('admin',{errors:'',usuario: req.cookies.recordame, resultados,categorias});
       }
@@ -23,7 +23,7 @@ clients: function (req, res) {
       db.Category.findAll().then(function(categorias){
           if(req.cookies.recordame == undefined){ 
             console.log(usuarios[0].image)
-          res.render ('clientList',{errors:'',usuario: '',categorias, usuarios});
+            res.redirect ('login');
     }else {
           res.render ('clientList',{errors:'',usuario: req.cookies.recordame, usuarios,categorias});
     }
