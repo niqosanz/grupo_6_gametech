@@ -102,24 +102,35 @@ const controller = {
     },
 
     viewedit: function (req, res) {
+        if(req.cookies.recordame == undefined){ 
+            res.redirect ('/login');
+        }else {
         db.Product.findByPk(req.params.id).then(function (producto) {
             db.Category.findAll().then(function (categorias) {
                 res.render('productEdit', { producto, categorias })
             })
-        })
+              })}
     },
 
     edit: function (req, res) {
 
-        db.Product.update({
-            categories_id1: req.body.productCategory,
-            image: req.files[0].filename,
-            short_description: req.body.name,
-            price: req.body.price,
-            long_description: req.body.description,
-        }, { where: { id: req.body.productId } })
+        if(req.cookies.recordame == undefined){ 
+            res.redirect ('/login');
+        }else {
+            db.Product.update({
+                categories_id1: req.body.productCategory,
+                image: req.files[0].filename,
+                short_description: req.body.name,
+                price: req.body.price,
+                long_description: req.body.description,
+            }, { where: { id: req.body.productId } })
+            .then(function (result) {
+                res.redirect('/admin')
+            })
+    
+  }
 
-        res.redirect('/admin')
+
     },
 
     destroy: function (req, res) {
