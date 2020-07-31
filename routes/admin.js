@@ -19,7 +19,8 @@ var storage = multer.diskStorage({
   var upload = multer({ storage: storage })
 
 /* GET users listing. */
-router.get('/', adminController.list);
+router.get('/', adminController.list)
+router.get('/clients', adminController.clients);
 
 
 module.exports = router;
