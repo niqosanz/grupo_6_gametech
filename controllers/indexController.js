@@ -8,11 +8,16 @@ var Sequelize = require('sequelize');
 
 
 module.exports={
-  list: function (req, res) {
-    var productNumber = req.params.id;
-    db.Product.findAll({ include: [{ association: "brand" }, 
-    { association: "category" }] }).then(function (productos){
-        db.Category.findAll().then(function(categorias){
+    list: function(req, res){
+
+        db.Product.findAll(
+      
+          {include:[{association:"brand"},{association:"category"}]})
+          .then(function (productos){
+            db.Category.findAll().then(function(categorias){
+              console.log(productos)
+      
+
             if(req.cookies.recordame == undefined){ 
                 res.render ('index', {errors: '',usuario:'', productos, categorias });
             }else {
