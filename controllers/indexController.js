@@ -10,13 +10,13 @@ var Sequelize = require('sequelize');
 module.exports={
     list: function(req, res){
 
-      var datoABuscar =req.query.search
-      console.log(req.query.search)
+      // var datoABuscar =req.query.search
+      // console.log(req.query.search)
 
         db.Product.findAll(
-          {where:{
-            short_description:{[db.Sequelize.Op.substring]: '%' + datoABuscar}
-          }},
+          // {where:{
+          //   short_description:{[db.Sequelize.Op.substring]: '%' + datoABuscar}
+          // }},
           {include:[{association:"brand"},{association:"category"}]})
           .then(function (productos){
             db.Category.findAll().then(function(categorias){
