@@ -6,7 +6,6 @@ var Sequelize = require('sequelize');
 
 
 
-
 module.exports={
     list: function(req, res){
 
@@ -15,7 +14,6 @@ module.exports={
           {include:[{association:"brand"},{association:"category"}]})
           .then(function (productos){
             db.Category.findAll().then(function(categorias){
-              console.log(productos)
       
 
             if(req.cookies.recordame == undefined){ 
@@ -62,20 +60,33 @@ module.exports={
             }},
             {include:[{association:"brand"},{association:"category"}]})
             .then(function (productos){
-              db.Category.findAll().then(function(categorias){
-                console.log(productos)
+              db.Category.findAll({where:{
+                name:{[db.Sequelize.Op.substring]: '%' + datoABuscar}
+              }}).then(function(categorias1){
+                db.Brand.findAll({where:{
+                  name:{[db.Sequelize.Op.substring]: '%' + datoABuscar}
+                }}).then(function(brand){
+                  db.Category.findAll().then(function(categorias){
+
+                    var resultados = [productos,brand,categorias1]
+    
+                    
+                    
+  
         
   
               if(req.cookies.recordame == undefined){ 
-              res.render ('index',{usuario: '',categorias, productos});
-        }else {
-              res.render ('index',{usuario: req.cookies.recordame, productos,categorias});
-        }
-        })
+              res.render ('search',{usuario: '',categorias, productos,brand,categorias1, datoABuscar});
+                  }else {
+              res.render ('search',{usuario: req.cookies.recordame, productos,categorias,categorias1,brand, datoABuscar});
+                }
+                  })
         
-        },
-        )},
+               },
+                 )},
         
 
-
-}
+                  )
+                    },
+            )
+                }}
