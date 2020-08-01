@@ -9,13 +9,17 @@ var Sequelize = require('sequelize');
 module.exports={
     list: function(req, res){
 
-        db.Product.findAll(
-      
-          {include:[{association:"brand"},{association:"category"}]})
-          .then(function (productos){
+      db.Product.findAll(
+        {
+            where:{
+                categories_id1: 1,
+            }
+        }
+,{ include: [{ association: "brand" }, { association: "category" }] }
+    )   
+.then(function (productos){
             db.Category.findAll().then(function(categorias){
-      
-
+console.log(productos)
             if(req.cookies.recordame == undefined){ 
                 res.render ('index', {errors: '',usuario:'', productos, categorias });
             }else {
