@@ -63,7 +63,7 @@ const loginController = {
             req.cookies.usuarioLogueado = usuarioALoguear;
 
             if (req.body.recordame != undefined) {
-              res.cookie('recordame', usuarioALoguear, {maxAge: 60000})
+              res.cookie('recordame', usuarioALoguear, {maxAge: 6000000})
             }
 
             // res.redirect('/users/check');
