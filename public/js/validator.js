@@ -1,7 +1,7 @@
 window.addEventListener('load', function() {
     let formulario = document.querySelector('form');
     formulario.addEventListener('submit', function(evento) {
-        console.log(formulario)
+        // console.log(formulario)
   
     })
 });
@@ -18,7 +18,7 @@ buttonSend.disabled =true;
 form.name.addEventListener('keyup', function(event){
     event.target.classList.add('is-invalid')
     buttonSend.disabled =true;
-    console.log(buttonSend.classList)
+    // console.log(buttonSend.classList)
     
     let mensaje = event.target.value;
     

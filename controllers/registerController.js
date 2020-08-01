@@ -59,11 +59,11 @@ const registerController = {
             email: newUser.email,
           },
         }).then((results) => {
-          console.log(results.count);
+          // console.log(results.count);
 
           if(results.count >= 1){
 
-            console.log('La cantidad de coincidencias de ' + newUser.email + ' son ' + results.count)
+            // console.log('La cantidad de coincidencias de ' + newUser.email + ' son ' + results.count)
 
             res.render('createuser', {errors: errors.errors,pageCss: 'register.css',statusRegistracion: 'Usuario ya existente.'});
 
@@ -83,7 +83,7 @@ const registerController = {
               res.redirect('/');  
           }
 
-          console.log(results.rows);
+          // console.log(results.rows);
         });
 
 

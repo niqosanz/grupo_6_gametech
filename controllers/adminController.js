@@ -22,7 +22,7 @@ clients: function (req, res) {
   db.User.findAll().then(function (usuarios){
       db.Category.findAll().then(function(categorias){
           if(req.cookies.recordame == undefined){ 
-            console.log(usuarios[0].image)
+            // console.log(usuarios[0].image)
             res.redirect ('login');
     }else {
           res.render ('clientList',{errors:'',usuario: req.cookies.recordame, usuarios,categorias});

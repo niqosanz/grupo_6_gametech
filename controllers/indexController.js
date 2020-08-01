@@ -19,7 +19,7 @@ module.exports={
     )   
 .then(function (productos){
             db.Category.findAll().then(function(categorias){
-console.log(productos)
+// console.log(productos)
             if(req.cookies.recordame == undefined){ 
                 res.render ('index', {errors: '',usuario:'', productos, categorias });
             }else {
@@ -56,7 +56,7 @@ console.log(productos)
       search: function(req, res){
 
         var datoABuscar =req.query.query
-        console.log(req.query.query)
+        // console.log(req.query.query)
   
           db.Product.findAll(
             {where:{
