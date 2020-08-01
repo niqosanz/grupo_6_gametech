@@ -1,15 +1,29 @@
 var express = require('express');
 var db = require('../db/models');
+var Sequelize = require('sequelize');
+//const { notIn } = require('sequelize/types/lib/operators');
+//var op = Sequelize.Op;
+
 
 
 
 module.exports={
     list: function(req, res){
-        db.Product.findAll({include:[{association:"brand"},{association:"category"}]}).then(function (resultados){
+
+      var datoABuscar =req.query.search
+      console.log(req.query.search)
+
+        db.Product.findAll(
+          {where:{
+            short_description:{[db.Sequelize.Op.substring]: '%' + datoABuscar}
+          }},
+          {include:[{association:"brand"},{association:"category"}]})
+          .then(function (productos){
             db.Category.findAll().then(function(categorias){
-            let productos = resultados 
+              console.log(productos)
+      
+
             if(req.cookies.recordame == undefined){ 
-              console.log(productos[1].dataValues)
             res.render ('index',{usuario: '',categorias, productos});
       }else {
             res.render ('index',{usuario: req.cookies.recordame, productos,categorias});
@@ -21,12 +35,10 @@ module.exports={
       
       preguntas: function(req, res){
 
-        console.log(req.body.search)
         db.Product.findAll({include:[{association:"brand"},{association:"category"}]}).then(function (resultados){
             db.Category.findAll().then(function(categorias){
             let productos = resultados 
             if(req.cookies.recordame == undefined){ 
-              console.log(productos[1].dataValues)
             res.render ('faq',{usuario: '',categorias, productos});
       }else {
             res.render ('faq',{usuario: req.cookies.recordame, productos,categorias});
@@ -45,15 +57,8 @@ module.exports={
 
 
   search: function (req, res) {
-    db.Product.findAll({ include: [{ association: "brand" }, 
-    { association: "category" }] }).then(function (resultados){
-        db.Category.findAll().then(function(categorias){
-            if(req.cookies.recordame == undefined){ 
-              console.log(categorias)
-            res.render ('productCart',{errors:'',usuario: '',categorias, resultados});
-      }else {
-            res.render ('productCart',{errors:'',usuario: req.cookies.recordame, resultados,categorias});
-      }
-      })
-    })
-}}
+    res.send(req.query)
+}
+
+
+}
