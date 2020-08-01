@@ -18,7 +18,6 @@ const controller = {
   },
   detailCategories: function (req, res) {
     var parametros = req.params.id;
-    let categoria = '';
    
     db.Category.findOne(
       {
@@ -26,32 +25,33 @@ const controller = {
           id: parametros,
         }
       }
-   ).then(function(categoria){
-console.log(categoria)
+   ).
+   then(function(categoria){
 
-db.Category.findAll().then(function(categorias){
+      db.Category.findAll()
+      
+      .then(function(categorias){
 
 
-  db.Product.findAll(
-    {
-      where: {
-        categories_id1: parametros,
-      },
-    },
-    { include: [{ association: "brand" }, { association: "category" }] }
-  ).then(function (productos){
-
+        db.Product.findAll(
+          {
+            where: {
+              categories_id1: parametros,
+            },
+          },
+          { include: [{ association: "brand" }, { association: "category" }] }
+        )
+        .then(function (productos){
     
-    if(req.cookies.recordame == undefined){ 
-      res.render ('categories',{usuario:'',productos,categoria:categoria, categorias});
-          }else {
-      res.render ('categories',{usuario: req.cookies.recordame, productos,categoria:categoria,catgorias});
-        }
-  });
- })
+          if(req.cookies.recordame == undefined){ 
+              res.render ('categories',{usuario:'',productos,categoria:categoria, categorias});
+            }else {
+              res.render ('categories',{usuario: req.cookies.recordame, productos,categoria:categoria,categorias});
+            }
+        });
+      })
 
-
-})
+    })
 
    
   },
