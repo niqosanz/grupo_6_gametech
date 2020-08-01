@@ -16,14 +16,16 @@
 
 
         <div class="navbar-collapse collapse navbarText w-50 order-1 order-md-1 ">
-          <form class="ml-3 my-auto d-inline w-50">
+          <form action='/search'class="ml-3 my-auto d-inline w-50">
             <div class="bg-withe rounded border rounded-pill">
               <div class="input-group">
-                <div class="input-group-prepend">
-                  <button id="button-addon2" type="submit" class="btn btn-link text-dark"><i
-                      class="fa fa-search"></i></button>
-                </div>
-                <input type="search" placeholder="Buscar" aria-describedby="button-addon2" name='search'>
+                <form action='/search' method="GET">
+                  <div class="input-group-prepend">
+                    <button id="button-addon2" type="submit" value='search' class="btn btn-link text-dark"><i
+                        class="fa fa-search"></i></button>
+                  </div>
+                  <input type="text" placeholder="Buscar" aria-describedby="button-addon2" name='query'>
+                </form>
               </div>
             </div>
 

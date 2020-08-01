@@ -4,6 +4,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', indexController.list);
+router.get('/search', indexController.search);
 router.get('/faq', indexController.preguntas);
 
 
