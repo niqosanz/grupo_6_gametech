@@ -19,6 +19,7 @@ var apiProductsRouter = require('./routes/api/products')
 var registerRouter = require('./routes/register');
 var loginRouter = require('./routes/login');
 var pruebalecturadbRouter = require('./routes/pruebalecturadb');
+var contactRouter = require('./routes/contact');
 var recordameMiddleware = require('./middlewares/recordameMiddleware')
 
 
@@ -47,6 +48,9 @@ app.use('/api/users', apiUsersRouter);
 app.use('/register', registerRouter);
 app.use('/login', loginRouter);
 app.use('/pruebalecturadb', pruebalecturadbRouter);
+
+app.use('/contact', contactRouter);
+
 app.use(recordameMiddleware);
 
 //app.use('/users/admin', usersRouter)
