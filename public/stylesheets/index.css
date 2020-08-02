@@ -42,10 +42,13 @@ a{
     height: 50%;
 }
 .card-img-top2{
-    width:100%;
-    height: 20%;
+    width:200px;
+    height: 200px;
 }
-
+.fondo{
+background: #ebebeb !important;
+background-color: #ebebeb !important;;
+}
 .card-deck{
     margin-bottom: 40px;
 }

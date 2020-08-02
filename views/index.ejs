@@ -94,30 +94,19 @@
         <div class="row row-cols-1 row-cols-md-2">
           <% for(let i = 0; i<2; i++){ %>
 
-          <div class="col mb-2">
-            <div class="card">
-              <a
-                href="/products/<%= productos[i].dataValues.id %>"
-                class="card-img-top"
-              >
-                <img
-                  src="../Images/productos/<%= productos[i].dataValues.image %>"
-                  class="card-img-top2"
-                  alt="..."
-                />
-              </a>
-
-              <div class="card-body">
-                <h5 class="card-title">
-                  <%= productos[i].short_description %>
-                </h5>
-                <p class="card-text"><%= productos[i].long_description %></p>
+          <div class="col-md-6 ">
+            <div class=" row no-gutters fondo border rounded overflow-hidden flex-md-row mb-4 position-relative">
+              <div class=" bg-white col p-4 d-flex flex-column position-static">
+                <h3 class="mb-0"><%= productos[i].short_description %></h3>
+                <p class="card-text mb-auto"><%= productos[i].long_description %></p>
                 <button type="button" class="btn btn-info">
-                  <a href="/products/<%= productos[i].dataValues.id %>">
-                    Mas info
-                  </a>
-                </button>
-              </div>
+                  <a href="/products/<%= productos[i].dataValues.id %>">Mas info</a></button>            
+                </div>
+              <div class="col-auto d-none d-lg-block bg-white">
+                <a href="/products/<%= productos[i].dataValues.id %>" class="card-img-top2">
+                  <img style="float: left; margin: 0px 15px 15px 0px;" src="../Images/productos/<%= productos[i].dataValues.image %>" class="card-img-top2" alt="..."/>
+                </a>
+                </div>
             </div>
           </div>
           <% } %>
