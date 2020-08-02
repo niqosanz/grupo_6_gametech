@@ -32,7 +32,9 @@
         </a>
       </div>
       <div class="container">
-         <h2>Busquedas relacionadas con:"<%= datoABuscar %>" </h2>
+
+        <% if(productos[0].dataValues != ''){%>
+          <h2>Busquedas relacionadas con:"<%= datoABuscar %>" </h2>
           <div class="row row-cols-1 row-cols-md-4 card-deck">
             <div class="card">
               <img class="card-img-top" src="../Images/productos/<%= productos[0].dataValues.image %>" alt="Card image cap">
@@ -44,6 +46,18 @@
             </div>
             
           </div>
+        <% }else{ %>
+
+          <h2>No se encontraron coincidencias de productos:"<%= datoABuscar %>" </h2>
+          </br>
+          </br>
+          </br>
+          </br>
+          </br>
+          </br>
+
+        <% } %>
+
 <%- include('./partials/footer')%>      
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"

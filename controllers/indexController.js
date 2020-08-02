@@ -107,7 +107,23 @@ module.exports = {
 
       }else{
 
-        res.send('No hay productos coincidentes en la base de datos.')
+        let categorias = {}
+
+        db.Category.findAll()
+        .then(function(categorias){
+
+        })
+
+
+        res.render("search", {
+          usuario: "",
+          categorias: categorias,
+          productos: [{dataValues:''}],
+          // brand,
+          // categorias1,
+          datoABuscar: datoABuscar,
+        });
+
         
       }
 
@@ -122,4 +138,3 @@ module.exports = {
 
   }
 };
-
