@@ -101,11 +101,11 @@ module.exports = {
       });
     })
     .catch(function (err) {
-
-      res.redirect('/');
-
-      throw err;
-    })
-;
+      console.log("texto")
+            res.redirect('/');
+      
+            throw err;
+          })
+      ;
   },
 };

@@ -44,13 +44,14 @@
                         <tbody>
                             <% for(let i = 0; i<productos.length; i++){ %>
                                 <tr>
-                                    <td class="text-center"><a href="page_ecom_product_edit.html"><strong><%= productos[i].id %> </strong></a></td>
+                                    <td class="text-center"><a href="/products/<%= productos[i].id %>"><strong><%= productos[i].id %> </strong></a></td>
                                     <td class="text-left">
-                                        <div class="btn-group btn-group-xs">
+                                        <div class="btn-group btn-group-xs"><a href="/products/<%= productos[i].id %>">
                                             <img src="/Images/productos/<%= productos[i].image %>" class="avatar" alt="">
+                                        </a>
                                         </div>
                                     </td>
-                                    <td><a href=""><%= productos[i].short_description %></a></td>
+                                    <td><a href="/products/<%= productos[i].id %>"><%= productos[i].short_description %></a></td>
                                     <td class="text-left"><strong><%= productos[i].price %></strong></td>
                                 </tr>
                             <% } %>

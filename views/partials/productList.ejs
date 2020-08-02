@@ -54,13 +54,13 @@
                                 <tbody>
                                     <% for(let i = 0; i<resultados.length; i++){ %>
                                         <tr>
-                                            <td class="text-center"><a href="page_ecom_product_edit.html"><strong><%= resultados[i].id %></strong></a></td>
+                                            <td class="text-center"><a href="#"><strong><%= resultados[i].id %></strong></a></td>
                                             <td class="text-left">
                                                 <div class="btn-group btn-group-xs">
                                                     <img src="/Images/productos/<%= resultados[i].image %>" class="avatar" alt="">
                                                 </div>
                                             </td>
-                                            <td><a href="page_ecom_product_edit.html"><%= resultados[i].short_description %></a></td>
+                                            <td><a href="#"><%= resultados[i].short_description %></a></td>
                                             <td class="text-left"><strong><%= resultados[i].price %></strong></td>
                                             <td class="text-left">
                                                 <span><%= categorias[0].dataValues.name %></span>
