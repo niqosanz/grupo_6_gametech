@@ -3,52 +3,35 @@
 <head>
   <%- include('./partials/head') %>
   <link rel="stylesheet" href="../../stylesheets/register.css">
-
-
 </head>
 <body>
-
   <div id="external-container-login">
     <form action="../login" class="form-login login" method="POST">
       <div id="internal-container-login">
         <h2 id="header-login">Log in</h2>
-
         <% if(statusRegistracion != ''){ %>
-
           <p id="paragraph-login"><%= statusRegistracion %></p>
-
           <% for(let i=0; i<errors.length; i++){ %>
-
             <p id="paragraph-login"><%= errors[i].msg %></p>
-  
-  
           <% } %>
-  
-
         <% }else{ %>
-
           <p id="paragraph-login">Bienvenido!</p>
-
         <% } %>
-        
           <p id="paragraph-login">Ingrese sus datos de usuario:</p>
         <br>
         <br>
             <div class="frame-sizeinputs">
                 <input type="email" placeholder="E-mail" class="sizeinputs border-inputs email form-control" name="email" id='campoEmail'><i class="i-blank"></i>
-                
             </div>
         <br>
         <p class="mensajeErrorEmail"></p>
         <br>
-       
             <div class="frame-sizeinputs">
                 <input type="password"  placeholder="Password" class="sizeinputs border-inputs password form-control" name="password" id='password'><i class="far fa-eye-slash"></i>
             </div>           
         <br>
         <p class="mensajeErrorPassword"></p>
         <br>
-       
         <br>
         <input type="submit" id="buttonSend" value="Sign in" class="sizeinputs btn-submit">
         <br>
@@ -60,13 +43,7 @@
         </div>
     </div>
     </form>
-
 </div>
-
-
-
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
     crossorigin="anonymous"></script>
@@ -76,11 +53,6 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
-
-
-  <!-- Validación del lado del Front con Javascript. -->
   <script src="../../js/validacionLogin.js"></script>
-
 </body>
-
 </html>

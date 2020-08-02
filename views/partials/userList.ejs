@@ -1,10 +1,7 @@
    
    <div id="page-wrapper">
-
     <div id="page-container">
-
         <div id="main-container">
-
             <div id="page-content">
                 <div class="content-header">
                     <ul class="nav-horizontal text-center">
@@ -20,10 +17,8 @@
                         <li class="active">
                             <a href="/admin/clients"><i class="fa fa-users"></i> Usuarios</a>
                         </li>
-
                     </ul>
                 </div>
-
                 <div class="row text-center">
                     <div class="col-sm-6 col-lg-6">
                         <a href="/products/create" class="widget widget-hover-effect2">
@@ -42,17 +37,10 @@
                         </a>
                     </div>
                 </div>
-                <!-- END Quick Stats -->
-
-                <!-- All Products Block -->
                 <div class="block full">
-                    <!-- All Products Title -->
                     <div class="block-title">
                         <h2><strong>All</strong> Products</h2>
                     </div>
-                    <!-- END All Products Title -->
-
-                    <!-- All Products Content -->
                     <table id="ecom-products" class="table table-bordered table-striped table-vcenter">
                         <thead>
                             <tr>
@@ -63,7 +51,6 @@
                             </tr>
                         </thead>
                         <tbody>
-
                             <% for(let i = 0; i<usuarios.length; i++){ %>
                                 <tr>
                                     <td class="text-center"><a href="page_ecom_product_edit.html"><strong><%= usuarios[i].id %></strong></a></td>
@@ -76,19 +63,10 @@
                                     <td class="text-left"><strong><%= usuarios[i].email %></strong></td>
                                 </tr>
                             <% } %>
-
                        </tbody>
                     </table>
-
-                    <!-- END All Products Content -->
                 </div>
-                <!-- END All Products Block -->
             </div>
-            <!-- END Page Content -->
-
-            <!-- Footer -->
-            <!-- END Footer -->
         </div>
-        <!-- END Main Container -->
     </div>
 </div>

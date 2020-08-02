@@ -1,62 +1,10 @@
 <%- include('./partials/head.ejs')%>
 <%- include('./partials/productSt')%>
-
 <body>
   <%- include('./partials/header')%>
-
   <%- include('./partials/editProduct')%>
-
-      <!-- <div class="container">
-        <div class="row">
-
-                <img class='col-12' src="<%=producto.image%>">
-
-                <div class='col-sm-12 col-md-6 col-lg-6 descripcion-producto'>
-
-                  <div>
-                    <form action="/products/edit/:id?_method=PUT" method="POST"  class='col-sm-12 col-md-3 col-lg-3 contenedores' query='_method'>
-                      <input type="hidden" name="numberId" value='<%= producto.id %>'>
-                        <label class='col-sm-12 col-md-6 col-lg-6'>Cambiar Nombre:</label>
-                        <h2>
-                          <input type="text" name="name" value='<%=producto.short_description %>'>
-                          
-                        </h2>
-
-                          <h3><input type="text" name="price" value='<%=producto.price %>' class="precios"></h3> 
-                          <h3 class="precio-anterior">$119.99</h3>
-           
-                           <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                             DESCRIPTION
-                          </a>
-                        <div class="collapse" id="collapseExample">
-                          <div class="card card-body">
-                            <input type="text" name="description" value='<%=producto.long_description %>' class="precios">
-                          </div>
-                        </div>
-
-                       <input type="submit" value="Enviar" />
-                  </form>
-                </div>
-            
-              </div>
-              <form action="/products/delete/<%= producto.id %>?_method=DELETE" method="POST"  class='col-sm-12 col-md-3 col-lg-3 contenedores'>
-                <button type="submit"> Eliminar</button>
-              </form>
-        
-        
-        </div>
-    
- 
-    
-  </div> -->
 </div>
-
-    <!-- Footer -->
-
     <%- include('./partials/footer')%> 
-
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
     crossorigin="anonymous"></script>
@@ -67,7 +15,5 @@
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
   <script src="/js/validFrontAdd.js"></script>
-
 </body>
-
 </html>

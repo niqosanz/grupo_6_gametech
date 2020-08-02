@@ -15,7 +15,6 @@
                     <li>
                         <a href="/admin/clients"><i class="fa fa-users"></i> Usuarios</a>
                     </li>
-
                 </ul>
             </div>
             <div class="row">
@@ -24,7 +23,6 @@
                         <div class="block-title">
                             <h2><i class="fa fa-pencil"></i> <strong>General</strong> Data</h2>
                         </div>
-                        <!-- <form action="/products/edit/:id?_method=PUT" method="POST" ' class='col-sm-12 col-md-3 col-lg-3 contenedores' query='_method'> -->
                         <form action="/products/edit/:id?_method=PUT" method="POST" enctype="multipart/form-data" class="form-horizontal form-bordered" id='addProductForm'>
                             <div class="form-group">
                                 <label class="col-md-3 control-label" for="product-id">Product ID</label>
@@ -50,10 +48,7 @@
                                     <select id="product-category" name="productCategory" class="select-chosen" data-placeholder="Choose Category.." style="width: 250px;">
                                         <% for(let i = 0; i<categorias.length; i++){ %>
                                             <option value="<%= categorias[i].id %>"><%= categorias[i].name %></option>
-
                                             <% } %>
-
-                                       
                                     </select>
                                 </div>
                             </div>
@@ -66,7 +61,6 @@
                                     </div>
                                 </div>
                             </div>
-   
                             <div class="form-group form-actions">
                                 <div class="col-md-9 col-md-offset-3">
                                   <button type="submit" name="submit" class="btn btn-sm btn-primary"id='sendInformation'><i class="fa fa-floppy-o"></i> Save</button>
@@ -75,24 +69,19 @@
                             </div>
                     </div>
                 </div>
-            <!-- </form> -->
                 <div class="col-lg-6">
                     <div class="block">
                         <div class="block-title">
                             <h2><i class="fa fa-picture-o"></i> <strong>Product</strong> Images</h2>
                         </div>
-                        <!-- <form action="/products/create" method="post" enctype="multipart/form-data" class="form-horizontal form-bordered" id='addProductForm'> -->
                             <div class="form-group">
                                 <h2></i> <strong>Imagen</strong> Actual</h2>
                                 <div class="col-lg-4">
                                     <img src="/Images/productos/<%= producto.image %>" class="img-thumbnail" alt="">
-
                                 </div>
                             </div>
-
                             <div class="form-group">
                                 <h2></i> <strong>Actualizar</strong> Imagen</h2>
-                            <!-- prueba de agregar imagen -->
                             <div class="col-4" >
                                 <input name="imagenNew" type="file" id="seleccionArchivos" accept="image/*">
                                 <br><br>
@@ -100,16 +89,11 @@
                             </div>
                             <script src="/js/scripto.js"></script>
                             </div>
-                            <!-- termina prueba de imagen-->
-
-                          <!-- <div action="/products/create" class="dropzone dropzone-previews" id="myAwesomeDropzone"> -->
-                      
                         </div>
                         </form>
                         <form action="/products/delete/<%= producto.id %>?_method=DELETE" method="POST"  class="col-lg-6">
                             <button type="submit" class="btn btn-danger"> Eliminar producto</button>
                           </form>
-            
                     </div>
                 </div>
             </div>
