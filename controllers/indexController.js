@@ -65,47 +65,61 @@ module.exports = {
       },
       { include: [{ association: "brand" }, { association: "category" }] }
     ).then(function (productos) {
-      db.Category.findAll({
-        where: {
-          name: { [db.Sequelize.Op.substring]: "%" + datoABuscar },
-        },
-      }).then(function (categorias1) {
-        db.Brand.findAll({
+
+      console.log('Estos son los productos coincidentes con la búsqueda')
+      console.log(productos)
+
+      if(productos.length != 0){
+        db.Category.findAll({
           where: {
             name: { [db.Sequelize.Op.substring]: "%" + datoABuscar },
           },
-        }).then(function (brand) {
-          db.Category.findAll().then(function (categorias) {
-            var resultados = [productos, brand, categorias1];
-            if (req.cookies.recordame == undefined) {
-              res.render("search", {
-                usuario: "",
-                categorias,
-                productos,
-                brand,
-                categorias1,
-                datoABuscar,
-              });
-            } else {
-              res.render("search", {
-                usuario: req.cookies.recordame,
-                productos,
-                categorias,
-                categorias1,
-                brand,
-                datoABuscar,
-              });
-            }
+        }).then(function (categorias1) {
+          db.Brand.findAll({
+            where: {
+              name: { [db.Sequelize.Op.substring]: "%" + datoABuscar },
+            },
+          }).then(function (brand) {
+            db.Category.findAll().then(function (categorias) {
+              var resultados = [productos, brand, categorias1];
+              if (req.cookies.recordame == undefined) {
+                res.render("search", {
+                  usuario: "",
+                  categorias,
+                  productos,
+                  brand,
+                  categorias1,
+                  datoABuscar,
+                });
+              } else {
+                res.render("search", {
+                  usuario: req.cookies.recordame,
+                  productos,
+                  categorias,
+                  categorias1,
+                  brand,
+                  datoABuscar,
+                });
+              }
+            });
           });
         });
-      });
-    })
-    .catch(function (err) {
 
-      res.redirect('/');
+      }else{
 
-      throw err;
+        res.send('No hay productos coincidentes en la base de datos.')
+        
+      }
+
+
     })
-;
-  },
+    // .catch(function (err) {
+
+    //   res.send('Esto es un error.');
+
+    //   throw err;
+    // })
+
+  }
 };
+
