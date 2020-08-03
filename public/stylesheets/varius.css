@@ -104,3 +104,6 @@
 	.icon-button:hover .fa-steam,
 	.icon-button:hover .fa-envelope
 	{color: white;}
+.ancho{
+	width: 80%;
+}

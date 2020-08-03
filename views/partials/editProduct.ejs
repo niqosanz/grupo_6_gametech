@@ -25,12 +25,6 @@
                         </div>
                         <form action="/products/edit/:id?_method=PUT" method="POST" enctype="multipart/form-data" class="form-horizontal form-bordered" id='addProductForm'>
                             <div class="form-group">
-                                <label class="col-md-3 control-label" for="product-id">Product ID</label>
-                                <div class="col-md-9">
-                                    <input type="text" id="product-id" name="productId" class="form-control" value='<%= producto.id %>'>
-                                </div>
-                            </div>
-                            <div class="form-group">
                                 <label class="col-md-3 control-label" for="product-name">Nombre</label>
                                 <div class="col-md-9">
                                     <input type="text" id="product-name" class="form-control" value='<%= producto.short_description %>' name="name">
