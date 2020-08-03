@@ -63,7 +63,13 @@ const controller = {
     }).then(function (producto) {
       db.Category.findAll().then(function (categorias) {
         if (req.cookies.recordame == undefined) {
-          res.redirect("/login");
+
+          res.render("productDetail", {
+            usuario: '',
+            producto,
+            categorias,
+          });
+          // res.redirect("/login");
         } else {
           res.render("productDetail", {
             usuario: req.cookies.recordame,
