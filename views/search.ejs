@@ -33,19 +33,30 @@
       </div>
       <div class="container">
 
+        <div class="row row-cols-1 row-cols-md-4 card-deck">
+
+        <!-- nuevo -->
         <% if(productos[0].dataValues != ''){%>
-          <h2>Busquedas relacionadas con:"<%= datoABuscar %>" </h2>
-          <div class="row row-cols-1 row-cols-md-4 card-deck">
-            <div class="card">
-              <img class="card-img-top" src="../Images/productos/<%= productos[0].dataValues.image %>" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title"><%= productos[0].short_description %></h5>
-                  <p class="card-text"><%= productos[0].long_description %></p>
-                
-              </div>
-            </div>
-            
+        <div class="card">
+          <a
+            href="/products/<%= productos[0].dataValues.id %>"
+            class="card-img-top"
+          >
+            <img
+              src="../Images/productos/<%= productos[0].dataValues.image %>"
+              alt="Card image cap"
+            />
+          </a>
+          <div class="card-body">
+            <h5 class="card-title"><%= productos[0].short_description %></h5>
+            <p class="card-text"><%= productos[0].long_description %></p>
+            <button type="button" class="btn btn-info">
+              <a href="/products/<%= productos[0].dataValues.id %>">
+                Mas info
+              </a>
+            </button>
           </div>
+        </div>
         <% }else{ %>
 
           <h2>No se encontraron coincidencias de productos:"<%= datoABuscar %>" </h2>
@@ -57,6 +68,12 @@
           </br>
 
         <% } %>
+      </div>
+    </div>
+
+
+        <!-- nuevo -->
+
 
 <%- include('./partials/footer')%>      
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
