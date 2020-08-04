@@ -9,7 +9,7 @@ module.exports = {
     db.Product.findAll(
       {
         where: {
-          categories_id1: 1,
+          categories_id1: 4,
         },
       },
       { include: [{ association: "brand" }, { association: "category" }] }
@@ -22,6 +22,7 @@ module.exports = {
             usuario: "",
             productos,
             categorias,
+            'total': productos.length
           });
         } else {
           res.render("index", {
@@ -85,6 +86,7 @@ module.exports = {
               if (req.cookies.recordame == undefined) {
                 res.render("search", {
                   usuario: "",
+
                   categorias,
                   productos,
                   brand,

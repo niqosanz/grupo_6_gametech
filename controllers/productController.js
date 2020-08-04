@@ -100,11 +100,13 @@ const controller = {
     if (req.cookies.recordame == undefined) {
       res.redirect("/login");
     } else {
+      console.log(req.body)
       db.Product.create({
         short_description: req.body.name,
         price: req.body.price,
         long_description: req.body.description,
         image: req.files[0].filename,
+        categories_id1:req.body.productCategory
       })
         .then(function (producto) {
           db.Category.findAll().then(function (categorias) {
