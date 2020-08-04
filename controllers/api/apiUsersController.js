@@ -32,8 +32,8 @@ detail: function(req,res) {
         var detalle ={
             id: usuario.id,
             email :usuario.email,
-            imagen: '/Images/avatar-users/'+usuario.avatar
-    }
+            imagen: 'http://localhost:3000/Images/avatar-users/avatar-1595173022545.png',
+    name:usuario.name}
 
         res.json(detalle)
 

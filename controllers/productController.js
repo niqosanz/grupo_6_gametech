@@ -95,40 +95,43 @@ const controller = {
     });
   },
 
-  // create: function (req, res) {
 
-  //     if (req.cookies.recordame == undefined) {
-  //         // res.render ('index',{usuario: ''});
-  //         res.render('productAdd', { errors: '', usuario: '' })
-
-  //     } else {
-  //         res.render('productAdd', { errors: '', usuario: req.cookies.recordame });
-
-  //     }
-
-  // },
-  add: function (req, res) {
-    // let datosArchivo= req.files
-    // console.log(req.body)
-    let errors = validationResult(req);
-    let datosArchivo = req.files[0];
-    //  console.log(req.files[0].filename)
-
-    // if(errors.isEmpty()&& (datosArchivo.mimetype=='image/jpeg' || datosArchivo.mimetype=='image/jpg' || datosArchivo.mimetype=='image/png' || datosArchivo.mimetype=='image/gif')){  db.Product.create({
-    if (errors.isEmpty()) {
+    add: function (req, res) {
+    if (req.cookies.recordame == undefined) {
+      res.redirect("/login");
+    } else {
       db.Product.create({
         short_description: req.body.name,
         price: req.body.price,
         long_description: req.body.description,
         image: req.files[0].filename,
-      });
-      // console.log(req.files);
+      })  
+    .then(function (producto) {
+        db.Category.findAll().then(function (categorias) {
 
-      res.redirect("/products/create", { errors: "", usuario: "", categorias });
-    } else {
-      res.render("productAdd", errors);
+          console.log(producto)
+          res.render("productAdd", {
+            errors: "",
+            usuario: req.cookies.recordame,
+            producto,
+            categorias,
+          })
+          ;
+        }).catch(function (err) {
+          return res.status(400).json({ message: "issues trying to connect to database" });
+        })
+      
+        ;
+      });
     }
   },
+
+
+
+
+
+
+  
 
   viewedit: function (req, res) {
     if (req.cookies.recordame == undefined) {
@@ -136,6 +139,8 @@ const controller = {
     } else {
       db.Product.findByPk(req.params.id).then(function (producto) {
         db.Category.findAll().then(function (categorias) {
+
+          console.log(producto)
           res.render("productEdit", {
             errors: "",
             usuario: req.cookies.recordame,

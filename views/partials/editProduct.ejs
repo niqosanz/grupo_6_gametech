@@ -23,7 +23,13 @@
                         <div class="block-title">
                             <h2><i class="fa fa-pencil"></i> <strong>General</strong> Data</h2>
                         </div>
-                        <form action="/products/edit/:id?_method=PUT" method="POST" enctype="multipart/form-data" class="form-horizontal form-bordered" id='addProductForm'>
+                        <form action="/products/edit/:id?_method=PUT" method="POST" enctype="multipart/form-data" class="form-horizontal form-bordered" id='addProductForms'>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="product-name">ID</label>
+                                <div class="col-md-9">
+                                    <input type="text" id="product-name" class="form-control" value='<%= producto.dataValues.id %>' name="productId">
+                                </div>
+                            </div>
                             <div class="form-group">
                                 <label class="col-md-3 control-label" for="product-name">Nombre</label>
                                 <div class="col-md-9">
@@ -36,7 +42,7 @@
                                     <textarea id="product-short-description" name="description" class="form-control" rows="3"><%= producto.long_description %></textarea>
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group" id='addProductForm'>
                                 <label class="col-md-3 control-label" for="product-category">Categoria</label>
                                 <div class="col-md-8">
                                     <select id="product-category" name="productCategory" class="select-chosen" data-placeholder="Choose Category.." style="width: 250px;">

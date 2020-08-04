@@ -3,6 +3,7 @@
 <body>
     <%- include('./partials/header')%>
       <div class="container">
+        <form>
           <h4 class='destacar'><%=producto.dataValues.short_description %></h4>
         <div class="row">
             <div class='col-sm-12 col-md-6 col-lg-6 contenedores'>
@@ -16,12 +17,15 @@
               <div class="card card-body">
               <% {%> <%=producto.dataValues.long_description %> <%} %>
               </div>
-              <button type="button" class="dark btn-lg" action=''> + AGREGAR AL CARRITO</button>
-            </div>
+              <button type="button dark" class="btn btn-info">
+              
+                <a href="/cart/:id" value=<%=producto.dataValues.id %>>Agregar al Carrito</a></button> 
+           </div>
         </div>
       </div>
     </div>
   </div>
+</form>
     <%- include('./partials/footer')%> 
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"

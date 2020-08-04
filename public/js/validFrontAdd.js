@@ -1,21 +1,25 @@
 window.addEventListener('load', function() {
     let formulario = document.querySelector('form');
     formulario.addEventListener('submit', function(evento) {
-        // console.log(formulario)
+       
   
     })
 });
 
 
 
-var form = document.getElementById('addProductForm')
+var form = document.getElementById('addProductForms')
 var buttonSend = document.querySelector('#sendInformation');
-var images = document.querySelector('#imagen')
+var images = document.querySelector('#imagenPrevisualizacion')
 buttonSend.disabled =true;
+console.log(buttonSend)
+console.log(images)
+
 
 
 
 form.name.addEventListener('keyup', function(event){
+    console.log(form.name)
     event.target.classList.add('is-invalid')
     buttonSend.disabled =true;
     // console.log(buttonSend.classList)
@@ -52,8 +56,3 @@ form.description.addEventListener('keyup', function(event){
 }
 
 });
-
-buttonSend.addEventListener('Click', function(event){
-    <alert> El producto fue creado con exito</alert>
-    // console.log (alert)
-})
