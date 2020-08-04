@@ -37,28 +37,28 @@
 
         <!-- nuevo -->
         <% if(productos[0].dataValues != ''){%>
-          <% for(let i = 0; i<4; i++){ %>
-            <div class="card">
-              <a
-                href="/products/<%= productos[i].dataValues.id %>"
-                class="card-img-top"
-              >
-                <img
-                  src="../Images/productos/<%= productos[i].dataValues.image %>"
-                  alt="Card image cap"
-                />
+        <% for(let i = 0; i<4; i++){ %>
+        <div class="card">
+          <a
+            href="/products/<%= productos[i].dataValues.id %>"
+            class="card-img-top"
+          >
+            <img
+              src="../Images/productos/<%= productos[i].dataValues.image %>"
+              alt="Card image cap"
+            />
+          </a>
+          <div class="card-body">
+            <h5 class="card-title"><%= productos[i].short_description %></h5>
+            <p class="card-text"><%= productos[i].long_description %></p>
+            <button type="button" class="btn btn-info">
+              <a href="/products/<%= productos[i].dataValues.id %>">
+                Mas info
               </a>
-              <div class="card-body">
-                <h5 class="card-title"><%= productos[i].short_description %></h5>
-                <p class="card-text"><%= productos[i].long_description %></p>
-                <button type="button" class="btn btn-info">
-                  <a href="/products/<%= productos[i].dataValues.id %>">
-                    Mas info
-                  </a>
-                </button>
-              </div>
-            </div>
-            <% } %>
+            </button>
+          </div>
+        </div>
+        <% } %>
         <% }else{ %>
 
           <h2>No se encontraron coincidencias de productos:"<%= datoABuscar %>" </h2>
