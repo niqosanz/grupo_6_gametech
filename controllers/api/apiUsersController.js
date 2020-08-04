@@ -8,10 +8,12 @@ const controller ={
             for (i=0; i<usuarios.length ;i++){
                 
                 let idUsuario = usuarios[i].id;
+                let nameUsuario = usuarios[i].name;
                 let userEmail = usuarios[i].email;
                 let userDetail='http://localhost:3000/api/users/'+idUsuario;
+                let imagen='http://localhost:3000/Images/avatar-users/'+usuarios[i].avatar
                 
-                var newUser = {'id':idUsuario,'email':userEmail,'detail':userDetail}
+                var newUser = {'id':idUsuario,'email':userEmail,'detail':userDetail, name:nameUsuario,image:imagen}
                 usuario.push(newUser)
 
             }

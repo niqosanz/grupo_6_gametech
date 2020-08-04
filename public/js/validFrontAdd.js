@@ -1,9 +1,15 @@
 window.addEventListener('load', function() {
-    let formulario = document.querySelector('form');
+    let formulario = document.getElementById('addProductForms');
     formulario.addEventListener('submit', function(evento) {
        
   
     })
+    
+var buttonDelete = document.getElementById('borrarProducto');
+buttonDelete.addEventListener('submit', function(evento) {
+       
+  
+})
 });
 
 
@@ -54,5 +60,18 @@ form.description.addEventListener('keyup', function(event){
     
 
 }
+
+});
+
+console.log(form.buttonDelete)
+
+buttonDelete.addEventListener('click', function(event){
+    console.log(form.name)
+
+    // console.log(buttonSend.classList)
+    
+    let mensaje = 'Esta seguro que desea eliminar el producto?'
+    
+ promp (mensaje)
 
 });

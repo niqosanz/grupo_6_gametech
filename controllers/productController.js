@@ -18,42 +18,42 @@ const controller = {
   },
   detailCategories: function (req, res) {
     var parametros = req.params.id;
-   
+
     db.Category.findOne(
       {
-        where:{
+        where: {
           id: parametros,
         }
       }
-   ).
-   then(function(categoria){
+    ).
+      then(function (categoria) {
 
-      db.Category.findAll()
-      
-      .then(function(categorias){
+        db.Category.findAll()
+
+          .then(function (categorias) {
 
 
-        db.Product.findAll(
-          {
-            where: {
-              categories_id1: parametros,
-            },
-          },
-          { include: [{ association: "brand" }, { association: "category" }] }
-        )
-        .then(function (productos){
-    
-          if(req.cookies.recordame == undefined){ 
-              res.render ('categories',{usuario:'',productos,categoria:categoria, categorias});
-            }else {
-              res.render ('categories',{usuario: req.cookies.recordame, productos,categoria:categoria,categorias});
-            }
-        });
+            db.Product.findAll(
+              {
+                where: {
+                  categories_id1: parametros,
+                },
+              },
+              { include: [{ association: "brand" }, { association: "category" }] }
+            )
+              .then(function (productos) {
+
+                if (req.cookies.recordame == undefined) {
+                  res.render('categories', { usuario: '', productos, categoria: categoria, categorias });
+                } else {
+                  res.render('categories', { usuario: req.cookies.recordame, productos, categoria: categoria, categorias });
+                }
+              });
+          })
+
       })
 
-    })
 
-   
   },
 
   detail: function (req, res) {
@@ -96,7 +96,7 @@ const controller = {
   },
 
 
-    add: function (req, res) {
+  add: function (req, res) {
     if (req.cookies.recordame == undefined) {
       res.redirect("/login");
     } else {
@@ -105,24 +105,24 @@ const controller = {
         price: req.body.price,
         long_description: req.body.description,
         image: req.files[0].filename,
-      })  
-    .then(function (producto) {
-        db.Category.findAll().then(function (categorias) {
+      })
+        .then(function (producto) {
+          db.Category.findAll().then(function (categorias) {
 
-          console.log(producto)
-          res.render("productAdd", {
-            errors: "",
-            usuario: req.cookies.recordame,
-            producto,
-            categorias,
+            console.log(producto)
+            res.render("productAdd", {
+              errors: "",
+              usuario: req.cookies.recordame,
+              producto,
+              categorias,
+            })
+              ;
+          }).catch(function (err) {
+            return res.status(400).json({ message: "issues trying to connect to database" });
           })
-          ;
-        }).catch(function (err) {
-          return res.status(400).json({ message: "issues trying to connect to database" });
-        })
-      
-        ;
-      });
+
+            ;
+        });
     }
   },
 
@@ -131,7 +131,7 @@ const controller = {
 
 
 
-  
+
 
   viewedit: function (req, res) {
     if (req.cookies.recordame == undefined) {
@@ -175,7 +175,7 @@ const controller = {
     db.Product.destroy({ where: { id: req.params.id } }).then(function (
       result
     ) {
-      res.redirect("/");
+      res.redirect("/admin");
     });
   },
 
