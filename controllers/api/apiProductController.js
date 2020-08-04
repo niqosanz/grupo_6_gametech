@@ -44,6 +44,7 @@ const controller = {
             for (i = 0; i < productos.length; i ++) {
 
                 let idProduct = productos[i].id;
+                let imagen = productos[i].image;
                 let nameProduct = productos[i].short_description;
                 let descriptionProduct = productos[i].long_description;
                 let categorias = productos[i].category.dataValues.name;
@@ -54,7 +55,8 @@ const controller = {
                     'name': nameProduct,
                     'description': descriptionProduct,
                     'categories': categorias,
-                    'detail': detailProduct
+                    'detail': detailProduct,
+                    'image': 'http://localhost:3000/Images/productos/' + imagen
                 }
                 products.push(newProducts)
 
